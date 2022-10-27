@@ -1,3 +1,43 @@
+/* --------------------------------------- Montserrat font ---------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+/* --------------------------------------- Audio-wide font ----------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap%27');
+
+
+/* --------------------------------------- Import general css -------------------------------------------- */
+@import "_generalLayout.css";
+@import "general/home.css";
+@import "general/login.css";
+@import "general/play.css";
+@import "general/search.css";
+@import "general/subscription.css";
+
+/* --------------------------------------- Import UserSettings css --------------------------------------- */
+@import "_settingsLayout.css";
+@import "userSettings/addMusic.css";
+@import "userSettings/editProfil.css";
+@import "userSettings/profile.css";
+@import "userSettings/showMusic.css";
+@import "userSettings/showUsers.css";
+@import "userSettings/updateMusic.css";
+
+:root {
+    --backgroundNavTop: #000000;
+    --backgroundNavLeft: #2A2A27;
+    --backgroundBody: #373737;
+    --colorMainFont: #FFFFFF;
+    --colorSubFont: #D9D9D9;
+    --colorObject: #FDB927;
+    --titleFont: 'Audiowide', cursive;
+    --mainFont: 'Montserrat', sans-serif;
+    --validateButton : #73BF27;
+    --updateButton : #FDB927;
+    --deleteButton : #BF160A;
+}
+
 body {
-    color: #f76c6c;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--backgroundBody);
 }
