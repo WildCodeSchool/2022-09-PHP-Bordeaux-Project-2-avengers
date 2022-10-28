@@ -5,21 +5,10 @@
 
 
 /* --------------------------------------- Import general css -------------------------------------------- */
-@import "_generalLayout.css";
-@import "general/home.css";
-@import "general/login.css";
-@import "general/play.css";
-@import "general/search.css";
-@import "general/subscription.css";
+
 
 /* --------------------------------------- Import UserSettings css --------------------------------------- */
-@import "_settingsLayout.css";
-@import "userSettings/addMusic.css";
-@import "userSettings/editProfil.css";
-@import "userSettings/profile.css";
-@import "userSettings/showMusic.css";
-@import "userSettings/showUsers.css";
-@import "userSettings/updateMusic.css";
+
 
 :root {
     --backgroundNavTop: #000000;
@@ -33,6 +22,8 @@
     --validateButton : #73BF27;
     --updateButton : #FDB927;
     --deleteButton : #BF160A;
+    /* breakpoint tablet = min-width : 481 */
+    /* breakpoint desktop = min-width : 769 */
 }
 
 body {
