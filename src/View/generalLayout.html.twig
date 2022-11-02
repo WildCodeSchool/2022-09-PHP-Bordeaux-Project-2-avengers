@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <title>Wildify</title>
+    <link
+        rel="stylesheet" href="/assets/css/style.css">
+
+
+    {# ------------------- Top navbar ---------------------------------------------------------------------------------- #}
+    <nav class="top_navbar">
+
+        <label class="burger-label" for="expand-side-navbar"><img class="burger-icon" src="/assets/images/menu.png"
+                                                                  title="Home" alt="Home"></label>
+        <div class="navbar_logo">
+            <h3 class="navbar_logo_w">W</h3>
+            <h3 class="navbar_logo_part">ildify</h3>
+        </div>
+
+        <div class="search-bar">
+            <form onsubmit="event.preventDefault();" class="search-form">
+                <input type="search" class="search-input" placeholder="Search">
+                <button class="search-button" type="submit"><img class="magnifying_glass" Title="Search"
+                                                                 src="/assets/images/magnifying-glass.png" alt="Search">
+                </button>
+            </form>
+        </div>
+
+        <div class="sub-login-buttons">
+            <button class="subscribe-button">Subscribe</button>
+            <button class="login-button">Login</button>
+        </div>
+
+    </nav>
+
+</head>
+
+<body>
+<div class="middle-section">
+
+    {# ------------------------------- NAVBAR MENU--------------------------------------------- #}
+    <input type="checkbox" class="expand-side-navbar" id="expand-side-navbar"/>
+    <div class="side-navbar">
+
+        <nav class="left-navbar">
+            <label class="expand-label" for="expand-side-navbar"><img class="arrow-icon" src="/assets/images/left-arrow.png" title="Hide / Show Navbar" alt="Hide / Show Navbar"></label>
+
+            <ul>
+                <li><a href=""><img class="home-icon side-navbar-icons" src="/assets/images/home.png" title="Home" alt="Home"><p class="left-navbar-icon-labels">Home</p></a></li>
+                <li><a href=""><img class="list-icon side-navbar-icons" src="/assets/images/list.png" title="Create Playlist" alt="Create Playlist"><p class="left-navbar-icon-labels">Create Playlist</p></a></li>
+                <li><a href=""><img class="heart-icon side-navbar-icons" src="/assets/images/heart.png" title="Liked Songs" alt="Liked Songs"><p class="left-navbar-icon-labels">Liked Songs</p></a></li>
+                <li><a href=""><p class="login-button-leftbar sub-login-left-navbar-labels">Subscribe</p></a></li>
+                <li><a href=""><p class="login-button-leftbar sub-login-left-navbar-labels">Login</p></a></li>
+            </ul>
+
+        </nav>
+    </div>
+
+    {# ------------------- MAIN BLOCK ------------------------------------------------ #}
+
+    {% block content %}{% endblock %}
+</div>
+</body>
+
+
+{# ------------------- MAIN BLOCK ------------------------------------------------ #}
+
+
+</html>

@@ -1,0 +1,42 @@
+{% extends 'settingProfile.html.twig' %}
+
+{% block title %} Wildify | Delete profile {% endblock %}
+{% block topNavbar %}
+    {% include 'Setting/Navbar/settingTopNavbar.html.twig' %}
+{% endblock %}
+
+{% block sideNavbar %}
+    {% include 'Setting/Navbar/settingSideNavbar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    <section class="delete-profile">
+        <h1 class="setting-title">> Delete my account <</h1>
+        <div class="delete-wildify-logo">
+            <img src="/assets/images/logo-wildify-desktop.svg" alt="logo wildify">
+        </div>
+
+        <div class="delete-text">
+            <p>{{ user.username }}, you are about to delete your account. <br>
+                By validating the deletion, you will no longer be able to add music, manage your music or even access
+                your playlists. </p>
+
+               <p> If you wish to continue to benefit from the advantages linked to your account, click on "Back to
+                profile". <br>
+                If you really want to delete your account click on "Delete my account". You will still be able to
+                continue to listen to music on our site, without the advantages mentioned above. </p>
+
+                <p>Please note that once the deletion has been validated, your personal data will be permanently
+                deleted.</p>
+        </div>
+
+        <div class="profile-button-option">
+            <a class="update-profile" href="/setting/profile?id={{ user.ID_user }}">Back to profile</a>
+            <form action="/setting/profile/deleteDone" method="POST">
+                <button type="submit" name="delete" class="delete-account" value="{{ user.ID_user }}">Delete account
+                </button>
+            </form>
+        </div>
+
+    </section>
+{% endblock %}

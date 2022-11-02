@@ -1,0 +1,89 @@
+{% extends 'settingProfile.html.twig' %}
+
+{% block title %}  Wildify | Edit profile {% endblock %}
+
+{% block topNavbar %}
+    {% include 'Setting/Navbar/settingTopNavbar.html.twig' %}
+{% endblock %}
+
+{% block sideNavbar %}
+    {% include 'Setting/Navbar/settingSideNavbar.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    <section class="update-profile-section">
+        <h1 class="setting-title">> Update my profile <</h1>
+
+        <form action="" method="POST" class="update-profile-form">
+            <div class="form-content-update">
+                <input type="hidden" value="{{ user.ID_user }}" name="ID_user">
+
+                <div class="div-inside-form-update">
+                    <label for="firstname" class="update-form-label">Firstname :</label>
+                    <input type="text" name="firstname" class="update-form-input" id="firstname"
+                           value="{{ user.firstname }}">
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="lastname" class="update-form-label">Lastname :</label>
+                    <input type="text" name="lastname" class="update-form-input" id="lastname"
+                           value="{{ user.lastname }}">
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="username" class="update-form-label">Username :</label>
+                    <input type="text" name="username" class="update-form-input" id="username"
+                           value="{{ user.username }}">
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="birthday" class="update-form-label">Birthday :</label>
+                    <input type="text" name="birthday" class="update-form-input" id="birthday"
+                           value="{{ user.birthday }}">
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="country" class="update-form-label">Country :</label>
+                    <select name="country" class="update-form-input country" id="country">
+                        <option value={{ user.country }}>{{ user.country }}</option>
+                        <option value="France">France</option>
+                        <option value="Spain">Spain</option>
+                        <option value="England">England</option>
+                        <option value="Italy">Italy</option>
+                        <option value="not specified">Not specified</option>
+
+                    </select>
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="email" class="update-form-label">Email :</label>
+                    <input type="text" name="email" class="update-form-input email" id="email" disabled
+                           value="{{ user.email }}">
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="password" class="update-form-label">Actual Password :</label>
+                    <input type="text" name="password" class="update-form-input" id="password">
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="new-password" class="update-form-label">New password :</label>
+                    <input type="text" name="new-password" class="update-form-input" id="new-password">
+                </div>
+
+                <div class="error-update">
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+            <div class="profile-button-option">
+                <a class="update-profile" href="/setting/profile?id={{ user.ID_user }}">Back to profile</a>
+                <button type="submit" class="update-profile">Update profile</button>
+            </div>
+        </form>
+
+    </section>
+{% endblock %}

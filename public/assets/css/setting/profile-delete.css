@@ -1,0 +1,38 @@
+.delete-wildify-logo{
+    text-align: center;
+}
+
+.delete-wildify-logo img{
+    width: 70vw;
+}
+
+.delete-text {
+    color: var(--colorMainFont);
+    width: 80vw;
+    margin: 20px auto;
+    background-color: #181818;
+    border-radius: 20px;
+    border: solid 1px var(--colorObject);
+    padding: 1rem 2rem;
+}
+
+@media screen and (min-width: 513px) {
+    .delete-wildify-logo img{
+        width: 359px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: 0 0 0 241px;
+    }
+
+    .delete-wildify-logo img{
+        width: initial;
+    }
+
+    .delete-text {
+        width: 80%;
+    }
+
+}

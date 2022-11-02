@@ -1,0 +1,165 @@
+/* ---------------------------------------- user information list -------------------------------------------*/
+body {
+    margin: 90px 0 0 0;
+}
+
+.profile-section {
+    width: 100%;
+}
+
+.setting-title {
+    font-family: var(--titleFont);
+    color: var(--colorMainFont);
+    text-align: center;
+}
+
+.container-info-profile {
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: solid 1px var(--colorObject);
+}
+
+.info-list {
+    margin: 5px 0;
+    padding: 0;
+}
+
+.info-list li {
+    list-style: none;
+    font-family: var(--mainFont);
+}
+
+.info {
+    color: var(--colorMainFont);
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    margin-top: 22px;
+    width: 70vw;
+}
+
+.data {
+    color: var(--colorSubFont);
+    background-color: var(--backgroundBody);
+    padding: 0.5rem;
+    border-radius: 12px;
+    margin-top: 5px;
+    width: 80vw;
+    height: 19px;
+}
+
+/* ----------------------------------------- Update profile button -------------------------------------------*/
+.profile-button-option {
+    text-align: center;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.update-profile {
+    text-decoration: none;
+    color: var(--colorMainFont);
+    font-family: var(--mainFont);
+    border-radius: 12px;
+    padding: 8px;
+    margin: 5px 20px;
+    border-bottom: solid 3px #E38211;
+    border-left: solid 2px #E38211;
+    border-right: solid 2px #E38211;
+    border-top: solid 1px #E38211;
+    font-weight: 600;
+    background-color: var(--backgroundBody);
+    font-size: 1em;
+    cursor: pointer;
+    width: 6rem;
+}
+
+.delete-account {
+    text-decoration: none;
+    color: var(--colorMainFont);
+    font-family: var(--mainFont);
+    border-radius: 12px;
+    padding: 8px;
+    margin: 5px 20px;
+    border-bottom: solid 3px #BF160A;
+    border-left: solid 2px #BF160A;
+    border-right: solid 2px #BF160A;
+    border-top: solid 1px #BF160A;
+    font-weight: 600;
+    background-color: var(--backgroundBody);
+    font-size: 1em;
+    cursor: pointer;
+    width: 6rem;
+}
+
+.success-update {
+    color: white;
+    text-align: center;
+}
+
+/* --------------------------------------- Small @media screen to adapt --------------------------------------*/
+@media screen and (min-width: 366px) {
+    .info {
+        width: 293px;
+    }
+
+    .data {
+        width: 293px;
+    }
+}
+
+@media screen and (min-width: 426px) {
+    .container-info-profile {
+        width: 384px;
+    }
+}
+
+/* ----------------------------------------- @media screen tablet --------------------------------------------*/
+@media screen and (min-width: 768px) {
+    body {
+        margin: 0 0 0 241px;
+    }
+
+    .container-info-profile {
+        width: 60vw;
+        padding: 1rem;
+    }
+
+    .info-list li {
+        display: flex;
+        margin-bottom: 5px;
+    }
+
+    .info {
+        width: 8rem;
+        margin-right: 1rem;
+    }
+
+    .data {
+        margin-top: 14px;
+    }
+
+    .update-profile {
+        width: initial;
+        margin: 5px 40px;
+    }
+
+    .delete-account {
+        width: initial;
+        margin: 5px 40px;
+    }
+}
+
+/* ----------------------------------------- @media screen desktop -------------------------------------------*/
+@media screen and (min-width: 916px) {
+    .container-info-profile {
+        width: 550px;
+    }
+}
+
+
+
+

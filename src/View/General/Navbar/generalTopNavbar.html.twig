@@ -1,0 +1,30 @@
+{# --------------------------------------- Mobile Top-Navbar ------------------------------------------- #}
+<div class="top-navbar-mobile">
+    <div id="menuToggle">
+        <input type="checkbox"/>
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+            <li><a href="/setting/profile?id={{ user.ID_user }}">Setting</a></li>
+            <li><a href="#">Liked songs</a></li>
+            <li><a href="#">My playlist</a></li>
+            <li><a href="#">Add music</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="logout-burger-li"><a href="#" class="logout-burger">Login</a></li>
+        </ul>
+    </div>
+    <a href="/home"><img class="logo-wildify-mobile" src="/assets/images/logo-wildify-mobile.svg" alt="logo mobile"></a>
+    <a href="/search"><img class="logo-search-mobile" src="/assets/images/magnifying-glass.png" alt="logo search"></a>
+</div>
+
+{# --------------------------------------- Desktop Top-Navbar ------------------------------------------- #}
+<div class="top-navbar-desktop">
+    <p class="welcome-user">Subscribe</p>
+    <form action="/" method="POST">
+        <label for="logout"></label>
+        <button type="submit" name="logout" class="logout" value="{{ user.id }}">Login</button>
+    </form>
+</div>
+
+
