@@ -1,23 +1,11 @@
-{% extends 'settingProfile.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %} Wildify | Admin {% endblock %}
-{% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/style.css">
-{% endblock %}
-
-{% block topNavbar %}
-    {% include 'Setting/Navbar/settingTopNavbar.html.twig' %}
-{% endblock %}
-
-{% block sideNavbar %}
-    {% include 'Setting/Navbar/settingSideNavbar.html.twig' %}
-{% endblock %}
 
 
 {% block content %}
     <section class="profile-section">
 
-        <h1 class="setting-title">> Admin USER Page <</h1>
+        <h1 class="setting-title">>Wildify | Admin USER Page <</h1>
 
     <section>
         {% for user in users %}
@@ -28,7 +16,7 @@
         </div>
         {{ user.email }}
         <div class="delete-margin">
-<a class="delete-user" href="/setting/admin/delete?id={{user.ID_user}}">Delete</a>
+<a class="btn-option warning-option" href="/setting/admin/delete?id={{user.ID_user}}">Delete</a>
         </div>
         </div>
         </p>

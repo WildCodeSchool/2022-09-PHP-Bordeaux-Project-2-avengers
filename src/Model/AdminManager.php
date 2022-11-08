@@ -15,7 +15,7 @@ class AdminManager
         $connection = new Connection();
         $this->pdo = $connection->getConnection();
     }
-
+// FEATURE GESTION USERS //
     public function getAllUsers(): array
     {
         $sql = "SELECT ID_user, username, email FROM user";
@@ -45,4 +45,10 @@ class AdminManager
         return $statement->fetch();
     }
 
+//FIN GESTION USERS//
+
+
+// FEATURE GESTION MUSICS //
+
+ 
 }

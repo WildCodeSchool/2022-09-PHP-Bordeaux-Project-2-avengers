@@ -1,23 +1,10 @@
-{% extends 'settingProfile.html.twig' %}
-
-{% block title %} Wildify | Admin {% endblock %}
-{% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/style.css">
-{% endblock %}
-
-{% block topNavbar %}
-    {% include 'Setting/Navbar/settingTopNavbar.html.twig' %}
-{% endblock %}
-
-{% block sideNavbar %}
-    {% include 'Setting/Navbar/settingSideNavbar.html.twig' %}
-{% endblock %}
+{% extends 'layout.html.twig' %}
 
 
 {% block content %}
 
 
-    <h1 class="setting-title">> Admin Page <</h1>
+    <h1 class="setting-title">>Wildify | Admin Delete Page <</h1>
     <section class= "delete-adminpage" >
     <div class="admin-delete-text">
    <p class="setting-title">Vous allez supprimer l'utilisateur : </p>
@@ -28,8 +15,8 @@
     </p>
     </div>
     <div class="admin-buttons">
-   <a class="delete-account" href="/setting/admin">Non</a>  
-    <a class="update-profile" href="/setting/admin/deleteDone?id={{ admin.ID_user }}">Oui</a>
+   <a class="btn-option warning-option" href="/setting/admin">Non</a>  
+    <a class="btn-option validate-option" href="/setting/admin/deleteDone?id={{ admin.ID_user }}">Oui</a>
     </div>
    </section>
    
