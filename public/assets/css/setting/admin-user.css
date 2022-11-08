@@ -1,0 +1,63 @@
+.admin-table {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--colorMainFont);
+    width: 32vw;
+    margin: auto;
+    background-color: #181818;
+    border-radius: 15px;
+    border: solid 1px var(--colorObject);
+    padding: 1rem 1.5rem;
+    font-family: var(--titleFont);
+    color: var(--colorMainFont);
+}
+
+.delete-user {
+    
+    text-decoration: none;
+    color: var(--colorMainFont);
+    font-family: var(--mainFont);
+    border-radius: 12px;
+    padding: 8px;
+    margin: auto;
+    border-bottom: solid 3px #BF160A;
+    border-left: solid 2px #BF160A;
+    border-right: solid 2px #BF160A;
+    border-top: solid 1px #BF160A;
+    font-weight: 600;
+    background-color: var(--backgroundBody);
+    font-size: 1em;
+    cursor: pointer;
+    width: 6rem;
+}
+
+.admin{
+    font-family: var(--titleFont);
+    color: var(--colorMainFont);
+}
+
+.delete-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-padding {
+    padding-right: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .admin-table{
+        flex-direction: column;
+        width: 60vw;
+    }
+    .user-padding{
+        margin: 1rem;
+    }
+    .delete-margin{
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+        
+    }
+
+}

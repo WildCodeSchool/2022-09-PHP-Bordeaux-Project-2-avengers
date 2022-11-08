@@ -17,8 +17,11 @@ return [
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
     'setting/profile/edit' => ['UserController', 'editProfile', ['id']],
     'setting/profile/delete' => ['UserController', 'showDeletePage', ['id']],
-    'setting/profile/deleteDone' => ['UserController', 'deleteUser'],
+    'setting/profile/deleteDone' => ['UserController', 'deleteUser', ['id']],
 
+    'setting/admin' => ['AdminController', 'showAllUsers'],
+    'setting/admin/delete' => ['AdminController', 'showDeleteUser', ['id']],
+    'setting/admin/deleteDone' => ['AdminController', 'deleteUser', ['id']],
     'login' => ['UserController', 'login',],
 
 ];
