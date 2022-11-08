@@ -64,7 +64,7 @@
 }
 
 .btn-option {
-    margin: 0 50px;
+    margin: 0 50px 25px 50px;
     padding: 10px;
     text-align: center;
     transition: all 275ms;
@@ -79,6 +79,7 @@
     user-select: none;
     text-decoration: none;
     font-size: 1rem;
+    width: 15rem;
 }
 
 .btn-option:hover {
@@ -171,24 +172,8 @@
         flex-direction: initial;
     }
 
-    .update-profile {
-        width: initial;
-        margin: 5px 40px;
-    }
-
-    .update-profile.option-button {
-        width: initial;
-        margin: 5px 40px;
-    }
-
-    .delete-account {
-        width: initial;
-        margin: 5px 40px;
-    }
-
-    .delete-account.option-button {
-        width: initial;
-        margin: 5px 40px;
+    .btn-option {
+        width: 8rem;
     }
 }
 
