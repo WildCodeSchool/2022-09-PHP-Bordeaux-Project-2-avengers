@@ -1,6 +1,6 @@
 /* ---------------------------------------- user information list -------------------------------------------*/
-body {
-    margin: 90px 0 0 0;
+.main-block {
+    width: 100%;
 }
 
 .profile-section {
@@ -63,56 +63,56 @@ body {
     margin-top: 20px;
 }
 
-.update-profile {
-    text-decoration: none;
-    color: var(--colorMainFont);
+.btn-option {
+    margin: 0 50px;
+    padding: 10px;
+    text-align: center;
+    transition: all 275ms;
+    background-size: 200% auto;
+    color: var(--backgroundNavLeft);
+    border-radius: 10px;
+    border: 0;
+    display: block;
     font-family: var(--mainFont);
-    border-radius: 12px;
-    padding: 8px;
-    margin: 5px auto 15px auto;
-    border-bottom: solid 3px var(--updateButton);
-    border-left: solid 2px var(--updateButton);
-    border-right: solid 2px var(--updateButton);
-    border-top: solid 1px var(--updateButton);
-    font-weight: 600;
-    background-color: var(--backgroundBody);
-    font-size: 1em;
+    font-weight: 515;
     cursor: pointer;
-    width: 15rem;
-}
-
-.update-profile:hover {
-    background: var(--updateButton);
-}
-
-.update-profile.option-button {
-    width: 260px;
-}
-
-.delete-account {
+    user-select: none;
     text-decoration: none;
-    color: var(--colorMainFont);
-    font-family: var(--mainFont);
-    border-radius: 12px;
-    padding: 8px;
-    margin: 5px 20px;
-    border-bottom: solid 3px var(--deleteButton);
-    border-left: solid 2px var(--deleteButton);
-    border-right: solid 2px var(--deleteButton);
-    border-top: solid 1px var(--deleteButton);
-    font-weight: 600;
-    background-color: var(--backgroundBody);
-    font-size: 1em;
-    cursor: pointer;
-    width: 15rem;
+    font-size: 1rem;
 }
 
-.delete-account:hover {
-    background: var(--deleteButton);
+.btn-option:hover {
+    background-position: right center;
+    transform: scale(1.03);
+    text-decoration: none;
 }
 
-.delete-account.option-button {
-    width: 260px;
+.btn-option:active {
+    transform: scale(0.95);
+}
+
+.warning-option {
+    background-image: radial-gradient(circle farthest-side, #fcbbbb, #f80000);
+}
+
+.warning-option:hover {
+    box-shadow: var(--deleteButton) 0 0 15px;
+}
+
+.redirection-option {
+    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+}
+
+.redirection-option:hover {
+    box-shadow: var(--colorObject) 0 0 15px;
+}
+
+.validate-option {
+    background-image: radial-gradient(circle farthest-side, #c9fcbb, #36f800);
+}
+
+.validate-option:hover {
+    box-shadow: #36f800 0 0 15px;
 }
 
 .success-update {
@@ -144,10 +144,6 @@ body {
 
 /* ----------------------------------------- @media screen tablet --------------------------------------------*/
 @media screen and (min-width: 768px) {
-    body {
-        margin: 0 0 0 241px;
-    }
-
     .container-info-profile {
         width: 60vw;
         padding: 1rem;
