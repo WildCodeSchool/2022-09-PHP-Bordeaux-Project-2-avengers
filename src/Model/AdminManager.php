@@ -5,7 +5,7 @@ namespace App\Model;
 use App\Model\Connection;
 use PDO;
 
-class AdminManager 
+class AdminManager
 {
 
     public PDO $pdo;
@@ -25,15 +25,15 @@ class AdminManager
         return $statement->fetchAll();
     }
 
-    public function deleteOneUser(int $id): void 
+    public function deleteOneUser(int $id): void
     {
         $statement = $this->pdo->prepare("DELETE FROM user WHERE ID_user=:id");
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
 
- 
-  
+
+
     public function selectOneUser(int $id): array
     {
         $sql = "SELECT ID_user, username, email, password FROM user WHERE ID_user=:id";
@@ -45,5 +45,4 @@ class AdminManager
         return $statement->fetch();
     }
 
-  
 }

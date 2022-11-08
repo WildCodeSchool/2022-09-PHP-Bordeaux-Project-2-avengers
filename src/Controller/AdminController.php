@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\AdminManager;
 
-class AdminController extends AbstractController 
+class AdminController extends AbstractController
 {
     public function showAllUsers(): string
     {
@@ -32,7 +32,7 @@ class AdminController extends AbstractController
         }
     }
 
-    public function showDeleteUser($id): string 
+    public function showDeleteUser($id): string
     {
         $adminManager = new AdminManager();
         $admin = $adminManager->selectOneUser($id);
