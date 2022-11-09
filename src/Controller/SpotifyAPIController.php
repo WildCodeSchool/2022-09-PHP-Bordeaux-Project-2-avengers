@@ -44,16 +44,12 @@ class SpotifyAPIController
             // Il est possible de le stocker dans une BDD, sinon.
             $_SESSION['access-token'] = $accessToken;
 
-//            // Send the user along and fetch some data!
-//            // (redirection non nécessaire, appel de deux méthodes à la suite)
-//            header('Location: /');
-//            die();
         }
     }
 
-    /* FONCTIONS CRUD - Récupérer les infos de */
+    /* FONCTIONS CRUD - Récupérer les infos des chansons */
 
-    public function getTrackInfo(string $track): string
+    public function getTrackInfo(string $track)
     {
         // On récupère le token dans notre variable session.
         // Il est possible de le stocker dans une BDD, sinon.
@@ -62,24 +58,32 @@ class SpotifyAPIController
         $api = new SpotifyWebAPI\SpotifyWebAPI();
         $api->setAccessToken($accessToken);
 
-        $track = $api->getTrack($track);
+        return $track = $api->getTrack($track);
 
-        // It's now possible to request data from the Spotify catalog
-        return
-            "Titre :<br>"
-            . $track->name
-            . "<br>Artiste :<br>"
-            . $track->artists[0]->name
-            . "<br>Album :<br>"
-            . $track->album->name
-            . "<br>Date de sortie :<br>"
-            . $track->album->release_date
-            . "<br>URL de l'image:<br>"
-            . $track->album->images[1]->url;
+    }
 
-//        Ex. pour Récupérer des infos sur une chanson dans le Controller
-//        $track = '3K4HG9evC7dg3N0R9cYqk4';
-//        echo $spotify->getTrackInfo($track);
+    public function getMultipleTracks(array $tracks)
+    {
+        // On récupère le token dans notre variable session.
+        // Il est possible de le stocker dans une BDD, sinon.
+        $accessToken = $_SESSION['access-token'];
+
+        $api = new SpotifyWebAPI\SpotifyWebAPI();
+        $api->setAccessToken($accessToken);
+
+        return $tracks = $api->getTracks($tracks);
+    }
+
+    public function searchTracks($genre, $type)
+    {
+        // On récupère le token dans notre variable session.
+        // Il est possible de le stocker dans une BDD, sinon.
+        $accessToken = $_SESSION['access-token'];
+
+        $api = new SpotifyWebAPI\SpotifyWebAPI();
+        $api->setAccessToken($accessToken);
+
+        return $api->search($genre, $type);
     }
 
     /* GETTERS AND SETTERS */

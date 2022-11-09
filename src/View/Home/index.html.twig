@@ -2,5 +2,19 @@
 
 {% block content %}
     <h2>Homepage</h2>
+    {{ dump(tracks.tracks.items) }}
+    {#    {% for track in tracks.tracks.items %}#}
+    {#    <div>#}
+    {#        <p>{{ track.name }}</p>#}
+    {#    </div>#}
+    {#    {% endfor %}#}
 
+    {# afficher le nom d'un item (chanson) de la recherche #}
 {% endblock %}
+
+{#afficher les données de plusieurs tracks (get multiple)#}
+{#<ul>#}
+{#    {% for track in tracks.tracks %}#}
+{#        <li>{{ track.name }}</li>#}
+{#    {% endfor %}#}
+{#</ul>#}
