@@ -18,9 +18,8 @@
 
 .multiple-item-wrapper {
     width: 100%;
-    /*background-color: var(--backgroundNavLeft);*/
     padding: 1em;
-    margin: 0.5em 0 1em;
+    margin: 0.8em 0 1.2em;
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -34,6 +33,7 @@
     padding: 0.5em;
     border-radius: 20px;
     width: 40%;
+    border: 1px solid var(--backgroundBody);
 }
 
 .single-item-wrapper p {
@@ -56,11 +56,14 @@
 
 /* Play button on track picture */
 
-.item-img img {
-    display: block;
-    width: 2em;
-    height: 2em;
-    filter: drop-shadow(0 0 2em #FDB927);
+.play-icon {
+    width: 2.5em;
+    height: 2.5em;
+    position: relative;
+    bottom: 6em;
+    left: 2.9em;
+    margin-bottom: -2em;
+    filter: drop-shadow(0 0 3px black);
 }
 
 /* Artist name and song title */
@@ -101,6 +104,7 @@
         width: 8em;
     }
 
+
     .single-item-wrapper p {
         margin-bottom: 0.5em;
         font-size: 0.9em;
@@ -113,8 +117,12 @@
         margin-left: 1em;
     }
 
+    .single-item-wrapper {
+        transition: ease-out 0.5s;
+    }
+
     .single-item-wrapper:hover {
-        background-color: var(--backgroundBody);
+        border: 1px solid var(--colorObject);
     }
 
     .item-img {
@@ -126,19 +134,10 @@
         max-width: 13em;
     }
 
-    /* blur necessaire pour révéler le z-index -1 de l'image dessous */
-    .item-img:hover {
-        filter: blur(0px);
+    .play-icon {
+        bottom: 8em;
+        left: 4.8em;
+        pointer-events: none;
     }
 
-    .item-img img {
-        width: 3em;
-        height: 3em;
-        z-index: -1;
-        filter: drop-shadow(0 0 20px #FDB927);
-    }
-
-    .item-img img:hover {
-        display: block;
-    }
 }

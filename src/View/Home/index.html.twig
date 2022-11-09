@@ -3,13 +3,16 @@
 {% block content %}
     <div class="homepage-wrapper">
 
-        {# metal #}
+        {# pop #}
         <div class="genre-wrapper">
-            <h2>Metal</h2>
+            <h2>Pop</h2>
             <div class="multiple-item-wrapper">
-                {% for track in metal.tracks %}
+                {% for track in pop.tracks %}
                     <div class="single-item-wrapper">
-                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <div class="img-and-icon">
+                            <a href="#"><img src="{{ track.album.images[1].url }}" alt="" class="item-img"></a>
+                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
                         <p class="item-title">{{ track.name }}</p>
                     </div>
@@ -23,7 +26,10 @@
             <div class="multiple-item-wrapper">
                 {% for track in rock.tracks %}
                     <div class="single-item-wrapper">
-                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <div class="img-and-icon">
+                            <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
                         <p class="item-title">{{ track.name }}</p>
                     </div>
@@ -31,13 +37,16 @@
             </div>
         </div>
 
-        {# pop #}
+        {# metal #}
         <div class="genre-wrapper">
-            <h2>Pop</h2>
+            <h2>Metal</h2>
             <div class="multiple-item-wrapper">
-                {% for track in pop.tracks %}
+                {% for track in metal.tracks %}
                     <div class="single-item-wrapper">
-                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <div class="img-and-icon">
+                            <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
                         <p class="item-title">{{ track.name }}</p>
                     </div>
@@ -51,7 +60,10 @@
             <div class="multiple-item-wrapper">
                 {% for track in electro.tracks %}
                     <div class="single-item-wrapper">
-                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <div class="img-and-icon">
+                            <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
                         <p class="item-title">{{ track.name }}</p>
                     </div>
@@ -66,7 +78,10 @@
             <div class="multiple-item-wrapper">
                 {% for track in country.tracks %}
                     <div class="single-item-wrapper">
-                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <div class="img-and-icon">
+                            <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
                         <p class="item-title">{{ track.name }}</p>
                     </div>
