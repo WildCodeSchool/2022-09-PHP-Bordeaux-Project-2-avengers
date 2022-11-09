@@ -86,6 +86,12 @@ class SpotifyAPIController
         return $tracks = $api->getTracks($tracks);
     }
 
+    /**
+     * Function to artificially inject songs ID to the "get mutiple tracks" function
+     * You need first to look for a song on Spotify and get its ID in the URL
+     *
+     * @return \string[][]
+     */
     public function createTrackLists(): array
     {
         $metalMusic = [
