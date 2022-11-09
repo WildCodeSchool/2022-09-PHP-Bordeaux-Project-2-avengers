@@ -1,0 +1,185 @@
+/* ---------------------------------------- user information list -------------------------------------------*/
+.main-block {
+    width: 100%;
+}
+
+.profile-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.setting-title {
+    font-family: var(--titleFont);
+    color: var(--colorMainFont);
+    text-align: center;
+}
+
+.container-info-profile {
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: solid 1px var(--colorObject);
+}
+
+.info-list {
+    margin: 5px 0;
+    padding: 0;
+}
+
+.info-list li {
+    list-style: none;
+    font-family: var(--mainFont);
+}
+
+.info {
+    color: var(--colorMainFont);
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    margin-top: 22px;
+    width: 70vw;
+}
+
+.data {
+    color: var(--colorSubFont);
+    background-color: var(--backgroundBody);
+    padding: 0.5rem;
+    border-radius: 12px;
+    margin-top: 5px;
+    width: 80vw;
+    height: 19px;
+}
+
+/* ----------------------------------------- Update profile button -------------------------------------------*/
+.profile-button-option {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-option {
+    margin: 0 50px 25px 50px;
+    padding: 10px;
+    text-align: center;
+    transition: all 275ms;
+    background-size: 200% auto;
+    color: var(--backgroundNavLeft);
+    border-radius: 10px;
+    border: 0;
+    display: block;
+    font-family: var(--mainFont);
+    font-weight: 515;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    font-size: 1rem;
+    width: 15rem;
+}
+
+.btn-option:hover {
+    background-position: right center;
+    transform: scale(1.03);
+    text-decoration: none;
+}
+
+.btn-option:active {
+    transform: scale(0.95);
+}
+
+.warning-option {
+    background-image: radial-gradient(circle farthest-side, #fcbbbb, #f80000);
+}
+
+.warning-option:hover {
+    box-shadow: var(--deleteButton) 0 0 15px;
+}
+
+.redirection-option {
+    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+}
+
+.redirection-option:hover {
+    box-shadow: var(--colorObject) 0 0 15px;
+}
+
+.validate-option {
+    background-image: radial-gradient(circle farthest-side, #c9fcbb, #36f800);
+}
+
+.validate-option:hover {
+    box-shadow: #36f800 0 0 15px;
+}
+
+.success-update {
+    color: var(--colorMainFont);
+    text-align: center;
+    font-family: var(--mainFont);
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    width: 90vw;
+}
+
+/* --------------------------------------- Small @media screen to adapt --------------------------------------*/
+@media screen and (min-width: 366px) {
+    .info {
+        width: 293px;
+    }
+
+    .data {
+        width: 293px;
+    }
+}
+
+@media screen and (min-width: 426px) {
+    .container-info-profile {
+        width: 384px;
+    }
+}
+
+/* ----------------------------------------- @media screen tablet --------------------------------------------*/
+@media screen and (min-width: 768px) {
+    .container-info-profile {
+        width: 60vw;
+        padding: 1rem;
+    }
+
+    .info-list li {
+        display: flex;
+        margin-bottom: 5px;
+    }
+
+    .info {
+        width: 8rem;
+        margin-right: 1rem;
+    }
+
+    .data {
+        margin-top: 14px;
+    }
+
+    .profile-button-option {
+        text-align: center;
+        margin: 1.5rem 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: initial;
+    }
+
+    .btn-option {
+        width: 8rem;
+    }
+}
+
+/* ----------------------------------------- @media screen desktop -------------------------------------------*/
+@media screen and (min-width: 916px) {
+    .container-info-profile {
+        width: 550px;
+    }
+}

@@ -8,6 +8,8 @@
 
 
 /* --------------------------------------- Import UserSettings css --------------------------------------- */
+@import "setting/show_profile.css";
+
 
 
 :root {
