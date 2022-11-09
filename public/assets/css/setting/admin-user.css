@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     color: var(--colorMainFont);
-    width: 32vw;
+    width: 52vw;
     margin: auto;
     background-color: #181818;
     border-radius: 15px;
@@ -47,10 +47,10 @@
 }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
     .admin-table{
         flex-direction: column;
-        width: 60vw;
+        width: 70vw;
     }
     .user-padding{
         margin: 1rem;
@@ -60,5 +60,11 @@
         margin-top: 2rem;
         
     }
+
+@media screen and (min-width: 768px) {
+    .admin-table {
+        width: 40vw;
+    }
+}   
 
 }

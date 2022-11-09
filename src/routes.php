@@ -12,5 +12,6 @@ return [
     /* ------------------------------------------ Setting page ----------------------------------------------------*/
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
     'setting/admin' => ['AdminController', 'showAllUsers'],
+    'setting/admin/delete' => ['AdminController', 'showDeleteUser', ['id']],
 
 ];

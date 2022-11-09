@@ -25,5 +25,17 @@ class AdminManager
         return $statement->fetchAll();
     }
 
+    public function selectOneUser(int $id): array
+    {
+        $sql = "SELECT ID_user, username, email, password FROM user WHERE ID_user=:id";
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
+
+
     
 }
