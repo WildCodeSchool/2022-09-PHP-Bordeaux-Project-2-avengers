@@ -9,6 +9,7 @@
 
 /* --------------------------------------- Import UserSettings css --------------------------------------- */
 @import "setting/show_profile.css";
+@import "setting/admin-user.css";
 
 
 
