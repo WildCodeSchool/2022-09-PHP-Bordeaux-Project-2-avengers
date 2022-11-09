@@ -1,20 +1,78 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h2>Homepage</h2>
-    {{ dump(tracks.tracks.items) }}
-    {#    {% for track in tracks.tracks.items %}#}
-    {#    <div>#}
-    {#        <p>{{ track.name }}</p>#}
-    {#    </div>#}
-    {#    {% endfor %}#}
+    <div class="homepage-wrapper">
 
-    {# afficher le nom d'un item (chanson) de la recherche #}
+        {# metal #}
+        <div class="genre-wrapper">
+            <h2>Metal</h2>
+            <div class="multiple-item-wrapper">
+                {% for track in metal.tracks %}
+                    <div class="single-item-wrapper">
+                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <p class="item-artist">{{ track.artists[0].name }}</p>
+                        <p class="item-title">{{ track.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {# rock #}
+        <div class="genre-wrapper">
+            <h2>Rock</h2>
+            <div class="multiple-item-wrapper">
+                {% for track in rock.tracks %}
+                    <div class="single-item-wrapper">
+                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <p class="item-artist">{{ track.artists[0].name }}</p>
+                        <p class="item-title">{{ track.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {# pop #}
+        <div class="genre-wrapper">
+            <h2>Pop</h2>
+            <div class="multiple-item-wrapper">
+                {% for track in pop.tracks %}
+                    <div class="single-item-wrapper">
+                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <p class="item-artist">{{ track.artists[0].name }}</p>
+                        <p class="item-title">{{ track.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {# electro #}
+        <div class="genre-wrapper">
+            <h2>Electro</h2>
+            <div class="multiple-item-wrapper">
+                {% for track in electro.tracks %}
+                    <div class="single-item-wrapper">
+                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <p class="item-artist">{{ track.artists[0].name }}</p>
+                        <p class="item-title">{{ track.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        {# country #}
+        <div class="genre-wrapper">
+            <h2>Country</h2>
+            <div class="multiple-item-wrapper">
+                {% for track in country.tracks %}
+                    <div class="single-item-wrapper">
+                        <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                        <p class="item-artist">{{ track.artists[0].name }}</p>
+                        <p class="item-title">{{ track.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
 {% endblock %}
-
-{#afficher les données de plusieurs tracks (get multiple)#}
-{#<ul>#}
-{#    {% for track in tracks.tracks %}#}
-{#        <li>{{ track.name }}</li>#}
-{#    {% endfor %}#}
-{#</ul>#}

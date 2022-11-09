@@ -49,6 +49,12 @@ class SpotifyAPIController
 
     /* FONCTIONS CRUD - Récupérer les infos des chansons */
 
+    /**
+     * Get the info of one track at a time
+     *
+     * @param string $track
+     * @return array|object
+     */
     public function getTrackInfo(string $track)
     {
         // On récupère le token dans notre variable session.
@@ -62,6 +68,12 @@ class SpotifyAPIController
 
     }
 
+    /**
+     * Get the info of multiple tracks, feeding the function an array of track IDs
+     *
+     * @param array $tracks
+     * @return array|object
+     */
     public function getMultipleTracks(array $tracks)
     {
         // On récupère le token dans notre variable session.
@@ -74,7 +86,57 @@ class SpotifyAPIController
         return $tracks = $api->getTracks($tracks);
     }
 
-    public function searchTracks($genre, $type)
+    public function createTrackLists(): array
+    {
+        $metalMusic = [
+            '3K4HG9evC7dg3N0R9cYqk4',
+            '61mWefnWQOLf90gepjOCb3',
+            '3IDOmkdbqgOiMORoyiQtyS',
+            '0tljt9o0lVww8YPGq4S6Vf',
+            '3QOgIKOmAGdcMqeGa3Yl5C'
+        ];
+        $rockMusic = [
+            '25H6P7a94WUr5102lC6TNI',
+            '4gphxUgq0JSFv2BCLhNDiE',
+            '3EYOJ48Et32uATr9ZmLnAo',
+            '6kooDsorCpWVMGc994XjWN',
+            '60VNmTr9ox1PaCIOCprfIa'
+        ];
+        $popMusic = [
+            '4r6eNCsrZnQWJzzvFh4nlg',
+            '0nucG9RsYTuv5Ztm5f4cnu',
+            '6ZBJFWDYJSTQg54eDsqnkJ',
+            '7qiZfU4dY1lWllzX7mPBI3',
+            '7Lf7oSEVdzZqTA0kEDSlS5'
+        ];
+        $electroMusic = [
+            '1pKYYY0dkg23sQQXi0Q5zN',
+            '4wSmqFg31t6LsQWtzYAJob',
+            '6VRhkROS2SZHGlp0pxndbJ',
+            '0UAEHlFR79k9CJvknSGUNf',
+            '3u5N55tHf7hXATSQrjBh2q'
+        ];
+        $countryMusic = [
+            '5rDkA2TFOImbiVenmnE9r4',
+            '3g5k04QYJJgcpwErTwMoaB',
+            '6LahUh0U4umx6hDFfVWlGi',
+            '0eZcFq1zvOh6buqrL4VBhP',
+            '2SpEHTbUuebeLkgs9QB7Ue'
+        ];
+
+        return $tracks = [$metalMusic, $rockMusic, $popMusic, $electroMusic, $countryMusic];
+    }
+
+    /**
+     * Search for a term of a given type
+     * (ex. "The Queen", "Artist")
+     * (ex. "Rock", "Playlist")
+     *
+     * @param $search
+     * @param $type
+     * @return array|object
+     */
+    public function searchTracks($search, $type)
     {
         // On récupère le token dans notre variable session.
         // Il est possible de le stocker dans une BDD, sinon.
@@ -83,7 +145,7 @@ class SpotifyAPIController
         $api = new SpotifyWebAPI\SpotifyWebAPI();
         $api->setAccessToken($accessToken);
 
-        return $api->search($genre, $type);
+        return $api->search($search, $type);
     }
 
     /* GETTERS AND SETTERS */

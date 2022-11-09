@@ -16,13 +16,27 @@ class HomeController extends AbstractController
         $spotify = new SpotifyAPIController();
         $spotify->connectToAPI();
 
-        $trackList = [
-            '3K4HG9evC7dg3N0R9cYqk4',
-            '6n8TMVyFKoUmDc4apxceRD',
-            '5rDkA2TFOImbiVenmnE9r4',
-            '2VxeLyX666F8uXCJ0dZF8B'];
-        $tracks = $spotify->getMultipleTracks($trackList);
+        $trackList = $spotify->createTrackLists();
 
-        return $this->twig->render('Home/index.html.twig', ['tracks' => $tracks]);
+        $metalMusic = $trackList[0];
+        $rockMusic = $trackList[1];
+        $popMusic = $trackList[2];
+        $electroMusic = $trackList[3];
+        $countryMusic = $trackList[4];
+
+        $tracksMetal = $spotify->getMultipleTracks($metalMusic);
+        $tracksRock = $spotify->getMultipleTracks($rockMusic);
+        $tracksPop = $spotify->getMultipleTracks($popMusic);
+        $tracksElectro = $spotify->getMultipleTracks($electroMusic);
+        $tracksCountry = $spotify->getMultipleTracks($countryMusic);
+
+        return $this->twig->render('Home/index.html.twig',
+            [
+                'metal' => $tracksMetal,
+                'rock' => $tracksRock,
+                'pop' => $tracksPop,
+                'electro' => $tracksElectro,
+                'country' => $tracksCountry,
+            ]);
     }
 }

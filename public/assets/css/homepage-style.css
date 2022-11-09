@@ -18,12 +18,14 @@
 
 .multiple-item-wrapper {
     width: 100%;
-    background-color: var(--backgroundNavLeft);
+    /*background-color: var(--backgroundNavLeft);*/
     padding: 1em;
+    margin: 0.5em 0 1em;
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    box-shadow: 0 0 10px black;
 }
 
 /* Single track wrapper */
@@ -44,7 +46,6 @@
 .item-img {
     height: 25vw;
     width: 25vw;
-    background: url("https://loremflickr.com/200/200/dog") center no-repeat;
     background-size: cover;
     border-radius: 10px;
     margin: 0 auto 0.5em;
@@ -119,6 +120,10 @@
     .item-img {
         height: 12em;
         width: 12em;
+    }
+
+    .item-artist, .item-title {
+        max-width: 13em;
     }
 
     /* blur necessaire pour révéler le z-index -1 de l'image dessous */
