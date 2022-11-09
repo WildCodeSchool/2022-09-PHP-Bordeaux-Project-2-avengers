@@ -36,6 +36,12 @@ class AdminManager
         return $statement->fetch();
     }
 
+    public function deleteOneUser(int $id): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM user WHERE ID_user=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 
     
 }
