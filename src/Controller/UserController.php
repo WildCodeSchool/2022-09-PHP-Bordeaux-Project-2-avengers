@@ -123,5 +123,6 @@ class UserController extends AbstractController
             }
         }
         return $this->twig->render('General/login.html.twig',);
+
     }
 }
