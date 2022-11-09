@@ -20,12 +20,10 @@ class AdminController extends AbstractController
         $adminManager = new AdminManager();
         $admin = $adminManager->selectOneUser($id);
 
-        //var_dump($admin);
-        //die();
-
+        
         return $this->twig->render('Setting/Admin/admin-delete.html.twig', ['admin' => $admin]);
     }
-    
+
     public function deleteUser($id): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -38,5 +36,13 @@ class AdminController extends AbstractController
 
             header('Location: /setting/admin');
         }
+    }
+
+    public function showAllMusics(): string
+    {
+        $musicManager = new AdminManager();
+        $musics= $musicManager->getAllMusics();
+
+        return $this->twig->render("Setting/Admin/manage-musics.html.twig", ['musics' => $musics]);
     }
 }

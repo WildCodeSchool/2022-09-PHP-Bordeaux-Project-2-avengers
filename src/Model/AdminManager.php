@@ -43,5 +43,13 @@ class AdminManager
         $statement->execute();
     }
 
-    
+    public function getAllMusics(): array 
+    {
+        $sql = "SELECT title, artist, image_url, song_url, genre_ID_genre FROM songs";
+        $statement= $this->pdo->prepare($sql);
+        $statement->execute();
+
+        return $statement->fetchAll();
+
+    }
 }

@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+
+
+{% block content %}
+
+        {% for music in musics %}
+
+        {{ music.title}}
+        {{ music.artist}}
+      
+        
+         {% endfor %}  
+
+{% endblock %}
+
