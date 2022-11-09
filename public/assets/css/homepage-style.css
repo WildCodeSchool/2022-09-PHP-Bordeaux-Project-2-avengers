@@ -19,7 +19,7 @@
 .multiple-item-wrapper {
     width: 100%;
     padding: 1em;
-    margin: 0.8em 0 1.2em;
+    margin: 1.2em 0 2em;
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -60,8 +60,8 @@
     width: 2.5em;
     height: 2.5em;
     position: relative;
-    bottom: 6em;
-    left: 2.9em;
+    bottom: 5.3em;
+    left: 3.3em;
     margin-bottom: -2em;
     filter: drop-shadow(0 0 3px black);
 }
@@ -104,6 +104,10 @@
         width: 8em;
     }
 
+    .play-icon {
+        bottom: 6em;
+        left: 2.9em;
+    }
 
     .single-item-wrapper p {
         margin-bottom: 0.5em;

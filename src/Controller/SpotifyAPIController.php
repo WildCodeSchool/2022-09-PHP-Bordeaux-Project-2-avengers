@@ -93,35 +93,40 @@ class SpotifyAPIController
             '61mWefnWQOLf90gepjOCb3',
             '3IDOmkdbqgOiMORoyiQtyS',
             '0tljt9o0lVww8YPGq4S6Vf',
-            '3QOgIKOmAGdcMqeGa3Yl5C'
+            '3QOgIKOmAGdcMqeGa3Yl5C',
+            '6NwbeybX6TDtXlpXvnUOZC'
         ];
         $rockMusic = [
             '25H6P7a94WUr5102lC6TNI',
             '4gphxUgq0JSFv2BCLhNDiE',
             '3EYOJ48Et32uATr9ZmLnAo',
             '6kooDsorCpWVMGc994XjWN',
-            '60VNmTr9ox1PaCIOCprfIa'
+            '60VNmTr9ox1PaCIOCprfIa',
+            '2Cdvbe2G4hZsnhNMKyGrie'
         ];
         $popMusic = [
             '4r6eNCsrZnQWJzzvFh4nlg',
             '0nucG9RsYTuv5Ztm5f4cnu',
             '6ZBJFWDYJSTQg54eDsqnkJ',
             '7qiZfU4dY1lWllzX7mPBI3',
-            '7Lf7oSEVdzZqTA0kEDSlS5'
+            '7Lf7oSEVdzZqTA0kEDSlS5',
+            '6I9VzXrHxO9rA9A5euc8Ak'
         ];
         $electroMusic = [
             '1pKYYY0dkg23sQQXi0Q5zN',
             '4wSmqFg31t6LsQWtzYAJob',
             '6VRhkROS2SZHGlp0pxndbJ',
             '0UAEHlFR79k9CJvknSGUNf',
-            '3u5N55tHf7hXATSQrjBh2q'
+            '3u5N55tHf7hXATSQrjBh2q',
+            '0molLCkfeNcLxV3oNgGY9a'
         ];
         $countryMusic = [
             '5rDkA2TFOImbiVenmnE9r4',
             '3g5k04QYJJgcpwErTwMoaB',
             '6LahUh0U4umx6hDFfVWlGi',
             '0eZcFq1zvOh6buqrL4VBhP',
-            '2SpEHTbUuebeLkgs9QB7Ue'
+            '2SpEHTbUuebeLkgs9QB7Ue',
+            '7cyBw7bpAOYhzyNv7yqW6y'
         ];
 
         return $tracks = [$metalMusic, $rockMusic, $popMusic, $electroMusic, $countryMusic];
