@@ -11,8 +11,7 @@ class AdminController extends AbstractController
         $adminManager = new AdminManager();
         $users = $adminManager->getAllUsers();
 
-        //var_dump($users);
-       // die();
+      
         return $this->twig->render('Setting/Admin/admin.html.twig', ['users' => $users]);
     }
 }
