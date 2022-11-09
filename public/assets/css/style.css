@@ -5,7 +5,7 @@
 
 
 /* --------------------------------------- Import general css -------------------------------------------- */
-
+@import "general/Layout.css";
 
 /* --------------------------------------- Import UserSettings css --------------------------------------- */
 @import "setting/show_profile.css";
@@ -13,17 +13,19 @@
 
 
 :root {
+    --backgroundNavLeft: #090909;
     --backgroundNavTop: #000000;
-    --backgroundNavLeft: #2A2A27;
-    --backgroundBody: #373737;
+    --backgroundBody: #121212;
     --colorMainFont: #FFFFFF;
     --colorSubFont: #D9D9D9;
     --colorObject: #FDB927;
     --titleFont: 'Audiowide', cursive;
     --mainFont: 'Montserrat', sans-serif;
-    --validateButton : #73BF27;
-    --updateButton : #FDB927;
-    --deleteButton : #BF160A;
+    --validateButton: #73BF27;
+    --updateButton: #FDB927;
+    --deleteButton: #BF160A;
+    --backgroundSearchInput: #373737;
+    --colorSubDiscFont: #797979;
     /* breakpoint tablet = min-width : 481 */
     /* breakpoint desktop = min-width : 769 */
 }
@@ -33,4 +35,59 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: var(--backgroundBody);
+}
+
+/* ---------- root default BUTTON design css --------------------- */
+.default-bttn {
+    margin-right: 20px;
+    padding: 10px;
+    text-align: center;
+    transition: all 275ms;
+    background-size: 200% auto;
+    color: var(--backgroundNavLeft);
+    border-radius: 10px;
+    display: block;
+    border: 0px;
+    font-family: var(--mainFont);
+    font-weight: 515;
+    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+    cursor: pointer;
+    user-select: none;
+}
+
+.default-bttn:hover {
+    box-shadow: var(--colorObject) 0 0px 15px;
+    background-position: right center;
+    transform: scale(1.03);
+    text-decoration: none;
+}
+
+.default-bttn:active {
+    transform: scale(0.95);
+}
+
+/* ----- DEFAULT hover animation for links --------------- */
+.link-animation-container{
+    margin: 0;
+}
+
+.link-animation {
+    position: relative;
+}
+
+.link-animation::after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: var(--colorObject);
+    left: 50%;
+    bottom: -5px;
+    transition: all 250ms ease-in-out;
+}
+
+.link-animation-container:hover .link-animation::after {
+    box-shadow: var(--colorObject) 0 0px 5px;
+    width: 100%;
+    left: 0;
 }
