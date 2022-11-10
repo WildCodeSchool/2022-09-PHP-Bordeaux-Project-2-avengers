@@ -41,11 +41,11 @@ class HomeController extends AbstractController
 
         // on retourne la vue twig avec les arrays de musiques qu'on a chargées
         return $this->twig->render('Home/index.html.twig', [
-                'metal' => $tracksMetal,
-                'rock' => $tracksRock,
-                'pop' => $tracksPop,
-                'electro' => $tracksElectro,
-                'country' => $tracksCountry,]);
+            'metal' => $tracksMetal,
+            'rock' => $tracksRock,
+            'pop' => $tracksPop,
+            'electro' => $tracksElectro,
+            'country' => $tracksCountry,]);
     }
 
     /**
