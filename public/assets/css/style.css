@@ -5,7 +5,7 @@
 
 
 /* --------------------------------------- Import general css -------------------------------------------- */
-@import "general/Layout.css";
+@import "General/Layout.css";
 
 /* --------------------------------------- Import UserSettings css --------------------------------------- */
 @import "setting/show_profile.css";
