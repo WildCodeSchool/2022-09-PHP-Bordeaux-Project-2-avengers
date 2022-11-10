@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+
+
+{% block content %}
+    <section class="profile-section">
+
+        <h1 class="setting-title">>Wildify | Admin USER Page <</h1>
+
+    <section>
+        {% for user in users %}
+    <p class="admin">
+    <div class="admin-table">
+        <div class="user-padding">
+        {{ user.username }}
+        </div>
+        {{ user.email }}
+        <div class="delete-margin">
+<a class="btn-option-admin warning-option" href="/setting/admin/delete?id={{user.ID_user}}">Delete</a>
+        </div>
+        </div>
+        </p>
+        {% endfor %}
+    </section>
+
+
+{% endblock %}
