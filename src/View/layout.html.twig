@@ -1,21 +1,36 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/images/favicon.png">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="/assets/images/logo-wildify-mobile.svg">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<title>
+			{% block title %}{% endblock %}
+		</title>
 
-    <title>{% block title %}{% endblock %}</title>
+		{# ------------------- Top navbar --------------------------------------------------------------------------- #}
+		{% include 'Navbars/TopNavbar.html.twig' %}
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-    {% block stylesheet %}{% endblock %}
-</head>
+	</head>
+	<body>
 
-<body>
-    {% block content %}{% endblock %}
-    {% block javascript %}{% endblock %}
-</body>
-</html>
+		<div class="middle-section">
 
+			{# -------------------------------SIDE NAVBAR--------------------------------------------- #}
+			<input type="checkbox" class="expand-side-navbar" id="expand-side-navbar" onclick="document.getElementById('expand-profile-checkbox').checked = false, document.getElementById('expand-admin-checkbox').checked = false"/>
+			<div class="side-navbar">
+				{% include 'Navbars/SideNavbar.html.twig' %}
+			</div>
 
+			{# ------------ MAIN BLOCK content for home page/profile/song search etc. ------------------------------- #}
+			<div class="main-block"> 
+				{% block content %}{% endblock %}
+			</div>
+
+		</div>
+
+		</body>
+
+	</html>

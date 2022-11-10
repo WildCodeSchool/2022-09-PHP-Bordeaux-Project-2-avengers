@@ -1,0 +1,666 @@
+.menu-labels a {
+    margin: 0;
+    font-family: var(--mainFont);
+    color: var(--colorSubFont);
+    text-decoration: none;
+  }
+  
+  .expand-checkbox {
+    display: none;
+  }
+  
+  /* ------- [top navbar] Subscribe and Login buttons----- */
+  .sub-login-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .subscribe-button {
+    margin-right: 15px;
+    background-color: transparent;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-family: var(--mainFont);
+    font-size: 1em;
+    color: var(--colorMainFont);
+  }
+  
+  /* ------ HOME, SETTINGS and ADMIN menu -------- */
+  
+  .home-menus {
+    border-bottom: 1px solid;
+    border-bottom-color: #1a1a1a;
+  }
+  
+  .menu-arrow-icon {
+    margin-left: 10px;
+    height: 10px;
+    width: 10px;
+  }
+  
+  .settings-admin-labels {
+    margin: 0;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+    max-width: 115px;
+    font-family: var(--mainFont);
+    color: var(--colorSubFont);
+    font-size: 16px;
+  }
+  
+  .settings-arrow-icon {
+    animation-delay: 0s;
+    rotate: -90deg;
+    transition: all ease-out 0.5s;
+  }
+  
+  .expand-profile-checkbox:checked~div .settings-arrow-icon {
+    animation-delay: 0s;
+    rotate: 90deg;
+  }
+  
+  .profile-menus {
+    animation-delay: 0s;
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.7s ease-out;
+  }
+  
+  .expand-profile-checkbox:checked~.profile-menus {
+    animation-delay: 0s;
+    transition: 0.7s ease-out;
+    max-height: 150px;
+  }
+  
+  .profile-menus div a {
+    transition: 0.7s ease-out;
+    opacity: 0;
+  }
+  
+  .expand-profile-checkbox:checked~.profile-menus div a {
+    animation-delay: 0s;
+    opacity: 1;
+  }
+  
+  .profile-menus p {
+    margin: 0;
+    margin-left: 30px;
+    color: var(--colorSubDiscFont);
+    font-size: 14px;
+  }
+  
+  .admin-arrow-icon {
+    rotate: -90deg;
+    transition: all ease-out 0.5s;
+  }
+  
+  .expand-admin-checkbox:checked~div p .admin-arrow-icon {
+    transition: all ease-out 0.5s;
+    rotate: 90deg;
+  }
+  
+  .admin-menu {
+    animation-delay: 0s;
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.7s ease-out;
+  }
+  
+  .expand-admin-checkbox:checked~.admin-menu {
+    animation-delay: 0s;
+    transition: 0.7s ease-out;
+    max-height: 150px;
+  }
+  
+  .admin-menu div a {
+    transition: 0.9s ease-out;
+    opacity: 0;
+  }
+  
+  .expand-admin-checkbox:checked~.admin-menu div a {
+    animation-delay: 0s;
+    opacity: 1;
+  }
+  
+  .admin-menu p {
+    margin: 0;
+    margin-left: 30px;
+    color: var(--colorSubDiscFont);
+    font-size: 14px;
+  }
+  
+  /* ----------------------------------------------MOBILE AND TABLET SCREEN SIZE ---------------------------------------------------------------- */
+  @media only screen and (max-width: 850px) {
+  
+    .sub-login-buttons {
+      display: none;
+    }
+  
+    .expand-side-navbar {
+      display: none;
+    }
+  
+    .burger-label {
+      margin: 0;
+      padding: 0;
+    }
+  
+    .burger-icon {
+      max-height: 45px;
+      max-width: 45px;
+    }
+  
+    .top_navbar {
+      position: fixed;
+      z-index: 3;
+      height: 60px;
+      width: 100vw;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--backgroundNavTop);
+    }
+  
+    .logo-search-button {
+      margin: 0;
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .navbar_logo {
+      display: flex;
+      align-items: center;
+    }
+  
+    .navbar_logo_mobile {
+      margin-right: 10px;
+      height: 50px;
+      width: 50px;
+    }
+  
+    .ildify-logo {
+      display: none;
+    }
+  
+    .navbar_logo_desktop {
+      display: none;
+    }
+  
+    /* ---------------------------------------------------- SEARCH BAR ----------------------------------------------------------*/
+  
+    .search-form {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      align-items: center;
+    }
+  
+    .search-input {
+      position: relative;
+      border: 0;
+      margin: 0;
+      padding: 10px;
+      border-radius: 25px;
+      height: 100%;
+      width: 30vw;
+      background: var(--backgroundSearchInput);
+      font-size: auto;
+      transition: 0.5s width;
+  
+    }
+  
+    .search-input:focus {
+      outline: 0;
+      background: white;
+      width: 55vw;
+    }
+  
+    .search-button {
+      margin: 0;
+      margin-right: 3px;
+      position: absolute;
+      right: 0%;
+      z-index: 0;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      outline: none;
+      align-items: center;
+      background-color: var(--colorSubFont);
+      border-color: var(--backgroundBody);
+      border-radius: 25px;
+      height: 30px;
+      width: 30px;
+    }
+  
+    .magnifying_glass {
+      height: 15px;
+      width: 15px;
+    }
+  
+    /* ---------------------------------------------- MAIN BLOCK ---------------------------------------------------------------------- */
+  
+    .middle-section {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .main-block {
+      margin: 10px;
+      margin-top: 65px
+    }
+  
+    /* ---------------------------------------------- LEFT NAVBAR ---------------------------------------------------------------------- */
+    .expand-label {
+      display: none;
+    }
+  
+    .side-navbar {
+      position: fixed;
+      top: 61px;
+      background-color: var(--backgroundNavLeft);
+      max-height: 0px;
+      width: 100%;
+      border-radius: 0px 0px 10px 10px;
+      transition: ease-out 0.8s;
+      overflow: auto;
+    }
+  
+    .middle-section .expand-side-navbar:checked~.side-navbar {
+      max-height: 100%;
+      width: 100%;
+    }
+  
+    .left-navbar {
+      padding: 20px;
+    }
+  
+    .left-navbar ul {
+      margin: 0px;
+      margin-left: 0px;
+      padding: 0px;
+      list-style-type: none;
+      font-size: 19px;
+    }
+  
+    .left-navbar ul li {
+      margin-top: 13px;
+      margin-bottom: 20px;
+      padding: 0;
+    }
+  
+    .side-navbar-icons {
+      height: 20px;
+      width: 20px;
+    }
+  
+    .left-navbar ul li a {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+  
+    .hide-labels {
+      margin: 0;
+      margin-left: 10px;
+      opacity: 1;
+      transition: all ease-out 1s;
+    }
+  
+    .welcome-user-leftNavbar {
+      margin: 0;
+      padding-bottom: 10px;
+      font-family: var(--mainFont);
+      font-size: 17px;
+      color: var(--colorSubFont);
+      text-decoration: none;
+    }
+  
+    .home-menus {
+      margin: 0;
+    }
+  
+    .contact-label {
+      margin: 0;
+      text-decoration: none;
+      font-family: var(--mainFont);
+      color: var(--colorSubDiscFont);
+      font-size: 14px;
+    }
+  
+    .sub-login-left-navbar-labels {
+      align-items: left;
+      margin: 0;
+    }
+  
+    .login-button-leftbar {
+      /* color: var(--colorObject); */
+      margin-right: 20px;
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: all 0.5s;
+      background-size: 200% auto;
+      color: var(--backgroundNavLeft);
+      border-radius: 10px;
+      display: block;
+      border: 0px;
+      font-family: var(--mainFont);
+      font-weight: 525;
+      font-size: 15px;
+      background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+      cursor: pointer;
+      user-select: none;
+      touch-action: manipulation;
+    }
+  
+    .logout-bttn-leftnavbar p {
+      color: var(--backgroundNavLeft);
+    }
+  
+    .login-out-bttn {
+      margin: 0;
+      font-size: 15px;
+    }
+  
+  }
+  
+  /* --------------------------------------------------  DESKTOP SCREEN SIZE ---------------------------------------------------------- */
+  @media only screen and (min-width: 851px) {
+  
+    /* --------------------------------------------------  TOP NAVBAR ---------------------------------------------------------- */
+    .burger-label {
+      display: none;
+    }
+  
+    .sub-login-buttons a {
+      text-decoration: none;
+    }
+  
+    .sub-login-buttons p {
+      font-family: var(--mainFont);
+      color: var(--colorSubFont);
+      margin-right: 20px;
+    }
+  
+    .sub-login-buttons-leftNavbar {
+      display: none;
+    }
+  
+    .expand-side-navbar {
+      display: none;
+    }
+  
+    .top_navbar {
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 100px;
+      width: 100%;
+      align-items: center;
+      background-color: var(--backgroundNavTop);
+      box-shadow: 5px 2px 5px #1d1d1d;
+    }
+  
+    .logo-search-button {
+      margin: 0;
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .navbar_logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 15%;
+      font-family: var(--titleFont);
+      font-size: 2em;
+    }
+  
+    .navbar_logo_part {
+      margin: 0;
+      color: var(--colorObject);
+    }
+  
+    .navbar_logo_mobile {
+      z-index: 0;
+      height: 80px;
+      width: 80px;
+    }
+  
+    /* ---------------------------------------------------- [top navbar] ILDIFY LOGO ---------------------------------------------------------- */
+    .ildify-logo {
+      z-index: 1;
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      width: 80%;
+      font-family: var(--titleFont);
+      font-size: 55px;
+      color: var(--colorObject);
+    }
+  
+    .navbar_logo_desktop {
+      display: none;
+    }
+  
+    /* ---------------------------------------------------- [top navbar] SEARCH BAR ---------------------------------------------------------- */
+    .search-form {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      position: relative;
+      align-items: center;
+    }
+  
+    .search-input {
+      position: relative;
+      border: 0;
+      margin: 0;
+      padding: 10px;
+      border-radius: 25px;
+      height: 100%;
+      width: 15vw;
+      background-color: var(--backgroundSearchInput);
+      font-size: auto;
+      transition: 0.5s width;
+    }
+  
+    .search-input:focus {
+      outline: 0;
+      background-color: white;
+      width: 25vw;
+    }
+  
+    .search-button {
+      margin: 0;
+      margin-right: 3px;
+      position: absolute;
+      right: 0%;
+      z-index: 0;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      outline: none;
+      align-items: center;
+      background-color: var(--colorSubFont);
+      border-color: var(--backgroundSearchInput);
+      border-radius: 25px;
+      height: 30px;
+      width: 30px;
+    }
+  
+    .magnifying_glass {
+      height: 15px;
+      width: 15px;
+    }
+  
+    /* ---------------------------------------------- MAIN BLOCK ---------------------------------------------------------------------- */
+  
+    .middle-section {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+    }
+  
+    .main-block {
+      margin: 20px;
+      margin-left: 200px;
+      margin-top: 120px;
+    }
+  
+    /* ---------------------------------------------- LEFT NAVBAR ---------------------------------------------------------------------- */
+  
+    .side-navbar {
+      position: fixed;
+      top: 120px;
+      left: 0;
+      background-color: var(--backgroundNavLeft);
+      box-shadow: 5px 2px 5px #171717;
+      height: 100vh;
+      width: 195px;
+      transition: width 1s;
+      overflow: hidden;
+    }
+  
+    .middle-section .expand-side-navbar:checked~.side-navbar {
+      width: 60px;
+    }
+  
+    .left-navbar {
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      flex-wrap: nowrap;
+      overflow: hidden;
+    }
+  
+    .expand-label {
+      left: 21px;
+      position: absolute;
+      align-items: flex-end;
+      color: var(--colorSubFont);
+      font-size: 2em;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+  
+    .arrow-icon {
+      height: 13px;
+      width: 13px;
+      transition: all ease-out 1s;
+    }
+  
+    .middle-section .expand-side-navbar:checked~.side-navbar .left-navbar .expand-label .arrow-icon {
+      rotate: 180deg;
+    }
+  
+    .left-navbar ul {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      padding: 0px;
+      align-items: left;
+      list-style-type: none;
+    }
+  
+    .welcome-user-leftNavbar {
+      display: none;
+      height: 0px;
+    }
+  
+    .left-navbar ul li {
+      width: 200px;
+      margin-left: 20px;
+      margin-bottom: 25px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .left-navbar ul li a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .hide-labels {
+      margin: 0;
+      opacity: 1;
+      transition: all ease-out 1s;
+    }
+  
+    .expand-side-navbar:checked~.side-navbar .left-navbar .hide-labels {
+      opacity: 0;
+    }
+  
+    .home-menus {
+      margin: 0;
+      margin-top: 15px;
+    }
+  
+    .profile-menus {
+      margin-top: 15px;
+    }
+  
+    .admin-menu {
+      margin-top: 15px;
+    }
+  
+    .settings-admin-labels {
+      margin-left: 20px;
+    }
+  
+    .contact {
+      margin: 0;
+      padding-top: 15px;
+      text-decoration: none;
+      font-family: var(--mainFont);
+      color: var(--colorSubDiscFont);
+      font-size: 14px;
+    }
+  
+    .expand-side-navbar {
+      display: none;
+    }
+  
+    .logout-bttn-leftnavbar {
+      display: none;
+    }
+  
+    .side-navbar-icons {
+      margin-right: 10px;
+      height: 20px;
+      width: 20px;
+    }
+  
+  }
