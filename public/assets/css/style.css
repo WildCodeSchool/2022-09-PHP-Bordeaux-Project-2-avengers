@@ -5,7 +5,8 @@
 
 
 /* --------------------------------------- Import general css -------------------------------------------- */
-@import "general/Layout.css";
+@import "homepage-style.css"; /* CSS d'Alexis, pour la page d'accueil */
+@import "General/Layout.css";
 
 /* --------------------------------------- Import UserSettings css --------------------------------------- */
 @import "setting/show_profile.css";

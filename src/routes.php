@@ -8,10 +8,9 @@
 // e.g route '/item/edit?id=1' will execute $itemController->edit(1)
 return [
     /* ------------------------------------------ General page ----------------------------------------------------*/
-
+    '' => ['HomeController', 'index',],
     /* ------------------------------------------ Setting page ----------------------------------------------------*/
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
     'setting/admin' => ['AdminController', 'showAllUsers'],
     'setting/admin/delete' => ['AdminController', 'showDeleteUser', ['id']],
-
 ];
