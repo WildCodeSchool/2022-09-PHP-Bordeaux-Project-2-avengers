@@ -28,4 +28,19 @@ class UserManager
 
         return $statement->fetch();
     }
+
+    /**
+     * Get email + password to verify in database
+     */
+    public function login($email, $password)
+    {
+        $sql = "SELECT * FROM user WHERE email = :email and password = :password";
+        $statement = $this->pdo->prepare($sql);
+        $statement->bindValue(':email', $email, PDO::PARAM_STR);
+        $statement->bindValue(':password', $password, PDO::PARAM_STR);
+
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }

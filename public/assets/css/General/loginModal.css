@@ -1,0 +1,108 @@
+.update-profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-profile-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-content-update {
+    background-color: #181818;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80vw;
+    border-radius: 20px;
+    border: solid 1px var(--colorObject);
+    padding: 1rem;
+}
+
+.div-inside-form-update {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-form-label {
+    font-family: var(--mainFont);
+    color: var(--colorMainFont);
+    width: 70vw;
+    margin-right: 1rem;
+}
+
+.update-form-input {
+    width: 70vw;
+    margin-bottom: 1rem;
+    color: var(--backgroundBody);
+    padding: 0.5rem;
+    border-radius: 12px;
+    margin-top: 5px;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.update-form-input.email {
+    cursor: not-allowed;
+}
+
+.error-update {
+    list-style: none;
+    color: red;
+}
+
+.error-update li {
+    padding-bottom: 5px;
+}
+
+.update-form-input.country {
+    width: 74.6vw;
+}
+
+@media screen and (min-width: 420px) {
+    .form-content-update {
+        width: 336px;
+    }
+
+    .update-form-label {
+        width: 293px;
+    }
+
+    .update-form-input {
+        width: 293px;
+        margin-bottom: 1rem;
+    }
+
+    .update-form-input.country {
+        width: 309px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .div-inside-form-update {
+        flex-direction: initial;
+        display: flex;
+        margin-bottom: 0.5rem;
+    }
+    .form-content-update {
+        width: 60vw;
+        padding-top: 1.5rem;
+    }
+
+    .update-form-label {
+        width: 8rem;
+        padding-top: 1.2rem;
+    }
+
+    .update-form-input {
+        margin-top: 12px;
+    }
+}
+
+@media screen and (min-width: 916px) {
+    .form-content-update {
+        width: 550px;
+    }
+}

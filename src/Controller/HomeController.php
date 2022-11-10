@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\UserManager;
+
 /**
  * In case of access problem to a specific page,
  * try and check the authorized RedirectURI on the Dashboard of Spotify App
@@ -13,6 +15,9 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
+        // authentification
+        $this->login();
+
         // on crée une connexion à l'API de Spotify
         $spotify = new SpotifyAPIController();
         $spotify->connectToAPI();
@@ -35,13 +40,24 @@ class HomeController extends AbstractController
         $tracksCountry = $spotify->getMultipleTracks($countryMusic);
 
         // on retourne la vue twig avec les arrays de musiques qu'on a chargées
-        return $this->twig->render('Home/index.html.twig',
-            [
+        return $this->twig->render('Home/index.html.twig', [
                 'metal' => $tracksMetal,
                 'rock' => $tracksRock,
                 'pop' => $tracksPop,
                 'electro' => $tracksElectro,
-                'country' => $tracksCountry,
-            ]);
+                'country' => $tracksCountry,]);
+    }
+
+    /**
+     * Logout and destroy session
+     */
+    public function logout()
+    {
+        if (isset($_SESSION['ID_user'])) {
+            unset($_SESSION['ID_user']);
+        }
+
+        session_destroy();
+        header('Location: /');
     }
 }
