@@ -9,7 +9,7 @@ class UserController extends AbstractController
     /**
      * Show all information for user connected
      */
-    public function showOneUser(): string
+    public function showOneUser()
     {
         if (!$this->user) {
             echo 'Unauthorized access';
@@ -17,7 +17,5 @@ class UserController extends AbstractController
         } else {
             return $this->twig->render('Setting/show_profile.html.twig');
         }
-
-        return $this->twig->render('Setting/show_profile.html.twig');
     }
 }

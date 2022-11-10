@@ -1,13 +1,80 @@
-.update-profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 80px;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-left: -10px;
 }
 
-.update-profile-form {
+.modal-content {
+    position: relative;
+    background-color: var(--backgroundNavTop);
+    margin: auto;
+    border-radius: 20px;
+    border: solid 1px var(--colorObject);
+    width: 90vw;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: var(--colorObject);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 10px 16px;
+    color: var(--colorMainFont);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--colorMainFont);
+}
+
+.logo-modal {
+    width: 50px;
+}
+
+.modal-body {
+    padding: 20px 20px 10px 20px;
 }
 
 .form-content-update {
@@ -21,88 +88,74 @@
     padding: 1rem;
 }
 
-.div-inside-form-update {
+.modal-body form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.update-form-label {
-    font-family: var(--mainFont);
-    color: var(--colorMainFont);
-    width: 70vw;
-    margin-right: 1rem;
+.error-update.login li {
+    padding-top: 10px;
 }
 
-.update-form-input {
-    width: 70vw;
-    margin-bottom: 1rem;
-    color: var(--backgroundBody);
-    padding: 0.5rem;
-    border-radius: 12px;
+.btn-option.redirection-option.login {
     margin-top: 5px;
-    border: none;
-    font-size: 0.9rem;
 }
 
-.update-form-input.email {
-    cursor: not-allowed;
+.profile-button-option.login {
+    margin: 0 0 -10px 0;
 }
 
-.error-update {
-    list-style: none;
-    color: red;
-}
-
-.error-update li {
-    padding-bottom: 5px;
-}
-
-.update-form-input.country {
-    width: 74.6vw;
-}
-
-@media screen and (min-width: 420px) {
-    .form-content-update {
-        width: 336px;
+@media screen and (min-width: 422px) {
+    .modal {
+        margin-left: -6px;
+    }
+    .update-form-input.login-form {
+        width: 316px;
     }
 
-    .update-form-label {
-        width: 293px;
-    }
-
-    .update-form-input {
-        width: 293px;
-        margin-bottom: 1rem;
-    }
-
-    .update-form-input.country {
-        width: 309px;
+    .modal-content {
+        width: 379px
     }
 }
 
 @media screen and (min-width: 768px) {
-    .div-inside-form-update {
-        flex-direction: initial;
-        display: flex;
-        margin-bottom: 0.5rem;
-    }
-    .form-content-update {
-        width: 60vw;
-        padding-top: 1.5rem;
+    .modal-body form {
+        display: initial;
     }
 
-    .update-form-label {
-        width: 8rem;
-        padding-top: 1.2rem;
+    .btn-option.redirection-option.login {
+        margin: 0;
+        width: 26rem;
     }
 
-    .update-form-input {
-        margin-top: 12px;
+    .profile-button-option.login {
+        margin: 0 0 5px 0;
     }
 }
 
-@media screen and (min-width: 916px) {
-    .form-content-update {
-        width: 550px;
+@media screen and (min-width: 850px) {
+    .modal {
+        width: 80%;
+        top: 120px;
     }
 }
+
+@media screen and (min-width: 982px) {
+    .modal {
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 1310px) {
+    .modal {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal-content {
+        width: 446px;
+    }
+}
+
