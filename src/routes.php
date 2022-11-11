@@ -13,4 +13,5 @@ return [
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
     'setting/admin' => ['AdminController', 'showAllUsers'],
     'setting/admin/delete' => ['AdminController', 'showDeleteUser', ['id']],
+    'setting/admin/deleteDone' => ['AdminController', 'deleteUser', ['id']],
 ];

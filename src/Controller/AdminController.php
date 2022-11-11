@@ -25,4 +25,18 @@ class AdminController extends AbstractController
 
         return $this->twig->render('Setting/Admin/admin-delete.html.twig', ['admin' => $admin]);
     }
+    
+    public function deleteUser($id): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $id = trim($_GET['id']);
+
+
+
+            $adminManager = new AdminManager();
+            $adminManager->deleteOneUser($id);
+
+            header('Location: /setting/admin');
+        }
+    }
 }
