@@ -1,0 +1,37 @@
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <img class="logo-modal" src="/assets/images/Navbars/logo-wildify-mobile.svg" alt="logo wildify">
+            <h2>Login</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+
+            <form action="" method="POST">
+                <div class="div-inside-form-update">
+
+                    <label for="email" class="update-form-label">Email :</label>
+                    <input type="text" name="email" class="update-form-input" id="email">
+                </div>
+
+                <div class="div-inside-form-update">
+
+                    <label for="password" class="update-form-label">Password :</label>
+                    <input type="text" name="password" class="update-form-input" id="password">
+                </div>
+
+                <div class="profile-button-option login">
+                    <input type="submit" class="btn-option redirection-option login" value="Connect">
+                </div>
+
+                <div class="error-update login">
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

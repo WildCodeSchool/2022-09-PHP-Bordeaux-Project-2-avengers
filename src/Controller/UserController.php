@@ -9,11 +9,13 @@ class UserController extends AbstractController
     /**
      * Show all information for user connected
      */
-    public function showOneUser($id): string
+    public function showOneUser()
     {
-        $userModel = new UserManager();
-        $user = $userModel->getOneUser($id);
-
-        return $this->twig->render('Setting/show_profile.html.twig', ['user' => $user]);
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+        } else {
+            return $this->twig->render('Setting/show_profile.html.twig');
+        }
     }
 }
