@@ -66,4 +66,36 @@ class UserController extends AbstractController
         }
         return $this->twig->render('Setting/update_profile.html.twig');
     }
+
+    /**
+     * Show delete page to confirm delete
+     */
+    public function showDeletePage()
+    {
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+        } else {
+            return $this->twig->render('Setting/delete_profile.html.twig');
+        }
+    }
+
+    /**
+     * Delete all information for user connected
+     */
+    public function deleteUser(): void
+    {
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+        } else {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $id = trim($_POST['delete']);
+                $userModel = new UserManager();
+                $userModel->delete($id);
+
+                header('Location: /');
+            }
+        }
+    }
 }

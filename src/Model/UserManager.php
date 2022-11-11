@@ -63,4 +63,14 @@ class UserManager
 
         return $statement->execute();
     }
+
+    /**
+     * Delete user from database
+     */
+    public function delete($id): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM user WHERE ID_user=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }

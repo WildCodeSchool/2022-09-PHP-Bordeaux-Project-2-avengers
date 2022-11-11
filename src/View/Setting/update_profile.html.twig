@@ -2,26 +2,6 @@
 
 {% block title %}  Wildify | Edit profile {% endblock %}
 
-{% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/setting/show_profile_underline.css">
-{% endblock %}
-
-{% block topNavbar %}
-    {% if user.role == 'admin' %}
-        {% include 'Setting/Admin/_admin_top_navbar.html.twig' %}
-    {% else %}
-        {% include 'Setting/_setting_top_navbar.html.twig' %}
-    {% endif %}
-{% endblock %}
-
-{% block sideNavbar %}
-    {% if user.role == 'admin' %}
-        {% include 'Setting/Admin/_admin_side_navbar.html.twig' %}
-    {% else %}
-        {% include 'Setting/_setting_side_navbar.html.twig' %}
-    {% endif %}
-{% endblock %}
-
 {% block content %}
     <section class="update-profile-section">
         <h1 class="setting-title">> Update my profile <</h1>
@@ -89,7 +69,6 @@
                         <li>{{ error }}</li>
                     {% endfor %}
                 </div>
-
 
             </div>
             <div class="profile-button-option">
