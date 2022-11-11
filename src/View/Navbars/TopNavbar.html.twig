@@ -15,9 +15,9 @@
 		</div>
 
 		<label class="burger-label" for="expand-side-navbar"><img class="burger-icon" src="/assets/images/Navbars/icon-menu.png" title="Home" alt="Home"></label>
-
-		{# -------- IF user is LOGGED IN show welcome text & logout bttn, if not show subscribe & login bttn------------------------ #}
-		{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
+		
+		{# -------- IF USER is LOGGED IN show welcome text & logout bttn, if not show subscribe & login bttn------------------------ #}
+		{% if user.role %}
 		<div class="sub-login-buttons">
 			<p class="welcome-user">Welcome, {{ user.username }}!</p>
 			<a href="/logout" class="default-bttn">Logout</a>
@@ -30,7 +30,7 @@
 			<a href="#" id="connect-desktop" class="default-bttn logout-bttn">Login</a>
 		</div>
 		{% endif %}
-
+		
 	</div>
 
 </nav>
