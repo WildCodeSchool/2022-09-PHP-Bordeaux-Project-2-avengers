@@ -12,6 +12,7 @@
 /* --------------------------------------- Import UserSettings css --------------------------------------- */
 @import "setting/show_profile.css";
 @import "setting/update_profile.css";
+@import "setting/delete_profile.css";
 @import "setting/admin-user.css";
 @import "setting/admin-delete-user.css";
 

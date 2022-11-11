@@ -61,6 +61,10 @@
     width: 74.6vw;
 }
 
+.btn-option.validate-option.adapt-btn {
+    width: 260px;
+}
+
 @media screen and (min-width: 420px) {
     .form-content-update {
         width: 336px;
@@ -98,6 +102,10 @@
 
     .update-form-input {
         margin-top: 12px;
+    }
+
+    .btn-option.validate-option.adapt-btn {
+        width: 164px;
     }
 }
 
