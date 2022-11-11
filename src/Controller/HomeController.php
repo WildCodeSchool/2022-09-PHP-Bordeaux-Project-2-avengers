@@ -44,4 +44,14 @@ class HomeController extends AbstractController
                 'country' => $tracksCountry,
             ]);
     }
+
+    public function play(): string
+    {
+        $trackURL = $_GET['track-id'];
+        if ($trackURL === '') {
+            header('Location: /');
+            die();
+        }
+        return $this->twig->render('Home/play.html.twig', ['trackURL' => $trackURL]);
+    }
 }

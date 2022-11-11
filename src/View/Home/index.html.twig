@@ -3,14 +3,14 @@
 {% block content %}
     <div class="homepage-wrapper">
 
-        {# pop #}
+{#         pop #}
         <div class="genre-wrapper">
             <h2>Pop</h2>
             <div class="multiple-item-wrapper">
                 {% for track in pop.tracks %}
                     <div class="single-item-wrapper">
                         <div class="img-and-icon">
-                            <a href="#"><img src="{{ track.album.images[1].url }}" alt="" class="item-img"></a>
+                            <a href="play?track-id={{ track.preview_url }}"><img src="{{ track.album.images[1].url }}" alt="" class="item-img"></a>
                             <img src="assets/images/play-icon-gold.png" class="play-icon">
                         </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
@@ -20,14 +20,14 @@
             </div>
         </div>
 
-        {# rock #}
+{#         rock #}
         <div class="genre-wrapper">
             <h2>Rock</h2>
             <div class="multiple-item-wrapper">
                 {% for track in rock.tracks %}
                     <div class="single-item-wrapper">
                         <div class="img-and-icon">
-                            <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                            <a href="play?track-id={{ track.preview_url }}"><img src="{{ track.album.images[1].url }}" alt="" class="item-img"></a>
                             <img src="assets/images/play-icon-gold.png" class="play-icon">
                         </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
@@ -37,14 +37,14 @@
             </div>
         </div>
 
-        {# metal #}
+{#         metal #}
         <div class="genre-wrapper">
             <h2>Metal</h2>
             <div class="multiple-item-wrapper">
                 {% for track in metal.tracks %}
                     <div class="single-item-wrapper">
                         <div class="img-and-icon">
-                            <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                            <a href="play?track-id={{ track.preview_url }}"><img src="{{ track.album.images[1].url }}" alt="" class="item-img"></a>
                             <img src="assets/images/play-icon-gold.png" class="play-icon">
                         </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
@@ -54,14 +54,14 @@
             </div>
         </div>
 
-        {# electro #}
+{#         electro #}
         <div class="genre-wrapper">
             <h2>Electro</h2>
             <div class="multiple-item-wrapper">
                 {% for track in electro.tracks %}
                     <div class="single-item-wrapper">
                         <div class="img-and-icon">
-                            <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                            <a href="play?track-id={{ track.preview_url }}"><img src="{{ track.album.images[1].url }}" alt="" class="item-img"></a>
                             <img src="assets/images/play-icon-gold.png" class="play-icon">
                         </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
@@ -72,14 +72,14 @@
         </div>
 
 
-        {# country #}
+{#         country #}
         <div class="genre-wrapper">
             <h2>Country</h2>
             <div class="multiple-item-wrapper">
                 {% for track in country.tracks %}
                     <div class="single-item-wrapper">
                         <div class="img-and-icon">
-                            <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
+                            <a href="play?track-id={{ track.preview_url }}"><img src="{{ track.album.images[1].url }}" alt="" class="item-img"></a>
                             <img src="assets/images/play-icon-gold.png" class="play-icon">
                         </div>
                         <p class="item-artist">{{ track.artists[0].name }}</p>
