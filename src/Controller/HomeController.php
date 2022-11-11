@@ -45,9 +45,19 @@ class HomeController extends AbstractController
             ]);
     }
 
+    /**
+     * Once you click on a track to play in the homepage, catch the sample URL with "$_GET" to feed the music player
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     public function play(): string
     {
+        // get the music sample from the homepage
         $trackURL = $_GET['track-id'];
+        // if no sample is available, redirect toward homepage
         if ($trackURL === '') {
             header('Location: /');
             die();
