@@ -43,4 +43,34 @@ class UserManager
 
         return $statement->fetch();
     }
+
+    /**
+     * Update new information for user
+     */
+    public function update(array $user): bool
+    {
+        $query = 'UPDATE user SET firstname = :firstname, lastname = :lastname, username = :username,
+                birthday = :birthday, country = :country, password = :password WHERE ID_user=:id';
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':id', $user['ID_user'], PDO::PARAM_INT);
+        $statement->bindValue(':firstname', $user['firstname'], PDO::PARAM_STR);
+        $statement->bindValue(':lastname', $user['lastname'], PDO::PARAM_STR);
+        $statement->bindValue(':username', $user['username'], PDO::PARAM_STR);
+        $statement->bindValue(':birthday', $user['birthday'], PDO::PARAM_STR);
+        $statement->bindValue(':country', $user['country'], PDO::PARAM_STR);
+        $statement->bindValue(':password', $user['password'], PDO::PARAM_STR);
+
+        return $statement->execute();
+    }
+
+    /**
+     * Delete user from database
+     */
+    public function delete($id): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM user WHERE ID_user=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }
