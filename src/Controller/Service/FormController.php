@@ -11,7 +11,6 @@ class FormController
     {
         $errors = [];
 
-
         if (empty($post['username'])) {
             $errors[] = 'Username is require.';
         }

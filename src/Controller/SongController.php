@@ -14,8 +14,6 @@ class SongController extends AbstractController
             echo 'Unauthorized access';
             header('HTTP/1.1 401 Unauthorized');
         } else {
-            $songManager = new SongManager();
-
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $service = new FormController();
 
@@ -33,15 +31,16 @@ class SongController extends AbstractController
                 if (!empty($errors)) {
                     return $this->twig->render('Setting/add_music.html.twig', ['errors' => $errors]);
                 } else {
+                    $songManager = new SongManager();
                     $songManager->addSong($song, $fileJacket, $fileTrack);
+
                     $uploadDirJacket = '../public/jacket/';
-                    $uploadJacket = $uploadDirJacket . basename($_FILES['jacket_file']['name']);
-                    move_uploaded_file($_FILES['jacket_file']['tmp_name'], $uploadJacket);
+                    $uploadJacket = $uploadDirJacket . basename($fileJacket['name']);
+                    move_uploaded_file($fileJacket['tmp_name'], $uploadJacket);
 
                     $uploadDirTrack = '../public/track/';
-                    $uploadTrack = $uploadDirTrack . basename($_FILES['track_file']['name']);
-                    move_uploaded_file($_FILES['track_file']['tmp_name'], $uploadTrack);
-
+                    $uploadTrack = $uploadDirTrack . basename($fileTrack['name']);
+                    move_uploaded_file($fileTrack['tmp_name'], $uploadTrack);
 
                     $success = "Your song has been upload with success !";
                     return $this->twig->render('Setting/add_music.html.twig', ['success' => $success]);
