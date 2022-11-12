@@ -69,7 +69,7 @@ class FormController
                 }
 
                 if (filesize($jacket['tmp_name']) > $maxFileSize) {
-                    $errors[] = "Your file must be less to 5M.";
+                    $errors[] = "Your jacket file must be less to 5M.";
                 }
             }
         }
@@ -101,7 +101,7 @@ class FormController
                 }
 
                 if (filesize($track['tmp_name']) > $maxFileSize) {
-                    $errors[] = "Your file must be less to 5M.";
+                    $errors[] = "Your track file must be less to 5M.";
                 }
             }
         }
