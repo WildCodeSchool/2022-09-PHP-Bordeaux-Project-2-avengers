@@ -1,0 +1,68 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Wildify | Add music {% endblock %}
+
+{% block content %}
+    <section class="update-profile-section">
+        <h1 class="setting-title">> Add music <</h1>
+
+        <h3 class="success-update">{{ success }}</h3>
+
+        <form action="" method="POST" enctype="multipart/form-data" class="update-profile-form">
+            <div class="form-content-update">
+
+                <input type="hidden" value="{{ user.ID_user }}" name="ID_user">
+
+                <div class="div-inside-form-update">
+                    <label for="title" class="update-form-label">Title :</label>
+                    <input type="text" name="title" class="update-form-input" id="title">
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="artist" class="update-form-label">Artist :</label>
+                    <input type="text" name="artist" class="update-form-input" id="artist">
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="genre" class="update-form-label">Genre :</label>
+                    <select name="genre" class="update-form-input country" id="genre">
+                        <option value=select-genre>Select genre</option>
+                        <option value="pop">Pop</option>
+                        <option value="rap">RAP</option>
+                        <option value="electro">Electro</option>
+                        <option value="jazz">Jazz</option>
+                        <option value="classic">Classic</option>
+                        <option value="rock">Rock</option>
+                        <option value="reggae">Reggae</option>
+                    </select>
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="jacket_file" class="update-form-label upload-form">Jacket :</label>
+                    <input type="file" name="jacket_file" id="jacket_file" class="input-file">
+                    <label for="jacket_file" class="update-form-input"><span>Choose a file&hellip;</span></label>
+                </div>
+
+                <div class="div-inside-form-update">
+                    <label for="track_file" class="update-form-label upload-form">Track file :</label>
+                    <input type="file" name="track_file" id="track_file" class="input-file">
+                    <label for="track_file" class="update-form-input"><span>Choose a file&hellip;</span></label>
+                </div>
+
+                <div class="error-update">
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="profile-button-option reverse-button">
+                <a class="btn-option redirection-option" href="/setting/profile?id={{ user.ID_user }}">Back to
+                    profile</a>
+                <button type="submit" class="btn-option validate-option adapt-btn">Add track</button>
+
+            </div>
+        </form>
+
+    </section>
+{% endblock %}
