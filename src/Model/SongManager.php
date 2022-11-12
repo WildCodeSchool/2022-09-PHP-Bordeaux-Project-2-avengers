@@ -15,6 +15,9 @@ class SongManager
         $this->pdo = $connection->getConnection();
     }
 
+    /**
+     * Insert new song in db
+     */
     public function addSong(array $song, $fileJacket, $fileTrack): void
     {
         $query = "INSERT INTO songs (user_ID_user, genre_ID_genre, title, artist, image_url, song_url)

@@ -25,6 +25,9 @@ class FormController
         return $errors;
     }
 
+    /**
+     * treatment add music POST
+     */
     public function addSongForm($post): array|null
     {
         $errors = [];
@@ -42,6 +45,9 @@ class FormController
         return $errors;
     }
 
+    /**
+     * treatment add music FILE jacket
+     */
     public function jacketTreatment($jacket): array|null
     {
         $errors = [];
@@ -67,6 +73,9 @@ class FormController
         return $errors;
     }
 
+    /**
+     * treatment add music FILE track
+     */
     public function trackTreatment($track): array|null
     {
         $errors = [];

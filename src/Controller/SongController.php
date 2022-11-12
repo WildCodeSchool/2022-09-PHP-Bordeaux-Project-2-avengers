@@ -8,6 +8,9 @@ use App\Model\UserManager;
 
 class SongController extends AbstractController
 {
+    /**
+     *  Add music upload files
+     */
     public function addSong(): string
     {
         if (!$this->user) {
