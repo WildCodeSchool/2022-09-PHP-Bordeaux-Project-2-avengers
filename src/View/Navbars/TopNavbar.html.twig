@@ -15,22 +15,22 @@
 		</div>
 
 		<label class="burger-label" for="expand-side-navbar"><img class="burger-icon" src="/assets/images/Navbars/icon-menu.png" title="Home" alt="Home"></label>
-		
+
 		{# -------- IF user is LOGGED IN show welcome text & logout bttn, if not show subscribe & login bttn------------------------ #}
-		{% if user.role == 'Artist' or user.role == 'User' or user.role == 'Admin'%}
+		{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
 		<div class="sub-login-buttons">
 			<p class="welcome-user">Welcome, {{ user.username }}!</p>
-			<a href="#" class="default-bttn">Logout</a>
+			<a href="/logout" class="default-bttn">Logout</a>
 		</div>
 		{% else %}
 		<div class="sub-login-buttons">
 			<div class="link-animation-container">
 				<a href="#" class="subscribe-button link-animation">Subscribe</a>
 			</div>
-			<a href="#" class="default-bttn logout-bttn">Login</a>
+			<a id="connect-desktop" class="default-bttn logout-bttn">Login</a>
 		</div>
 		{% endif %}
-		
+
 	</div>
 
 </nav>

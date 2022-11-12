@@ -5,7 +5,7 @@
 			class="home-menus">
 
 			{# ------------------------ IF user is LOGGED IN, show welcome text---------------------------------------------------- #}
-			{% if user.role == 'Artist' or user.role == 'User' or user.role == 'Admin'%}
+			{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
 				<li>
 					<p class="welcome-user-leftNavbar">Welcome,
 						{{ user.username }}!</p>
@@ -14,11 +14,11 @@
 
 			<li>
 				<div class="link-animation-container">
-					<a href="/home" class="link-animation" title="Home" alt="Home"><img class="home-icon side-navbar-icons" src="/assets/images/Navbars/icon-home.png"><p class="hide-labels">Home</p>
+					<a href="/" class="link-animation" title="Home" alt="Home"><img class="home-icon side-navbar-icons" src="/assets/images/Navbars/icon-home.png"><p class="hide-labels">Home</p>
 					</a>
 				</div>
 			</li>
-			{% if user.role == 'Artist' or user.role == 'User' or user.role == 'Admin'%}
+			{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
 				<li>
 					<div class="link-animation-container">
 						<a href="#" class="link-animation" title="Create Playlist" alt="Create Playlist"><img class="list-icon side-navbar-icons" src="/assets/images/Navbars/icon-list.png"><p class="hide-labels">Create Playlist</p>
@@ -36,7 +36,7 @@
 
 		{# ------------------------ IF user is LOGGED IN, show settings menus ---------------------------------------------------- #}
 		{# ------------------------ SETTINGS menus ------------------------------------------------------------------ #}
-		{% if user.role == 'Artist' or user.role == 'User' or user.role == 'Admin'%}
+		{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
 			{# or user.role ISSET #}
 			<input type="checkbox" class="expand-profile-checkbox expand-checkbox" id="expand-profile-checkbox"/>
 			<div class="link-animation-container">
@@ -71,7 +71,7 @@
 
 		{# ------------------------ IF user is LOGGED IN as ADMIN, show Admin menus ---------------------------------------------------- #}
 		{# ------------------------ ADMIN menus ------------------------------------------------------------------ #}
-		{% if user.role == 'Admin'%}
+		{% if user.role == 'admin'%}
 			<input type="checkbox" class="expand-admin-checkbox expand-checkbox" id="expand-admin-checkbox"/>
 			<div class="link-animation-container">
 				<label class="settings-admin-labels link-animation" for="expand-admin-checkbox"><img class="admin-icon side-navbar-icons" src="/assets/images/Navbars/admin.png"><p class="hide-labels">Admin<img class="admin-arrow-icon menu-arrow-icon" src="/assets/images/icon-left-arrow.png" title="Hide / Show Admin settings" alt="Hide / Show Admin settings"></p>
@@ -104,10 +104,10 @@
 		</li>
 
 		{# ------------------------ IF user is LOGGED IN show logout bttn if not show login bttn-------------------------------- #}
-		{% if user.role == 'Artist' or user.role == 'User' or user.role == 'Admin'%}
+		{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
 			<div class="logout-bttn-leftnavbar">
 				<li>
-					<a href="logout" title="Logout" alt="logout">
+					<a href="/logout" title="Logout" alt="logout">
 						<p class="default-bttn">Logout</p>
 					</a>
 				</li>
@@ -120,8 +120,8 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<p class="default-bttn">Login</p>
+					<a>
+						<p id="connect-mobile" class="default-bttn">Login</p>
 					</a>
 				</li>
 			</div>

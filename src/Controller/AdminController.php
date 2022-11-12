@@ -38,6 +38,7 @@ class AdminController extends AbstractController
         }
     }
 
+
     public function showAllMusics(): string
     {
         $musicManager = new AdminManager();
@@ -45,4 +46,5 @@ class AdminController extends AbstractController
 
         return $this->twig->render("Setting/Admin/manage-musics.html.twig", ['musics' => $musics]);
     }
+
 }
