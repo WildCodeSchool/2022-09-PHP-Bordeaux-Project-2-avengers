@@ -12,7 +12,10 @@
 @import "setting/show_profile.css";
 @import "setting/admin-user.css";
 @import "setting/admin-delete-user.css";
+/* --------------------------------------- Import music-player css -------------------------------------------- */
+@import "playpage/music-player.css";
 
+/* --------------------------------------- END OF CSS IMPORTS -------------------------------------------- */
 
 :root {
     --backgroundNavLeft: #090909;

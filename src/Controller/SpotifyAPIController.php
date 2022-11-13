@@ -24,9 +24,6 @@ class SpotifyAPIController
     /**
      * Manage connection to Spotify API
      *
-     * A user must be a Spotify user to login and must be added to the list of authorized people before,
-     * by Alexis (manager of the App on Spotify)
-     *
      * @return void
      */
     public function connectToAPI(): void
