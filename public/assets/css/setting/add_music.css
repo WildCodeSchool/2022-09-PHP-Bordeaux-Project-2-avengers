@@ -1,0 +1,28 @@
+.input-file {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.input-file + label {
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    background-color: var(--colorMainFont);
+}
+
+.profile-button-option.reverse-button {
+    flex-direction: column-reverse;
+}
+
+@media screen and (min-width: 768px) {
+    .profile-button-option.reverse-button {
+        flex-direction: initial;
+    }
+}
