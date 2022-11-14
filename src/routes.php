@@ -9,6 +9,8 @@
 return [
     /* ------------------------------------------ General page -------------------------------------------------*/
     '' => ['HomeController', 'index',],
+    'home' => ['HomeController', 'index',],
+    'home/searchSong' => ['GeneralController', 'searchSongs',],
     'logout' => ['HomeController', 'logout'],
     /* ------------------------------------------ Setting page USER --------------------------------------------*/
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
