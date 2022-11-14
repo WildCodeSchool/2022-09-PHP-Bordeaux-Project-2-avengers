@@ -3,7 +3,6 @@
 /* --------------------------------------- Audio-wide font ----------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap%27');
 
-
 /* --------------------------------------- Import general css -------------------------------------------- */
 @import "homepage-style.css"; /* CSS d'Alexis, pour la page d'accueil */
 @import "General/Layout.css";
@@ -15,7 +14,6 @@
 @import "setting/delete_profile.css";
 @import "setting/admin-user.css";
 @import "setting/admin-delete-user.css";
-
 
 :root {
     --backgroundNavLeft: #090909;
@@ -61,7 +59,7 @@ body {
 }
 
 .default-bttn:hover {
-    box-shadow: var(--colorObject) 0 0px 15px;
+    box-shadow: var(--colorObject) 0 0px 5px;
     background-position: right center;
     transform: scale(1.03);
     text-decoration: none;
@@ -92,7 +90,6 @@ body {
 }
 
 .link-animation-container:hover .link-animation::after {
-    box-shadow: var(--colorObject) 0 0px 5px;
     width: 100%;
     left: 0;
 }
