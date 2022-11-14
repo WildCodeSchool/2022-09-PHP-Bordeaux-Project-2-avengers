@@ -1,0 +1,191 @@
+.manage-music-admin 
+{
+    margin : 2rem;
+
+}
+
+.admin-table-music {
+    display: flex;
+    align-items: center;
+    color: var(--colorMainFont);
+    width: 70vw;
+    margin: auto;
+    background-color: #181818;
+    border-radius: 15px;
+    border: solid 1px var(--colorObject);
+    padding: 1rem 1.5rem;
+    font-family: var(--mainFont);
+    color: var(--colorMainFont);
+    justify-content: space-between;
+}
+.admin-music-title {
+    font-family: var(--titleFont);
+    color: var(--colorMainFont);
+    text-align: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.admin-music-token {
+    margin-right: 2rem;
+}
+.admin-one-music-token {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.admin-button {
+    display: flex;
+    margin: 2rem;
+    justify-content: center;
+}
+
+.admin-music-img {
+    color: var(--colorObject);
+    width: 7rem;
+    height: 7rem;
+    margin-left: 3rem;
+    
+}
+
+
+.admin-manage-titles
+{
+    display: flex;
+    align-items: center;
+}
+
+.admin-button-margin {
+
+    margin-right: 5rem;
+    margin-left: 5rem;
+}
+
+
+@media screen and ( max-width: 950px) {
+    
+    .admin-music-title {
+        
+        font-size: 80%;
+        text-align: end;
+        margin: 0rem;
+        padding: auto;
+        margin-right: 0.5rem;
+    }
+
+    .admin-table-music {
+        
+        font-size: 70%;
+        text-align: start;
+        padding: 0.5rem;
+        margin-bottom: 1.5rem;
+        width : 60vw;
+    }
+
+    .admin-manage-titles {
+        
+        display: grid;
+        grid-template-columns: 5rem 10rem;
+        
+    }
+    
+    .admin-music-img {
+        
+        width: 6rem;
+        height: 6rem;
+        margin: auto;
+    }
+    
+    .admin-button {
+        
+        flex-direction: column;
+        margin: 1rem;
+    }
+    
+    .admin-button-margin {
+
+        margin-bottom: 2rem;
+    }
+
+    .admin-music-token {
+        word-wrap: break-word;
+    }
+    
+    .manage-music-admin {
+        
+        margin-top: 1.5rem;
+        margin-right: 2rem;
+        margin-left: 1.5rem;
+        margin-bottom: 0;
+
+    }
+    
+}   
+    @media screen and (max-width: 600px) {
+        
+       
+        .admin-table-music {
+    
+            width : 80vw;
+        }
+    
+       
+    
+        .admin-music-img {
+    
+            width: 4rem;
+            height: 4rem;
+            margin: auto;
+        }
+    
+    
+    
+    
+    }
+
+    @media screen and (max-width: 1200px)
+    {
+        
+
+        .admin-table-music {
+            font-size: 70%;
+            width: 80vw;
+        }
+
+        .admin-music-title {
+            font-size: 90%;
+        }
+
+
+    .admin-music-token {
+        word-wrap: break-word;
+    }
+    
+    }
+
+    @media screen and (max-width: 1400px){
+        .admin-table-music {
+            font-size: 75%;
+            width: 80vw;
+        }
+
+    .admin-music-token {
+        word-wrap: break-word;
+    }
+    
+    }
+
+@media screen and (max-width: 400px){
+    .admin-manage-titles {
+        
+        display: grid;
+        grid-template-columns: 5rem 5rem;
+        
+    }
+
+    .admin-table-music {
+        font-size: 65%;
+        width: 80vw;
+    }
+}

@@ -43,5 +43,15 @@ class AdminManager
         $statement->execute();
     }
 
-    
+    public function getAllMusics(): array 
+    {
+        $sql = "SELECT songs.title, songs.artist, songs.image_url, songs.song_url, genre.genre, user.username FROM songs
+        JOIN genre ON genre.ID_genre = songs.genre_ID_genre
+        JOIN user ON user.ID_user = songs.user_ID_user";
+        $statement= $this->pdo->prepare($sql);
+        $statement->execute();
+
+        return $statement->fetchAll();
+
+    }
 }
