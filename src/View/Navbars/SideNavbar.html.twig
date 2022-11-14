@@ -1,49 +1,54 @@
 <nav class="left-navbar menu-labels">
-	<label class="expand-label" for="expand-side-navbar"><img class="arrow-icon" src="/assets/images/Navbars/icon-left-arrow.png" title="Hide / Show Navbar" alt="Hide / Show Navbar"></label>
 	<ul>
-		<div
-			class="home-menus">
+		<li>
+			<div class="link-animation-container">
+				<label class="expand-label link-animation" for="expand-side-navbar"><img class="arrow-icon" src="/assets/images/Navbars/icon-left-arrow.png" title="Minimize menu" alt="Minimize menu"><p class="hide-labels">Minimize menu</p>
+				</label>
+			</div>
+		</li>
 
-			{# ------------------------ IF user is LOGGED IN, show welcome text---------------------------------------------------- #}
-			{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
-				<li>
-					<p class="welcome-user-leftNavbar">Welcome,
-						{{ user.username }}!</p>
-				</li>
-			{% endif %}
+		{# ------------------------ IF user is LOGGED IN, show welcome text---------------------------------------------------- #}
+		{% if user.role %}
+			<p class="welcome-user-leftNavbar">Welcome,
+				{{ user.username }}!</p>
+		{% endif %}
 
+		<li>
+			<div class="link-animation-container">
+				<a href="" class="link-animation" title="Home" alt="Home"><img class="home-icon side-navbar-icons" src="/assets/images/Navbars/icon-home.png"><p class="hide-labels">Home</p>
+				</a>
+			</div>
+		</li>
+
+		{# ------------------------ IF USER is LOGGED IN, show links for create playlist and liked songs ----------------------------- #}
+		{% if user.role %}
 			<li>
 				<div class="link-animation-container">
-					<a href="/" class="link-animation" title="Home" alt="Home"><img class="home-icon side-navbar-icons" src="/assets/images/Navbars/icon-home.png"><p class="hide-labels">Home</p>
+					<a href="#" class="link-animation" title="Create Playlist" alt="Create Playlist"><img class="list-icon side-navbar-icons" src="/assets/images/Navbars/icon-list.png"><p class="hide-labels">Create Playlist</p>
 					</a>
 				</div>
 			</li>
-			{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
-				<li>
-					<div class="link-animation-container">
-						<a href="#" class="link-animation" title="Create Playlist" alt="Create Playlist"><img class="list-icon side-navbar-icons" src="/assets/images/Navbars/icon-list.png"><p class="hide-labels">Create Playlist</p>
-						</a>
-					</div>
-				</li>
-				<li>
-					<div class="link-animation-container">
-						<a href="#" class="link-animation" title="Liked Songs" alt="Liked Songs"><img class="heart-icon side-navbar-icons" src="/assets/images/Navbars/icon-heart.png"><p class="hide-labels">Liked Songs</p>
-						</a>
-					</div>
-				</li>
-			{% endif %}
-		</div>
+			<li>
+				<div class="link-animation-container">
+					<a href="#" class="link-animation" title="Liked Songs" alt="Liked Songs"><img class="heart-icon side-navbar-icons" src="/assets/images/Navbars/icon-heart.png"><p class="hide-labels">Liked Songs</p>
+					</a>
+				</div>
+			</li>
+		{% endif %}
 
-		{# ------------------------ IF user is LOGGED IN, show settings menus ---------------------------------------------------- #}
+		{# ------------------------ IF USER is LOGGED IN, show settings menus ---------------------------------------------------- #}
 		{# ------------------------ SETTINGS menus ------------------------------------------------------------------ #}
-		{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
-			{# or user.role ISSET #}
+		{% if user.role %}
 			<input type="checkbox" class="expand-profile-checkbox expand-checkbox" id="expand-profile-checkbox"/>
-			<div class="link-animation-container">
-				<label class="settings-admin-labels link-animation" for="expand-profile-checkbox"><img class="settings-icon side-navbar-icons" src="/assets/images/Navbars/settings.png"><p class="hide-labels">Settings</p>
-					<img class="settings-arrow-icon menu-arrow-icon" src="/assets/images/Navbars/icon-left-arrow.png" title="Hide / Show Settings" alt="Hide / Show Show Settings">
-				</label>
-			</div>
+
+			<li>
+				<div class="link-animation-container">
+					<label class="settings-admin-labels link-animation" for="expand-profile-checkbox"><img class="settings-icon side-navbar-icons" src="/assets/images/Navbars/settings.png"><p class="hide-labels">Settings</p>
+						<img class="settings-arrow-icon menu-arrow-icon" src="/assets/images/Navbars/icon-left-arrow.png" title="Hide / Show Settings" alt="Hide / Show Show Settings">
+					</label>
+				</div>
+			</li>
+
 			<div class="profile-menus">
 				<li>
 					<div class="link-animation-container">
@@ -71,12 +76,17 @@
 
 		{# ------------------------ IF user is LOGGED IN as ADMIN, show Admin menus ---------------------------------------------------- #}
 		{# ------------------------ ADMIN menus ------------------------------------------------------------------ #}
-		{% if user.role == 'admin'%}
+		{% if user.role == 'admin' or user.role == 'Admin'%}
 			<input type="checkbox" class="expand-admin-checkbox expand-checkbox" id="expand-admin-checkbox"/>
-			<div class="link-animation-container">
-				<label class="settings-admin-labels link-animation" for="expand-admin-checkbox"><img class="admin-icon side-navbar-icons" src="/assets/images/Navbars/admin.png"><p class="hide-labels">Admin<img class="admin-arrow-icon menu-arrow-icon" src="/assets/images/icon-left-arrow.png" title="Hide / Show Admin settings" alt="Hide / Show Admin settings"></p>
-				</label>
-			</div>
+
+			<li>
+				<div class="link-animation-container">
+					<label class="settings-admin-labels link-animation" for="expand-admin-checkbox"><img class="admin-icon side-navbar-icons" src="/assets/images/Navbars/admin.png"><p class="hide-labels">Admin</p>
+						<img class="admin-arrow-icon menu-arrow-icon" src="/assets/images/Navbars/icon-left-arrow.png" title="Admin settings" alt="Admin settings">
+					</label>
+				</div>
+			</li>
+
 			<div class="admin-menu">
 				<li>
 					<div class="link-animation-container">
@@ -95,38 +105,37 @@
 			</div>
 		{% endif %}
 
-		<li>
-			<div class="link-animation-container">
-				<a href="#" class="link-animation contact" title="Contact" alt="Contact">
-					<p class="hide-labels contact-label">Contact</p>
-				</a>
-			</div>
-		</li>
-
-		{# ------------------------ IF user is LOGGED IN show logout bttn if not show login bttn-------------------------------- #}
-		{% if user.role == 'artist' or user.role == 'user' or user.role == 'admin'%}
+		{# ------------------------ IF USER is LOGGED IN show logout bttn if not show login bttn-------------------------------- #}
+		{% if user.role %}
 			<div class="logout-bttn-leftnavbar">
 				<li>
-					<a href="/logout" title="Logout" alt="logout">
-						<p class="default-bttn">Logout</p>
+					<a href="/logout" class="link-animation" title="Logout" alt="Logout"><img class="logout-icon side-navbar-icons" src="/assets/images/Navbars/logout.png"><p class="hide-labels">Logout</p>
 					</a>
 				</li>
 			</div>
+
 		{% else %}
 			<div class="sub-login-buttons-leftNavbar">
 				<li>
-					<a href="#">
-						<p class="subscribe-button-leftbar sub-login-left-navbar-labels">Subscribe</p>
+					<a href="#" class="link-animation" title="Subscribe" alt="Subscribe"><img class="subscribe-icon side-navbar-icons" src="/assets/images/Navbars/subscribe.png"><p class="hide-labels">Subscribe</p>
 					</a>
 				</li>
 				<li>
-					<a>
-						<p id="connect-mobile" class="default-bttn">Login</p>
-					</a>
-				</li>
+					<a href="#" class="link-animation" title="Login" alt="Login"><img class="login-icon side-navbar-icons" src="/assets/images/Navbars/login.png"><p class="hide-labels" id="connect-mobile">Login</p>
+				  </a>
+        </li>
 			</div>
+		{% endif %}
+
+		{# ------------------------ IF USER IS NOT ADMIN show contact link -------------------------------- #}
+		{% if user.role != 'admin' or user.role != 'Admin'%}
+			<li>
+				<div class="link-animation-container">
+					<a href="#" class="link-animation" title="Contact" alt="Contact"><img class="contact-icon side-navbar-icons" src="/assets/images/Navbars/contact.png"><p class="hide-labels">Contact</p>
+					</a>
+				</div>
+			</li>
 		{% endif %}
 
 	</ul>
 </nav>
-
