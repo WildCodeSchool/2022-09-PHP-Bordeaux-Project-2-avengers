@@ -21,12 +21,11 @@ class GeneralManager
 
         $listImg = [];
 
-        $picDir= opendir($dir);
+        $picDir = opendir($dir);
         while ($file = readdir($picDir)) {
             if ($file === '.' || $file === '..') {
                 continue;
             }
-            
             $listImg[] = $dir . '/' . $file;
         }
         closedir($picDir);
@@ -38,7 +37,7 @@ class GeneralManager
      * search function on top navbar
      * Retrieves all songs where value = $_POST['search']
      */
-    public function songSearch():array
+    public function songSearch(): array
     {
         $query = 'SELECT songs.ID_song , songs.title , songs.artist , genre.genre, songs.image_url FROM songs
         join genre on songs.genre_ID_genre = genre.ID_genre
