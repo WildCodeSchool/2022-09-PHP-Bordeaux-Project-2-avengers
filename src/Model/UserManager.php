@@ -4,16 +4,8 @@ namespace App\Model;
 
 use PDO;
 
-class UserManager
+class UserManager extends Connection
 {
-    public PDO $pdo;
-
-    public function __construct()
-    {
-        $connection = new Connection();
-        $this->pdo = $connection->getConnection();
-    }
-
     /**
      * Get all information for one user
      */

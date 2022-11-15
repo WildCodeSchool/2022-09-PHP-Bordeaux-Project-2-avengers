@@ -5,16 +5,8 @@ namespace App\Model;
 use App\Model\Connection;
 use PDO;
 
-class SongManager
+class SongManager extends Connection
 {
-    public PDO $pdo;
-
-    public function __construct()
-    {
-        $connection = new Connection();
-        $this->pdo = $connection->getConnection();
-    }
-
     /**
      * Insert new song in db
      */

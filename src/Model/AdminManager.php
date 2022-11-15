@@ -5,15 +5,8 @@ namespace App\Model;
 use App\Model\Connection;
 use PDO;
 
-class AdminManager
+class AdminManager extends Connection
 {
-    public PDO $pdo;
-
-    public function __construct()
-    {
-        $connection = new Connection();
-        $this->pdo = $connection->getConnection();
-    }
 // FEATURE GESTION USERS //
     public function getAllUsers(): array
     {
