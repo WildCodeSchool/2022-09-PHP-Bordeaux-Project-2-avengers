@@ -19,10 +19,10 @@
 					<div class="songCard">
 						<div class="songCardFlex">
 
+						{# ---- if song has album cover, show image cover. If not choose random image ---- #}
 						{% if song.image_url %}
 							<div class="songCover" style="background-image: url('/{{song.image_url}}');background-size: cover">
 						{% else %}
-							{# ---- set random image ---- #}
 							{% set imgCover = random(rndSongCoverImg) %}
 							<div class="songCover" style="background-image: url('/{{imgCover}}');background-size: cover">
 						{% endif %}

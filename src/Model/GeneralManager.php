@@ -39,7 +39,7 @@ class GeneralManager
      */
     public function songSearch(): array
     {
-        $query = 'SELECT songs.ID_song , songs.title , songs.artist , genre.genre, songs.image_url FROM songs
+        $query = 'SELECT songs.ID_song , songs.title , songs.artist , genre.genre, songs.image_url, songs.song_url FROM songs
         join genre on songs.genre_ID_genre = genre.ID_genre
         where songs.title like "%'.$_POST['search'].'%" or songs.artist like "%'.$_POST['search'].'%" or genre.genre like "%'.$_POST['search'].'%"';
 
@@ -67,7 +67,7 @@ class GeneralManager
     public function getsongList(int $id):array | false
     {
 
-        $statement = $this->pdo->prepare("SELECT s2.ID_song , s2.title , s2.artist , g1.genre
+        $statement = $this->pdo->prepare("SELECT s2.ID_song , s2.title, s2.artist, s2.image_url, g1.genre
         FROM songs s1 
         JOIN songs s2 ON s1.artist=s2.artist 
         JOIN genre g1 on s2.genre_ID_genre = g1.ID_genre

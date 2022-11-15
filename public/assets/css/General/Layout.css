@@ -398,7 +398,6 @@
       width: 100%;
       align-items: center;
       background-color: var(--backgroundNavTop);
-      box-shadow: 2px 2px 2px #1d1d1d;
       z-index: 1;
     }
   
