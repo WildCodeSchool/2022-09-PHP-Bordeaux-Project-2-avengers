@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-
+{% block title %} Wildify | Admin TRACKS {% endblock %}
 
 {% block content %}
 <section class="admin-one-music-token">
@@ -33,7 +33,7 @@
                                 <p class="admin-music-title">
                                 <img src={{ music.image_url }} class="admin-music-img">
                                 </p>
-                        </div>        
+                        </div>
                 </div>
 
 <div class="admin-button">
@@ -47,8 +47,8 @@
 </div>
 
 </div>
-         {% endfor %}  
-</section>   
+         {% endfor %}
+</section>
 
 {% endblock %}
 
