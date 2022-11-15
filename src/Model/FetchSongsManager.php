@@ -1,20 +1,10 @@
 <?php
 
 namespace App\Model;
-
-use App\Model\Connection;
 use PDO;
 
-class GeneralManager
+class FetchSongsManager extends Connection
 {
-    public PDO $pdo;
-
-    public function __construct()
-    {
-        $connection = new Connection();
-        $this->pdo = $connection->getConnection();
-    }
-
     public function showImgDir()
     {
         $dir = "assets/images/imgPicker";
