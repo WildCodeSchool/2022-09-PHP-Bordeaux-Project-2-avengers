@@ -3,12 +3,13 @@
 namespace App\Controller;
 
 use App\Model\UserManager;
+use App\Controller\LoginController;
 
 /**
  * In case of access problem to a specific page,
  * try and check the authorized RedirectURI on the Dashboard of Spotify App
  */
-class HomeController extends AbstractController
+class HomeController extends AbstractTwigController
 {
     /**
      * Display home page
@@ -16,7 +17,8 @@ class HomeController extends AbstractController
     public function index(): string
     {
         // authentification
-        $this->login();
+        $login = new LoginController();
+        $login->login();
 
         // on crée une connexion à l'API de Spotify
         $spotify = new SpotifyAPIController();

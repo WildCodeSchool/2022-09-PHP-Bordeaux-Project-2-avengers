@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Controller\Service\FormController;
 use App\Model\UserManager;
 
-class UserController extends AbstractController
+class UserController extends AbstractTwigController
 {
     /**
      * Show all information for user connected

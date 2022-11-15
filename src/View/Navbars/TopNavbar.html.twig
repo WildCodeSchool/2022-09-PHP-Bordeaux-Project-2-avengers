@@ -1,36 +1,44 @@
 <nav class="top_navbar">
 
-	<div class="logo-search-button">
-		<div class="navbar_logo">
-			<img class="navbar_logo_mobile" src="/assets/images/Navbars/logo-wildify-mobile.svg" title="Home" alt="Home">
-			<p class="ildify-logo" title="ildify">ildify</p>
-			<img class="navbar_logo_desktop" src="/assets/images/Navbars/logo-wildify-desktop.svg" title="Home" alt="Home">
-		</div>
+    <div class="logo-search-button">
+        <a href="/" class="logo-home-link">
+            <div class="navbar_logo">
+                <img class="navbar_logo_mobile" src="/assets/images/Navbars/logo-wildify-mobile.svg" title="Home"
+                     alt="Home">
+                <p class="ildify-logo" title="ildify">ildify</p>
+                <img class="navbar_logo_desktop" src="/assets/images/Navbars/logo-wildify-desktop.svg" title="Home"
+                     alt="Home">
+            </div>
+        </a>
 
-		<div class="search-bar">
-			<form action="/home/searchSong" method="post" class="search-form">
-				<input type="text" class="search-input" placeholder="Search" name="search" id="search">
-				<button class="search-button" type="submit"><img class="magnifying_glass" title="Search" src="/assets/images/Navbars/icon-magnifying-glass.png" alt="Search"></button>
-			</form>
-		</div>
+        <div class="search-bar">
+            <form action="/home/searchSong" method="post" class="search-form">
+                <input type="text" class="search-input" placeholder="Search" name="search" id="search">
+                <button class="search-button" type="submit"><img class="magnifying_glass" title="Search"
+                                                                 src="/assets/images/Navbars/icon-magnifying-glass.png"
+                                                                 alt="Search"></button>
+            </form>
+        </div>
 
-		<label class="burger-label" for="expand-side-navbar"><img class="burger-icon" src="/assets/images/Navbars/icon-menu.png" title="Home" alt="Home"></label>
-		
-		{# -------- IF USER is LOGGED IN show welcome text & logout bttn, if not show subscribe & login bttn------------------------ #}
-		{% if user.role %}
-		<div class="sub-login-buttons">
-			<p class="welcome-user">Welcome, {{ user.username }}!</p>
-			<a href="/logout" class="default-bttn">Logout</a>
-		</div>
-		{% else %}
-		<div class="sub-login-buttons">
-			<div class="link-animation-container">
-				<a href="#" class="subscribe-button link-animation">Subscribe</a>
-			</div>
-			<a id="connect-desktop" class="default-bttn logout-bttn">Login</a>
-		</div>
-		{% endif %}
-		
-	</div>
+        <label class="burger-label" for="expand-side-navbar"><img class="burger-icon"
+                                                                  src="/assets/images/Navbars/icon-menu.png"
+                                                                  title="Home" alt="Home"></label>
+
+        {# -------- IF USER is LOGGED IN show welcome text & logout bttn, if not show subscribe & login bttn------------------------ #}
+        {% if user.role %}
+            <div class="sub-login-buttons">
+                <p class="welcome-user">Welcome, {{ user.username }}!</p>
+                <a href="/logout" class="default-bttn">Logout</a>
+            </div>
+        {% else %}
+            <div class="sub-login-buttons">
+                <div class="link-animation-container">
+                    <a href="#" class="subscribe-button link-animation">Subscribe</a>
+                </div>
+                <a id="connect-desktop" class="default-bttn logout-bttn">Login</a>
+            </div>
+        {% endif %}
+
+    </div>
 
 </nav>
