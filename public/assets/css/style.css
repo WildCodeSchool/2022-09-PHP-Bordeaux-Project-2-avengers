@@ -64,7 +64,7 @@ body {
 }
 
 .default-bttn:hover {
-    box-shadow: var(--colorObject) 0 0px 5px;
+    box-shadow: var(--colorObject) 0 0 5px;
     background-position: right center;
     transform: scale(1.03);
     text-decoration: none;
