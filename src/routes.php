@@ -22,4 +22,5 @@ return [
     'setting/admin' => ['AdminController', 'showAllUsers'],
     'setting/admin/delete' => ['AdminController', 'showDeleteUser', ['id']],
     'setting/admin/deleteDone' => ['AdminController', 'deleteUser', ['id']],
+    'setting/admin/manageMusics' => ['AdminController','showAllMusics']
 ];

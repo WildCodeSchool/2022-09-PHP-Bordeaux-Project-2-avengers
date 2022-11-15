@@ -1,0 +1,54 @@
+{% extends 'layout.html.twig' %}
+
+
+
+{% block content %}
+<section class="admin-one-music-token">
+        {% for music in musics %}
+        <div class ="manage-music-admin">
+
+                <div class="admin-table-music">
+                        <div class="admin-manage-titles">
+                        <h3 class="admin-music-title"> Username : </h3>
+                                <p class="admin-music-token">
+                                {{music.username}}
+                                </p>
+
+                        <h3 class="admin-music-title"> Title : </h3>
+                                <p class="admin-music-token">
+                                {{ music.title}}
+                                </p>
+
+                        <h3 class="admin-music-title"> Artist : </h3>
+                                <p class="admin-music-token">
+                                {{ music.artist}}
+                                </p>
+
+                        <h3 class="admin-music-title"> Genre : </h3>
+                                <p class="admin-music-token">
+                                {{ music.genre }}
+                                </p>
+                        </div>
+                        <div class="admin-img">
+                                <p class="admin-music-title">
+                                <img src={{ music.image_url }} class="admin-music-img">
+                                </p>
+                        </div>        
+                </div>
+
+<div class="admin-button">
+<div class="admin-button-margin">
+<a class="btn-option-admin warning-option">Delete</a>
+</div>
+<div class ="admin-button-margin">
+<a class="btn-option-admin redirection-option">Update</a>
+</div>
+
+</div>
+
+</div>
+         {% endfor %}  
+</section>   
+
+{% endblock %}
+

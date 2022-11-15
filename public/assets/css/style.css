@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap%27');
 
 /* --------------------------------------- Import general css -------------------------------------------- */
+
 @import "homepage-style.css"; /* CSS d'Alexis, pour la page d'accueil */
 @import "General/Layout.css";
 @import "General/searchPage.css";
@@ -17,6 +18,7 @@
 @import "setting/add_music.css";
 @import "setting/admin-user.css";
 @import "setting/admin-delete-user.css";
+@import "setting/admin-music-show.css";
 
 :root {
     --backgroundNavLeft: #090909;
