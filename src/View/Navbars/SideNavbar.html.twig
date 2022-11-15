@@ -15,7 +15,7 @@
 
 		<li>
 			<div class="link-animation-container">
-				<a href="" class="link-animation" title="Home" alt="Home"><img class="home-icon side-navbar-icons" src="/assets/images/Navbars/icon-home.png"><p class="hide-labels">Home</p>
+				<a href="/" class="link-animation" title="Home" alt="Home"><img class="home-icon side-navbar-icons" src="/assets/images/Navbars/icon-home.png"><p class="hide-labels">Home</p>
 				</a>
 			</div>
 		</li>
@@ -122,7 +122,7 @@
 		{% endif %}
 
 		{# ------------------------ IF USER IS NOT ADMIN show contact link -------------------------------- #}
-		{% if user.role != 'admin' or user.role != 'Admin'%}
+		{% if user.role != 'Admin'%}
 			<li>
 				<div class="link-animation-container">
 					<a href="#" class="link-animation" title="Contact" alt="Contact"><img class="contact-icon side-navbar-icons" src="/assets/images/Navbars/contact.png"><p class="hide-labels">Contact</p>
