@@ -6,7 +6,7 @@
 }
 
 .searchTitle{
-    font-family: var(--mainFont);
+    font-family: var(--titleFont);
     color: var(--colorMainFont);
 }
 

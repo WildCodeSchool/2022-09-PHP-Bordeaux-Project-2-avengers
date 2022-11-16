@@ -8,9 +8,11 @@
 // e.g route '/item/edit?id=1' will execute $itemController->edit(1)
 return [
     /* ------------------------------------------ General page -------------------------------------------------*/
-    '' => ['HomeController', 'index',],
+    '' => ['HomeController', 'index',], 
     'searchSong' => ['SearchPageController', 'searchSongs',],
     'play' => ['PlayPageController', 'getSongsForPlayPage', ['id']],
+    'likepage' => ['LikePageController', 'getSongsForLikePage', ['id']],
+    'playlikedsong' => ['LikePageController', 'getSongToPlayLikedSong', ['id', 'user']],
     'logout' => ['HomeController', 'logout'],
     /* ------------------------------------------ Setting page USER --------------------------------------------*/
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
