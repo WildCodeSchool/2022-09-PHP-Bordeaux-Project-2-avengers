@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\FetchSongsManager;
 
-class PlayPageController extends AbstractController
+class PlayPageController extends AbstractTwigController
 {
     /**
      * Get songs by song ID and display Play page
@@ -17,7 +17,9 @@ class PlayPageController extends AbstractController
             $artistSongs = $fetchSongs->getsongList($id);
             $fetchSongsManagerImg = new FetchSongsManager();
             $rndSongCoverImg = $fetchSongsManagerImg->showImgDir();
-    
-            return $this->twig->render('/Home/General/playPage.html.twig', ['song' => $song, 'artistSongs' => $artistSongs, 'rndSongCoverImg' =>$rndSongCoverImg]);
+
+            return $this->twig->render('/Home/General/playPage.html.twig', [
+                'song' => $song, 'artistSongs' => $artistSongs, 'rndSongCoverImg' => $rndSongCoverImg
+            ]);
     }
 }

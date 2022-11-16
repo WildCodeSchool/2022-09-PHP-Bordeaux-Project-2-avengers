@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\FetchSongsManager;
 
-class SearchPageController extends AbstractController
+class SearchPageController extends AbstractTwigController
 {
     /**
      * Displays search page
@@ -16,8 +16,10 @@ class SearchPageController extends AbstractController
             $songs = $fetchSongsManager->songSearch();
             $fetchSongsManagerImg = new FetchSongsManager();
             $rndSongCoverImg = $fetchSongsManagerImg->showImgDir();
-    
-            return $this->twig->render('/Home/General/searchPage.html.twig', ['songs' => $songs, 'rndSongCoverImg' => $rndSongCoverImg]);
+
+            return $this->twig->render('/Home/General/searchPage.html.twig', [
+                'songs' => $songs, 'rndSongCoverImg' => $rndSongCoverImg
+            ]);
         }
     }
 }
