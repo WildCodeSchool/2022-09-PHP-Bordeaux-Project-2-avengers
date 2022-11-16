@@ -11,16 +11,16 @@ class PlayPageController extends AbstractTwigController
      */
     public function getSongsForPlayPage(int $id): string
     {
-            $fetchSongsManager = new FetchSongsManager();
-            $song = $fetchSongsManager->selectSongById($id);
-            $fetchSongs = new FetchSongsManager();
-            $artistSongs = $fetchSongs->getsongList($id);
-            $fetchSongsManagerImg = new FetchSongsManager();
-            $rndSongCoverImg = $fetchSongsManagerImg->showImgDir();
+        $fetchSongsManager = new FetchSongsManager();
+        $song = $fetchSongsManager->selectSongById($id);
+        $fetchSongs = new FetchSongsManager();
+        $artistSongs = $fetchSongs->getsongList($id);
+        $fetchSongsManagerImg = new FetchSongsManager();
+        $rndSongCoverImg = $fetchSongsManagerImg->showImgDir();
 
-            return $this->twig->render('/Home/General/playPage.html.twig', [
-                'song' => $song, 'artistSongs' => $artistSongs, 'rndSongCoverImg' => $rndSongCoverImg
-            ]);
+        return $this->twig->render('/Home/General/playPage.html.twig', [
+            'song' => $song, 'artistSongs' => $artistSongs, 'rndSongCoverImg' => $rndSongCoverImg
+        ]);
     }
 
     /**
@@ -42,10 +42,11 @@ class PlayPageController extends AbstractTwigController
         // if no sample is available, redirect toward homepage
         if ($trackURL === '') {
             header('Location: /');
-            die();
         }
-        return $this->twig->render('/Home/General/spotifyPlayPage.html.twig',
+        return $this->twig->render(
+            '/Home/General/spotifyPlayPage.html.twig',
             ['trackURL' => $trackURL, 'trackArtist' => $trackArtist,
-                'trackTitle' => $trackTitle, 'trackImg' => $trackImg]);
+                'trackTitle' => $trackTitle, 'trackImg' => $trackImg]
+        );
     }
 }
