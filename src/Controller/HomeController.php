@@ -16,10 +16,6 @@ class HomeController extends AbstractTwigController
      */
     public function index(): string
     {
-        // authentification
-        $login = new LoginController();
-        $login->login();
-
         // on crée une connexion à l'API de Spotify
         $spotify = new SpotifyAPIController();
         $spotify->connectToAPI();

@@ -1,0 +1,60 @@
+.form-content-update.contact {
+    width: 70vw;
+}
+
+.update-form-label.contact {
+    width: 70vw;
+}
+
+.update-form-input.contact {
+    width: 70vw;
+}
+
+.delete-text.contact{
+    margin-top: 40px;
+    text-align: center;
+}
+
+@media screen and (min-width: 472px) {
+    .delete-text.contact {
+        width: 377px;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .div-inside-form-update.contact {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .update-profile-form.contact {
+        width: 80%;
+    }
+
+    .form-content-update.contact {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .update-form-label.contact {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .update-form-input.contact {
+        margin: 12px auto 0 auto;
+        width: 90%;
+    }
+
+    .delete-text.contact {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    .delete-text.contact {
+        width: 441px;
+    }
+}
