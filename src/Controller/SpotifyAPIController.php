@@ -151,7 +151,7 @@ class SpotifyAPIController
      * @param $type
      * @return array|object
      */
-    public function searchTracks($search, $type)
+    public function searchTracks($search, $type): array|object
     {
         // On récupère le token dans notre variable session.
         // Il est possible de le stocker dans une BDD, sinon.
