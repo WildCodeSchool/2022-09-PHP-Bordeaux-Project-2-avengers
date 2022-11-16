@@ -2,9 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\UserManager;
-use App\Controller\LoginController;
-
 /**
  * In case of access problem to a specific page,
  * try and check the authorized RedirectURI on the Dashboard of Spotify App
