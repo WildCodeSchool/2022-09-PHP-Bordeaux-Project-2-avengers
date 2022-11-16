@@ -48,19 +48,17 @@ class FormController
     /**
      * treatment add music FILE jacket
      */
-    public function jacketTreatment($jacket): array|null
+    public function jacketTreatment($jacket, $song): array|null
     {
         $errors = [];
 
-        $uploadDirJacket = '../public/jacket/';
-        $uploadJacket = $uploadDirJacket . basename($jacket['name']);
+        $uploadDir = '../public/songs/' . $song['artist'] . '/';
+        $uploadJacket = $uploadDir . basename($jacket['name']);
         $extensionJacket = pathinfo($jacket['name'], PATHINFO_EXTENSION);
         $validJacketExt = ['jpg', 'jpeg', 'png'];
         $maxFileSize = 5000000;
 
-        if ($jacket['error'] == 4) {
-            $errors[] = "You must select a jacket to upload.";
-        } else {
+        if ($jacket['error'] !== 4) {
             if (file_exists($uploadJacket)) {
                 $errors[] = "This jacket file already exist.";
             } else {
@@ -73,19 +71,18 @@ class FormController
                 }
             }
         }
-
         return $errors;
     }
 
     /**
      * treatment add music FILE track
      */
-    public function trackTreatment($track): array|null
+    public function trackTreatment($track, $song): array|null
     {
         $errors = [];
 
-        $uploadDirTrack = '../public/track/';
-        $uploadTrack = $uploadDirTrack . basename($track['name']);
+        $uploadDir = '../public/songs/' . $song['artist'] . '/';
+        $uploadTrack = $uploadDir . basename($track['name']);
         $extensionTrack = pathinfo($track['name'], PATHINFO_EXTENSION);
         $validTrackExt = ['mp3', 'wav'];
         $maxFileSize = 5000000;
@@ -105,7 +102,6 @@ class FormController
                 }
             }
         }
-
         return $errors;
     }
 }
