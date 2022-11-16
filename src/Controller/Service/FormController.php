@@ -48,27 +48,21 @@ class FormController
     /**
      * treatment add music FILE jacket
      */
-    public function jacketTreatment($jacket, $song): array|null
+    public function jacketTreatment($jacket): array|null
     {
         $errors = [];
 
-        $uploadDir = '../public/songs/' . $song['artist'] . '/';
-        $uploadJacket = $uploadDir . basename($jacket['name']);
         $extensionJacket = pathinfo($jacket['name'], PATHINFO_EXTENSION);
         $validJacketExt = ['jpg', 'jpeg', 'png'];
         $maxFileSize = 5000000;
 
         if ($jacket['error'] !== 4) {
-            if (file_exists($uploadJacket)) {
-                $errors[] = "This jacket file already exist.";
-            } else {
-                if (!in_array($extensionJacket, $validJacketExt)) {
-                    $errors[] = 'You must choose a jacket with .jpg or .jpeg or .png extension.';
-                }
+            if (!in_array($extensionJacket, $validJacketExt)) {
+                $errors[] = 'You must choose a jacket with .jpg or .jpeg or .png extension.';
+            }
 
-                if (filesize($jacket['tmp_name']) > $maxFileSize) {
-                    $errors[] = "Your jacket file must be less to 5M.";
-                }
+            if (filesize($jacket['tmp_name']) > $maxFileSize) {
+                $errors[] = "Your jacket file must be less to 5M.";
             }
         }
         return $errors;

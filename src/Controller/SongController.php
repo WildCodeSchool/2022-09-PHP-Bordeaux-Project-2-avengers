@@ -27,7 +27,7 @@ class SongController extends AbstractTwigController
 
                 $errors = array_merge(
                     $service->addSongForm($song),
-                    $service->jacketTreatment($fileJacket, $song),
+                    $service->jacketTreatment($fileJacket),
                     $service->trackTreatment($fileTrack, $song)
                 );
 
