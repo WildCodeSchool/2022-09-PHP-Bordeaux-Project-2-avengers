@@ -5,16 +5,8 @@ namespace App\Model;
 use App\Model\Connection;
 use PDO;
 
-class AdminManager
+class AdminManager extends Connection
 {
-
-    public PDO $pdo;
-
-    public function __construct()
-    {
-        $connection = new Connection();
-        $this->pdo = $connection->getConnection();
-    }
 // FEATURE GESTION USERS //
     public function getAllUsers(): array
     {
@@ -36,22 +28,21 @@ class AdminManager
         return $statement->fetch();
     }
 
-    public function deleteOneUser(int $id): void
+    public function deleteOneUser(string $id): void
     {
         $statement = $this->pdo->prepare("DELETE FROM user WHERE ID_user=:id");
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
 
-    public function getAllMusics(): array 
+    public function getAllMusics(): array
     {
         $sql = "SELECT songs.title, songs.artist, songs.image_url, songs.song_url, genre.genre, user.username FROM songs
         JOIN genre ON genre.ID_genre = songs.genre_ID_genre
         JOIN user ON user.ID_user = songs.user_ID_user";
-        $statement= $this->pdo->prepare($sql);
+        $statement = $this->pdo->prepare($sql);
         $statement->execute();
 
         return $statement->fetchAll();
-
     }
 }

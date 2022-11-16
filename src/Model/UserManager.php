@@ -4,18 +4,8 @@ namespace App\Model;
 
 use PDO;
 
-class UserManager
+class UserManager extends Connection
 {
-    public PDO $pdo;
-
-    public function __construct()
-    {
-        $connection = new Connection();
-        $this->pdo = $connection->getConnection();
-    }
-
-    public const TABLE = 'user';
-
     /**
      * Insert new user in database
      */

@@ -15,19 +15,13 @@
 
 		<li>
 			<div class="link-animation-container">
-				<a href="" class="link-animation" title="Home" alt="Home"><img class="home-icon side-navbar-icons" src="/assets/images/Navbars/icon-home.png"><p class="hide-labels">Home</p>
+				<a href="/" class="link-animation" title="Home" alt="Home"><img class="home-icon side-navbar-icons" src="/assets/images/Navbars/icon-home.png"><p class="hide-labels">Home</p>
 				</a>
 			</div>
 		</li>
 
 		{# ------------------------ IF USER is LOGGED IN, show links for create playlist and liked songs ----------------------------- #}
 		{% if user.role %}
-			<li>
-				<div class="link-animation-container">
-					<a href="#" class="link-animation" title="Create Playlist" alt="Create Playlist"><img class="list-icon side-navbar-icons" src="/assets/images/Navbars/icon-list.png"><p class="hide-labels">Create Playlist</p>
-					</a>
-				</div>
-			</li>
 			<li>
 				<div class="link-animation-container">
 					<a href="#" class="link-animation" title="Liked Songs" alt="Liked Songs"><img class="heart-icon side-navbar-icons" src="/assets/images/Navbars/icon-heart.png"><p class="hide-labels">Liked Songs</p>
@@ -59,7 +53,7 @@
 				</li>
 				<li>
 					<div class="link-animation-container">
-						<a href="#" title="Add music" alt="Add music">
+						<a href="/setting/add_music" title="Add music" alt="Add music">
 							<p class="hide-labels link-animation">Add music</p>
 						</a>
 					</div>
@@ -125,10 +119,11 @@
 				  </a>
         </li>
 			</div>
-		{% endif %}
+            {% include 'Home/login_modal.html.twig' %}
+        {% endif %}
 
 		{# ------------------------ IF USER IS NOT ADMIN show contact link -------------------------------- #}
-		{% if user.role != 'admin' or user.role != 'Admin'%}
+		{% if user.role != 'Admin'%}
 			<li>
 				<div class="link-animation-container">
 					<a href="#" class="link-animation" title="Contact" alt="Contact"><img class="contact-icon side-navbar-icons" src="/assets/images/Navbars/contact.png"><p class="hide-labels">Contact</p>
