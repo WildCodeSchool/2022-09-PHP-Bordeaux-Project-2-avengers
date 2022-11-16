@@ -11,6 +11,7 @@ return [
     '' => ['HomeController', 'index',],
     'searchSong' => ['SearchPageController', 'searchSongs',],
     'play' => ['PlayPageController', 'getSongsForPlayPage', ['id']],
+    'spotify-play' => ['PlayPageController', 'playSpotifySong',],
     'logout' => ['HomeController', 'logout'],
     /* ------------------------------------------ Setting page USER --------------------------------------------*/
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
