@@ -98,4 +98,48 @@ class UserController extends AbstractController
             }
         }
     }
+
+    /**
+     * User registration 
+     */
+    public function index()
+  {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      // clean $_POST data
+      $user = array_map('trim', $_POST);
+
+      // TODO validations (length, format...)
+      /*  function test_input($user) {
+              $user = trim($user);
+              $user = stripslashes($user);
+              $user = htmlspecialchars($user);
+              return $user;
+            }
+          */
+      $errors = [];
+
+      if (empty($_POST["username"])) {
+        $errors[] = "Username is required";
+      }
+      if ((empty($_POST["email"])) || (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))) {
+        $errors[] = "A valid email is required";
+      }
+      if (empty($_POST["password"])) {
+        $errors[] = "Password is required";
+      }
+      //TODO le coupe de password doesn't match
+      if ((empty($_POST["passwordConfirmation"])) || ($_POST["passwordConfirmation"] !== $_POST["password"])) {
+        $errors[] = "Passwords doesn't match";
+      }
+
+      if (!empty($errors)) {
+        return $this->twig->render('Registration/index.html.twig', ['errors' => $errors]);
+      } else{
+        return $this->twig->render('Registration/index.html.twig', ['users' => $user]);
+      }
+    }
+
+
+    return $this->twig->render('Registration/index.html.twig');
+  }
 }

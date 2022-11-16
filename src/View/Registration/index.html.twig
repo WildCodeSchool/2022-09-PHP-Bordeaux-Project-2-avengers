@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+
+    <h2>Registration</h2>
+
+    <form method="post">
+  
+     <div>
+        <label for="username"> Username : </label>
+        <input type="text" id="username" name="username" placeholder="Enter a username">
+    </div>
+    <div>
+        <label for="email"> Email : </label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+    </div>
+    <div>
+        <label for="password"> Password : </label>
+        <input type="text" id="password" name="password" placeholder="Enter your password">
+    </div>
+    <div>
+        <label for="passwordConfirmation"> Confirmation : </label>
+        <input type="text" id="passwordConfirmation" name="passwordConfirmation" placeholder="Confirm your password">
+    </div>
+
+    <div class="button">
+        <button type="submit">Submit</button>
+    </div>
+    
+    {% for error in errors %}
+        {{ error }}
+
+    {% endfor %}
+     {% for user in users %}
+        {{ user }}
+        
+    {% endfor %}
+</ul
+   <!-- Pour ajouter un user
+   <a href="/items/add">Ajouter</a>
+   -->
+{% endblock %}

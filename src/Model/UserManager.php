@@ -14,6 +14,20 @@ class UserManager
         $this->pdo = $connection->getConnection();
     }
 
+    public const TABLE = 'user';
+
+    /**
+     * Insert new user in database
+     */
+   public function insert(array $user): int
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`username`) VALUES (:username)");
+        $statement->bindValue('username', $user['username'], PDO::PARAM_STR);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
+
     /**
      * Get all information for one user
      */
