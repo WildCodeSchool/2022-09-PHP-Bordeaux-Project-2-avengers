@@ -1,0 +1,58 @@
+{% extends 'Layout.html.twig' %}
+
+{% block title %} Wildify | Search results{% endblock %}
+
+{# -- content for main-black in main layout -- #}
+{% block content %}
+
+<div class="searchBlock" onload="randombg()">
+		<div class="searchTitle">
+			<h2>Search results</h2>
+		</div>
+
+		<div class="searchResultsBlock">
+
+			{# ----- Loop for each song --------------------------------- #}
+			{% for song in songs %}
+
+				<a href="/play?id={{ song.ID_song }}" class="song-link">
+					<div class="songCard">
+						<div class="songCardFlex">
+
+						{# ---- if song has album cover, show image cover. If not choose random image ---- #}
+						{% if song.image_url %}
+							<div class="songCover" style="background-image: url('/{{song.image_url}}');background-size: cover">
+						{% else %}
+							{% set imgCover = random(rndSongCoverImg) %}
+							<div class="songCover" style="background-image: url('/{{imgCover}}');background-size: cover">
+						{% endif %}
+
+							<img src="/assets/images/searchPage/play-icon-gold.png" class="play-icon">
+							</div>
+
+							<div class="songInfo">
+								<div class="songTitle"> 
+									{{ song.title }}
+								</div>
+								<div class="songArtist">
+									{{ song.artist }}
+								</div>
+								<div class="songGenre">
+									Genre:
+									{{ song.genre }}
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</a>
+
+			{# --------- if no results found -------- #}
+			{% else %}
+				<h3 id="noResults">No results found</h3>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}
+

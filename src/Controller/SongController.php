@@ -6,7 +6,7 @@ use App\Controller\Service\FormController;
 use App\Model\SongManager;
 use App\Model\UserManager;
 
-class SongController extends AbstractController
+class SongController extends AbstractTwigController
 {
     /**
      *  Add music upload files
