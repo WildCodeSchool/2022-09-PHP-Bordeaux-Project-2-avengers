@@ -7,6 +7,8 @@
 
 @import "homepage-style.css"; /* CSS d'Alexis, pour la page d'accueil */
 @import "General/Layout.css";
+@import "General/searchPage.css";
+@import "General/playPage.css";
 @import "General/loginModal.css";
 
 /* --------------------------------------- Import UserSettings css --------------------------------------- */

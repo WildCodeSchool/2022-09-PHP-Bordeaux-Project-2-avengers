@@ -9,6 +9,8 @@
 return [
     /* ------------------------------------------ General page -------------------------------------------------*/
     '' => ['HomeController', 'index',],
+    'searchSong' => ['SearchPageController', 'searchSongs',],
+    'play' => ['PlayPageController', 'getSongsForPlayPage', ['id']],
     'logout' => ['HomeController', 'logout'],
     /* ------------------------------------------ Setting page USER --------------------------------------------*/
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
@@ -21,5 +23,4 @@ return [
     'setting/admin/delete' => ['AdminController', 'showDeleteUser', ['id']],
     'setting/admin/deleteDone' => ['AdminController', 'deleteUser', ['id']],
     'setting/admin/manageMusics' => ['AdminController','showAllMusics']
-
 ];

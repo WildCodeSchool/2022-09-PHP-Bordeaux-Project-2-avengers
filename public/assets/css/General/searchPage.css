@@ -1,0 +1,128 @@
+.searchBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+}
+
+.searchTitle{
+    font-family: var(--mainFont);
+    color: var(--colorMainFont);
+}
+
+#noResults{
+    font-family: var(--mainFont);
+    color: var(--colorSubFont);
+}
+
+.searchResultsBlock{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.searchResultsBlock a{
+text-decoration: none;
+}
+
+.songCard{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    height: 150px;
+    width: 90vw;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 0px 25px #000000;
+}
+
+.songCardFlex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.songCover{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 25%;
+    box-shadow: 0 4px 8px 0 var(--backgroundNavTop);
+    transition: ease-out 0.6s;
+    z-index: -1;
+}
+
+.play-icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.6s ease-out;
+}
+
+.songInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10vw;
+    font-family: var(--mainFont);
+    color: var(--colorSubFont);
+}
+
+.songTitle{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 17px;
+    font-weight: 550;
+    padding-bottom: 10px;
+}
+
+.songArtist{
+    font-size: 13px;
+    color: var(--colorSubDiscFont);
+}
+
+.songGenre{
+    font-size: 13px;
+    color: var(--colorSubDiscFont);
+}
+
+@media only screen and (min-width: 771px) {
+
+    .songCardFlex{
+        margin-left: 15px;
+    }
+
+    .songCard{
+        margin: 18px;
+        height: 170px;
+        width: 310px;
+    }
+
+    .songCard:hover .songCover{
+        transform: scale(1.09);
+        z-index: 0;
+    }
+
+    .songCard:hover .play-icon{
+        background-color: rgba(7, 7, 7, 0.3);
+        opacity: 1;
+    }
+
+    .songInfo{
+        margin-left: 2vw;
+    }
+
+}
