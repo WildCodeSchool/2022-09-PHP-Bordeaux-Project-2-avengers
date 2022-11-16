@@ -19,7 +19,7 @@ The main objective for the team was to build a website mostly inspired by Spotif
 ## The team (a.k.a. "The Avengers")
 - Hélène Fourcade
 - Alexis Boucherie
-- Andy Ricana
+- Andy Ricaña
 - Anthony Marché
 - Bixente Lasserre
 
