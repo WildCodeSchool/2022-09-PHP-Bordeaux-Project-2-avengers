@@ -33,12 +33,12 @@
                                 <p class="admin-music-title">
                                 <img src={{ music.image_url }} class="admin-music-img">
                                 </p>
-                        </div>        
+                        </div>
                 </div>
 
 <div class="admin-button">
 <div class="admin-button-margin">
-<a class="btn-option-admin warning-option">Delete</a>
+<a class="btn-option-admin warning-option" href="/setting/admin/deleteMusic?id={{ music.ID_song }}">Delete</a>
 </div>
 <div class ="admin-button-margin">
 <a class="btn-option-admin redirection-option">Update</a>
@@ -47,8 +47,8 @@
 </div>
 
 </div>
-         {% endfor %}  
-</section>   
+         {% endfor %}
+</section>
 
 {% endblock %}
 
