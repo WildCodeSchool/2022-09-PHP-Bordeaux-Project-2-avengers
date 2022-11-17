@@ -12,15 +12,15 @@
 		<img class="background-image" src="/{{random(rndSongCoverImg)}}">
 
 			<div class="play-main-info">
-				
+
 				{# ---- if song has album cover, show image. If not choose random image ---- #}
 				{% if song.image_url %}
 					<div class="play-songCover" style="background-image: url('/{{song.image_url}}');background-size: cover">
 				{% else %}
 					{% set imgCover = random(rndSongCoverImg) %}
 					<div class="play-songCover" style="background-image: url('/{{imgCover}}');background-size: cover">
-				{% endif %}	
-					
+				{% endif %}
+
 				</div>
 				<div class="play-songInfo">
 					<div class="play-songTitle">
@@ -29,10 +29,17 @@
 					<div class="play-songArtist">
 						{{ song.artist }}
 					</div>
+                    <form action="" method="POST" id="testform">
+                        <input type="hidden" name="ID_song" value="{{ song.ID_song }}">
+                        <input type="image"
+                            {% if song.ID_song in likeId %}
+                                src="/assets/images/playPage/coeur-plein.png" alt="logo coeur"
+                            {% else %}
+                                src="/assets/images/playPage/coeur-vide.png" alt="logo coeur"
+                            {% endif %}
+                        >
+                    </form>
 				</div>
-
-					<a href="#"><img src="/assets/images/playPage/icon-heart-empty.png" class="add-to-playlist-icon playlist-like-icons"></a>
-
 			</div>
 
 			<div class="playControls-footer">
@@ -40,7 +47,7 @@
 					<source src="/{{song.song_url}}" type="audio/mpeg">
 				</audio>
 			</div>
-			
+
 		</div>
 
 		{# ---- list of songs by artist section ---- #}
@@ -62,9 +69,9 @@
 						{% if songs.image_url %}
 							<div class="song-Cover" style="background-image: url('/{{songs.image_url}}');background-size: cover">
 						{% else %}
-							{% set imgCover = random(rndSongCoverImg) %} 
+							{% set imgCover = random(rndSongCoverImg) %}
 							<div class="song-Cover" style="background-image: url('/{{imgCover}}');background-size: cover">
-						{% endif %}	
+						{% endif %}
 								<img src="/assets/images/searchPage/play-icon-gold.png" alt="" class="play-icon">
 							</div>
 							<div class="song-info">

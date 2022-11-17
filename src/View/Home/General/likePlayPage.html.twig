@@ -30,9 +30,18 @@
 						<div class="play-songArtist">
 							{{ playLikedSong.artist }}
 						</div>
+                        <form action="" method="POST" id="testform">
+                            <input type="hidden" name="ID_song" value="{{ playLikedSong.ID_song }}">
+                            <input type="image"
+                                {% if playLikedSong.ID_song in likeId %}
+                                    src="/assets/images/playPage/coeur-plein.png" alt="logo coeur"
+                                {% else %}
+                                    src="/assets/images/playPage/coeur-vide.png" alt="logo coeur"
+                                {% endif %}
+                            >
+                        </form>
 					</div>
 
-					<a href="#"><img src="/assets/images/playPage/icon-heart-empty.png" class="add-to-playlist-icon playlist-like-icons"></a>
 
 				</div>
 
