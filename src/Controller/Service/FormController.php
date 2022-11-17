@@ -52,40 +52,31 @@ class FormController
     {
         $errors = [];
 
-        $uploadDirJacket = '../public/jacket/';
-        $uploadJacket = $uploadDirJacket . basename($jacket['name']);
         $extensionJacket = pathinfo($jacket['name'], PATHINFO_EXTENSION);
         $validJacketExt = ['jpg', 'jpeg', 'png'];
         $maxFileSize = 5000000;
 
-        if ($jacket['error'] == 4) {
-            $errors[] = "You must select a jacket to upload.";
-        } else {
-            if (file_exists($uploadJacket)) {
-                $errors[] = "This jacket file already exist.";
-            } else {
-                if (!in_array($extensionJacket, $validJacketExt)) {
-                    $errors[] = 'You must choose a jacket with .jpg or .jpeg or .png extension.';
-                }
+        if ($jacket['error'] !== 4) {
+            if (!in_array($extensionJacket, $validJacketExt)) {
+                $errors[] = 'You must choose a jacket with .jpg or .jpeg or .png extension.';
+            }
 
-                if (filesize($jacket['tmp_name']) > $maxFileSize) {
-                    $errors[] = "Your jacket file must be less to 5M.";
-                }
+            if (filesize($jacket['tmp_name']) > $maxFileSize) {
+                $errors[] = "Your jacket file must be less to 5M.";
             }
         }
-
         return $errors;
     }
 
     /**
      * treatment add music FILE track
      */
-    public function trackTreatment($track): array|null
+    public function trackTreatment($track, $song): array|null
     {
         $errors = [];
 
-        $uploadDirTrack = '../public/track/';
-        $uploadTrack = $uploadDirTrack . basename($track['name']);
+        $uploadDir = '../public/songs/' . $song['artist'] . '/';
+        $uploadTrack = $uploadDir . basename($track['name']);
         $extensionTrack = pathinfo($track['name'], PATHINFO_EXTENSION);
         $validTrackExt = ['mp3', 'wav'];
         $maxFileSize = 5000000;
@@ -105,6 +96,7 @@ class FormController
                 }
             }
         }
+
         return $errors;
     }
 
@@ -121,7 +113,6 @@ class FormController
         if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Email is not valid.';
         }
-
         return $errors;
     }
 }
