@@ -5,10 +5,10 @@
 {# -- content for main-black in main layout -- #}
 {% block content %}
 
-<div class="searchBlock">
-		<div class="searchTitle">
-			<h2>Search results</h2>
-		</div>
+    <div class="searchBlock">
+        <div class="searchTitle">
+            <h2>Search results</h2>
+        </div>
 
         <div class="searchResultsBlock">
 
@@ -22,16 +22,15 @@
 
                             {# ---- if song has album cover, show image cover. If not choose random image ---- #}
                             {% if song.image_url %}
-                            <div class="songCover"
-                                 style="background-image: url('/{{ song.image_url }}');background-size: cover">
-                                {% else %}
-                                {% set imgCover = random(rndSongCoverImg) %}
-                                <div class="songCover"
-                                     style="background-image: url('/{{ imgCover }}');background-size: cover">
-                                    {% endif %}
-
+                                <div class="songCover" style="background-image: url('/{{ song.image_url }}');background-size: cover">
                                     <img src="/assets/images/searchPage/play-icon-gold.png" class="play-icon">
                                 </div>
+                            {% else %}
+                                {% set imgCover = random(rndSongCoverImg) %}
+                                <div class="songCover" style="background-image: url('/{{ imgCover }}');background-size: cover">
+                                    <img src="/assets/images/searchPage/play-icon-gold.png" class="play-icon">
+                                </div>
+                            {% endif %}
 
                                 <div class="songInfo">
                                     <div class="songTitle">
@@ -45,7 +44,6 @@
                                         {{ song.genre }}
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </a>
@@ -71,9 +69,7 @@
                         <div class="songCard">
                             <div class="songCardFlex">
 
-                                <div class="songCover"
-                                     style="background-image: url('{{ track.album.images[1].url }}');background-size: cover">
-
+                                <div class="songCover" style="background-image: url('{{ track.album.images[1].url }}');background-size: cover">
                                     <img src="/assets/images/searchPage/play-icon-gold.png" class="play-icon">
                                 </div>
 
@@ -103,4 +99,3 @@
     </div>
 
 {% endblock %}
-

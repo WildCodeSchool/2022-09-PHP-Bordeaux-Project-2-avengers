@@ -30,6 +30,13 @@
     transition: ease-out 0.5s;
 }
 
+.searchSpotifyBlock{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .searchResultsBlock a{
 text-decoration: none;
 }
@@ -108,6 +115,13 @@ text-decoration: none;
 }
 
 @media only screen and (min-width: 771px) {
+
+    .searchResultsBlock{
+        border-radius: 30px;
+        margin: 20px;
+        box-shadow: 0px 0px 10px #000000;
+        padding-bottom: 10px;
+    }
 
     .songCardFlex{
         margin-left: 15px;
