@@ -24,7 +24,7 @@
         {# -------- IF USER is LOGGED IN show welcome text & logout bttn, if not show subscribe & login bttn------------------------ #}
         {% if user.role %}
             <div class="sub-login-buttons">
-                <p class="welcome-user">Welcome, {{ user.username }}!</p>
+                <p class="welcome-user">Welcome, {{ user.firstname }} {{ user.lastname }}!</p>
                 <a href="/logout" class="default-bttn">Logout</a>
             </div>
         {% else %}
