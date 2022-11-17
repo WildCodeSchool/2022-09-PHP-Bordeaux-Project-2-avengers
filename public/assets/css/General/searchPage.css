@@ -6,7 +6,7 @@
 }
 
 .searchTitle{
-    font-family: var(--mainFont);
+    font-family: var(--titleFont);
     color: var(--colorMainFont);
 }
 
@@ -27,6 +27,7 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    transition: ease-out 0.5s;
 }
 
 .searchResultsBlock a{
