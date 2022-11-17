@@ -13,6 +13,7 @@ return [
     'play' => ['PlayPageController', 'getSongsForPlayPage', ['id']],
     'likepage' => ['LikePageController', 'getSongsForLikePage', ['id']],
     'playlikedsong' => ['LikePageController', 'getSongToPlayLikedSong', ['id', 'user']],
+    'spotify-play' => ['PlayPageController', 'playSpotifySong',],
     'logout' => ['HomeController', 'logout'],
     /* ------------------------------------------ Setting page USER --------------------------------------------*/
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
