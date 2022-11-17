@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
+
+<section class="delete-adminpage">
+    <p>Vous allez supprimer la chanson</p>
+
+    <h3 class="setting-title">Title :  {{ music.title }} </h3>
+    <h3 class="setting-title">Artist : {{ music.artist }} </h3>
+
+    <p>Ajouter par l'utilisateur : </p>
+
+    <h3 class="setting-title"> {{ music.username }}</h3>
+
+    <p> Êtes-vous sur de vouloir la supprimer? </p>
+
+<div class="admin-buttons">
+    <a class="btn-option redirection-option" href="/setting/admin/manageMusics">Non</a>
+    <a class="btn-option warning-option" href="/setting/admin/deleteMusicDone?id={{ music.ID_song }}">Oui</a>
+</div>
+</section>
+
+{% endblock %}
