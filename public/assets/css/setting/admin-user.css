@@ -1,16 +1,43 @@
 .admin-table {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     color: var(--colorMainFont);
-    width: 52vw;
-    margin: auto;
+    width: 85vw;
     background-color: #181818;
     border-radius: 15px;
     border: solid 1px var(--colorObject);
-    padding: 1rem 1.5rem;
-    font-family: var(--titleFont);
+}
+
+.admin{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.user-padding {
+    padding-left: 9vw;
+    font-family: var(--mainFont);
+    margin: 10px;
+    margin-top: 15px;
+}
+
+.userlabels{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    color: #a5a5a5;
+}
+
+.userlabels p{
+    margin: 0;
+    font-weight:550;
+    font-size: 17px;
     color: var(--colorMainFont);
+}
+
+.delete-margin{
+    margin-bottom: 10px; 
 }
 
 .btn-option-admin {
@@ -32,39 +59,21 @@
     width: 7rem;
 }
 
-.admin{
-    font-family: var(--titleFont);
-    color: var(--colorMainFont);
-}
-
-.delete-button {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.user-padding {
-    padding-right: 1rem;
-}
-
-
-@media screen and (max-width: 1000px) {
-    .admin-table{
-        flex-direction: column;
-        width: 70vw;
-    }
-    .user-padding{
-        margin: 1rem;
-    }
-    .delete-margin{
-        margin-bottom: 1rem;
-        margin-top: 2rem;
-        
-    }
-
 @media screen and (min-width: 768px) {
     .admin-table {
-        width: 40vw;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 30vw;
+    }
+
+    .user-padding {
+        padding-left: 3vw;
+    }
+
+    .delete-margin{
+        margin: 0;
+        margin-right: 2vw;
     }
 }   
 
-}
