@@ -69,23 +69,8 @@ class AdminManager
         return $statement->fetch();
     }
 
-    public function deleteOneMusic(int $id): void
-    {
-        $statement = $this->pdo->prepare("DELETE FROM songs WHERE ID_song=:id");
-        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
-        $statement->execute();
-    }
 
-    public function updateMusic(array $music): bool
-    {
-        $query = 'UPDATE song SET title = :title, artist = :artist WHERE ID_songs=:id';
-        $statement = $this->pdo->prepare($query);
 
-        $statement->bindValue(':id', $music['ID_songs'], PDO::PARAM_INT);
-        $statement->bindValue(':title', $music['title'], PDO::PARAM_STR);
-        $statement->bindValue(':artist', $music['artist'], PDO::PARAM_STR);
 
-        return $statement->execute();
-    }
 
 }
