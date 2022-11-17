@@ -17,9 +17,11 @@ class PlayPageController extends AbstractTwigController
         $artistSongs = $fetchSongs->getsongList($id);
         $fetchSongsManagerImg = new FetchSongsManager();
         $rndSongCoverImg = $fetchSongsManagerImg->showImgDir();
+        $likedController = new LikePageController();
+        $likeId = $likedController->likeSong();
 
         return $this->twig->render('/Home/General/playPage.html.twig', [
-            'song' => $song, 'artistSongs' => $artistSongs, 'rndSongCoverImg' => $rndSongCoverImg
+            'song' => $song, 'artistSongs' => $artistSongs, 'rndSongCoverImg' => $rndSongCoverImg, 'likeId' => $likeId
         ]);
     }
 

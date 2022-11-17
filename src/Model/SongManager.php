@@ -26,4 +26,32 @@ class SongManager extends Connection
 
         $statement->execute();
     }
+
+    public function getLikeByUserId($id): array|null
+    {
+        $sql = "SELECT songs_ID_song FROM `like` WHERE user_ID_user = $id";
+        $statement = $this->pdo->query($sql);
+
+        return $statement->fetchAll();
+    }
+
+    public function checkSongLiked(int $idUser, int $idSong): bool|array
+    {
+        $sql = "SELECT * FROM `like` WHERE user_ID_user = $idUser and songs_ID_song = $idSong";
+        $statement = $this->pdo->query($sql);
+
+        return $statement->fetch();
+    }
+
+    public function addLikedSong(int $idUser, int $idSong): void
+    {
+        $sql = "INSERT INTO `like` (user_ID_user, songs_ID_song) VALUES ($idUser, $idSong)";
+        $this->pdo->query($sql);
+    }
+
+    public function deleteLikedSong(int $idUser, int $idSong): void
+    {
+        $sql = "DELETE FROM `like` WHERE user_ID_user = $idUser AND songs_ID_song = $idSong";
+        $this->pdo->query($sql);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\FetchSongsManager;
+use App\Model\SongManager;
 
 class LikePageController extends AbstractTwigController
 {
@@ -16,7 +17,8 @@ class LikePageController extends AbstractTwigController
         $fetchSongsImgs = new FetchSongsManager();
         $rndSongCoverImg = $fetchSongsImgs->showImgDir();
 
-        return $this->twig->render('/Home/General/likePage.html.twig', ['likedSongs' => $likedSongs, 'rndSongCoverImg' => $rndSongCoverImg]);
+        return $this->twig->render('/Home/General/likePage.html.twig', [
+            'likedSongs' => $likedSongs, 'rndSongCoverImg' => $rndSongCoverImg]);
     }
 
     /**
@@ -30,7 +32,39 @@ class LikePageController extends AbstractTwigController
         $likedSongs = $fetchSongs->getLikedSongsByUserId($userid);
         $fetchSongsImgs = new FetchSongsManager();
         $rndSongCoverImg = $fetchSongsImgs->showImgDir();
+        $likeId = $this->likeSong();
 
-        return $this->twig->render('/Home/General/likePlayPage.html.twig', ['playLikedSong' => $playLikedSong, 'likedSongs' => $likedSongs, 'rndSongCoverImg' => $rndSongCoverImg]);
+        return $this->twig->render('/Home/General/likePlayPage.html.twig', [
+            'playLikedSong' => $playLikedSong,
+            'likedSongs' => $likedSongs,
+            'rndSongCoverImg' => $rndSongCoverImg,
+            'likeId' => $likeId]);
+    }
+
+    public function likeSong(): array
+    {
+        $songManager = new SongManager();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $idUser = $this->user['ID_user'];
+            $idSong = $_POST['ID_song'];
+
+            $likedSong = $songManager->checkSongLiked($idUser, $idSong);
+
+            if ($likedSong) {
+                $songManager->deleteLikedSong($idUser, $idSong);
+            } else {
+                $songManager->addLikedSong($idUser, $idSong);
+            }
+        }
+
+        $likes = $songManager->getLikeByUserId($this->user['ID_user']);
+        $likeId = [];
+        foreach ($likes as $like) {
+            foreach ($like as $id) {
+                $likeId[] = $id;
+            }
+        }
+        return $likeId;
     }
 }
