@@ -30,7 +30,7 @@ return [
     'setting/admin/manageMusics' => ['AdminController','showAllMusics'],
 
     'setting/admin/deleteMusic' => ['AdminController', 'showOneMusic', ['id']],
-    'setting/admin/deleteMusicDone' => ['AdminController', 'deleteMusic', ['id']]
+    'setting/admin/deleteMusicDone' => ['AdminController', 'deleteMusic', ['id']],
     /* ------------------------------------------ User registration -------------------------------------------*/
     'registration' => ['UserController', 'index'],
 
