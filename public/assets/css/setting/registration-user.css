@@ -19,16 +19,24 @@
     flex-direction: column;
     width: 80vw;
     height: fit-content;
+   
+}
+
+.border {
+    background-color: #181818;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 70vw;
+    height: fit-content;
     border-radius: 20px;
     border: solid 1px var(--colorObject);
     padding: 1rem;
-    
 }
 
 .div-inside-form-registration {
     display: flex;
     flex-direction: column;
-    
 }
 
 .registration-form-label {
@@ -52,7 +60,6 @@
 .error-registration {
     list-style: none;
     color: red;
-   
 }
 
 .error-registration li {
@@ -90,9 +97,12 @@
 }
 
 @media screen and (min-width: 916px) {
-
+    .registration-section {
+        height: fit-content; 
+    }
     .form-content-registration {
         width: 550px;
+        margin-top: px;
     }
     .registration-section.btn-option.validate-option.adapt-btn {
         width: 164px;
