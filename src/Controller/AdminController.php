@@ -60,7 +60,6 @@ class AdminController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = trim($_GET['id']);
 
-
             $adminManager = new AdminManager();
             $adminManager->deleteOneMusic($id);
 
