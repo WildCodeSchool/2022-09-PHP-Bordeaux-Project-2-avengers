@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Wildify | Contact {% endblock %}
+
+{% block content %}
+<section class="profile-section">
+    <h1 class="setting-title">> Support <</h1>
+    <div class="delete-wildify-logo">
+        <img src="/assets/images/Navbars/logo-wildify-desktop.svg" alt="logo wildify">
+    </div>
+    {% if response %}
+        <div class="delete-text contact">
+            <p>Thank you for your message, we confirm receipt. <br>
+                We will answer you as soon as possible</p>
+
+            <p class="signature-contact">WILDIFY support </p>
+        </div>
+
+    {% else %}
+        <div class="delete-text contact">
+            <p>An error has occurred and your message could not be sent. <br>
+                Please try again or contact us later. </p>
+
+            <p>WILDIFY support </p>
+        </div>
+    {% endif %}
+
+    <div class="profile-button-option reverse-button">
+        <a class="btn-option redirection-option" href="/">Back to home</a>
+    </div>
+    {% endblock %}

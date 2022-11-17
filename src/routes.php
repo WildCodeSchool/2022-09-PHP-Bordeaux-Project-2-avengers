@@ -9,8 +9,10 @@
 return [
     /* ------------------------------------------ General page -------------------------------------------------*/
     '' => ['HomeController', 'index',],
+    'login' => ['LoginController', 'login',],
     'searchSong' => ['SearchPageController', 'searchSongs',],
     'play' => ['PlayPageController', 'getSongsForPlayPage', ['id']],
+    'contact' => ['ContactController', 'sendEmail'],
     'likepage' => ['LikePageController', 'getSongsForLikePage', ['id']],
     'playlikedsong' => ['LikePageController', 'getSongToPlayLikedSong', ['id', 'user']],
     'spotify-play' => ['PlayPageController', 'playSpotifySong',],

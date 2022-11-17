@@ -10,6 +10,7 @@
 @import "General/searchPage.css";
 @import "General/playPage.css";
 @import "General/loginModal.css";
+@import "General/contact.css";
 
 /* --------------------------------------- Import UserSettings css --------------------------------------- */
 @import "setting/show_profile.css";
