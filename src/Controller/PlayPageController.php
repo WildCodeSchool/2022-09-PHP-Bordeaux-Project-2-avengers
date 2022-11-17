@@ -38,6 +38,9 @@ class PlayPageController extends AbstractTwigController
         $trackArtist = $_GET['spotify-artist'];
         $trackTitle = $_GET['spotify-title'];
         $trackImg = $_GET['spotify-img'];
+        //Get random image for play page bacjground
+        $fetchSongsManagerImg = new FetchSongsManager();
+        $rndSongCoverImg = $fetchSongsManagerImg->showImgDir();
 
         // if no sample is available, redirect toward homepage
         if ($trackURL === '') {
@@ -46,7 +49,7 @@ class PlayPageController extends AbstractTwigController
         return $this->twig->render(
             '/Home/General/spotifyPlayPage.html.twig',
             ['trackURL' => $trackURL, 'trackArtist' => $trackArtist,
-                'trackTitle' => $trackTitle, 'trackImg' => $trackImg]
+                'trackTitle' => $trackTitle, 'trackImg' => $trackImg, 'rndSongCoverImg' => $rndSongCoverImg]
         );
     }
 }
