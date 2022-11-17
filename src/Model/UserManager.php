@@ -7,6 +7,20 @@ use PDO;
 class UserManager extends Connection
 {
     /**
+     * Insert new user in database
+     */
+    public function insert(array $user): void
+    {
+        $query = "INSERT INTO user (`username`,`email`,`password`) VALUES (:username, :email, :password)";
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':username', $user['username'], PDO::PARAM_STR);
+        $statement->bindValue(':email', $user['email'], PDO::PARAM_STR);
+        $statement->bindValue(':password', $user['password'], PDO::PARAM_STR);
+        $statement->execute();
+    }
+
+    /**
      * Get all information for one user
      */
     public function getOneUser(int $id): array

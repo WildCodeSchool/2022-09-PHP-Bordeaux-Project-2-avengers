@@ -9,8 +9,7 @@
 
 		{# ------------------------ IF user is LOGGED IN, show welcome text---------------------------------------------------- #}
 		{% if user.role %}
-			<p class="welcome-user-leftNavbar">Welcome,
-				{{ user.username }}!</p>
+			<p class="welcome-user-leftNavbar">Welcome, {{ user.firstname }} {{ user.lastname }}!</p>
 		{% endif %}
 
 		<li>
@@ -24,7 +23,7 @@
 		{% if user.role %}
 			<li>
 				<div class="link-animation-container">
-					<a href="#" class="link-animation" title="Liked Songs" alt="Liked Songs"><img class="heart-icon side-navbar-icons" src="/assets/images/Navbars/icon-heart.png"><p class="hide-labels">Liked Songs</p>
+					<a href="/likepage?id={{ user.ID_user }}" class="link-animation" title="Liked Songs" alt="Liked Songs"><img class="heart-icon side-navbar-icons" src="/assets/images/Navbars/icon-heart.png"><p class="hide-labels">Liked Songs</p>
 					</a>
 				</div>
 			</li>
@@ -111,7 +110,7 @@
 		{% else %}
 			<div class="sub-login-buttons-leftNavbar">
 				<li>
-					<a href="#" class="link-animation" title="Subscribe" alt="Subscribe"><img class="subscribe-icon side-navbar-icons" src="/assets/images/Navbars/subscribe.png"><p class="hide-labels">Subscribe</p>
+					<a href="/registration" class="link-animation" title="Subscribe" alt="Subscribe"><img class="subscribe-icon side-navbar-icons" src="/assets/images/Navbars/subscribe.png"><p class="hide-labels">Subscribe</p>
 					</a>
 				</li>
 				<li>
@@ -126,7 +125,7 @@
 		{% if user.role != 'Admin'%}
 			<li>
 				<div class="link-animation-container">
-					<a href="#" class="link-animation" title="Contact" alt="Contact"><img class="contact-icon side-navbar-icons" src="/assets/images/Navbars/contact.png"><p class="hide-labels">Contact</p>
+					<a href="/contact" class="link-animation" title="Contact" alt="Contact"><img class="contact-icon side-navbar-icons" src="/assets/images/Navbars/contact.png"><p class="hide-labels">Contact</p>
 					</a>
 				</div>
 			</li>

@@ -1,6 +1,6 @@
 {% extends 'Layout.html.twig' %}
 
-{% block title %}Wildify | Playing: {{ song.title }}{% endblock %}
+{% block title %}Playing: {{ song.title }}{% endblock %}
 
 {# -- content for main-block in main layout -- #}
 {% block content %}
@@ -9,11 +9,7 @@
 
 		<div class="play-Flex">
 
-		{# {% if song.image_url %}
-		<img class="background-image" src="/{{song.image_url}}">
-		{% else %} #}
 		<img class="background-image" src="/{{random(rndSongCoverImg)}}">
-		{# {% endif %}	 #}
 
 			<div class="play-main-info">
 				

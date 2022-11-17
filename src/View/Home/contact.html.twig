@@ -1,0 +1,46 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Wildify | Contact {% endblock %}
+
+{% block content %}
+    <section class="profile-section">
+        <h1 class="setting-title">> Contact support <</h1>
+
+        <form action="" method="POST" class="update-profile-form contact">
+            <div class="form-content-update contact">
+
+                <div class="div-inside-form-update contact">
+                    <label for="subject" class="update-form-label contact">Subject :</label>
+                    <input type="text" name="subject" class="update-form-input contact" id="subject">
+                </div>
+                {% if user %}
+                <div class="div-inside-form-update contact">
+                    <label for="emailUser" class="update-form-label contact">Your email :</label>
+                    <input type="text" name="emailUser" class="update-form-input email contact" disabled
+                           value="{{ user.email }}">
+                </div>
+                {% else %}
+                <div class="div-inside-form-update contact">
+                    <label for="emailRandom" class="update-form-label contact">Your email :</label>
+                    <input type="text" name="emailRandom" class="update-form-input contact">
+                </div>
+                {% endif %}
+
+                <div class="div-inside-form-update contact">
+                    <label for="message" class="update-form-label contact">Your message :</label>
+                    <textarea name="message" class="update-form-input contact" id="message" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="error-update">
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="profile-button-option reverse-button">
+                <a class="btn-option redirection-option" href="/">Back to home</a>
+                <button type="submit" class="btn-option validate-option adapt-btn">Send message</button>
+            </div>
+        </form>
+{% endblock %}
