@@ -6,13 +6,20 @@
 }
 
 .searchTitle{
-    font-family: var(--mainFont);
+    font-family: var(--titleFont);
     color: var(--colorMainFont);
+}
+
+.search-sub-title {
+    color: var(--colorMainFont);
+    font-family: var(--mainFont);
+    width: 100%;
+    text-align: center;
 }
 
 #noResults{
     font-family: var(--mainFont);
-    color: var(--colorSubFont);
+    color: var(--colorSubDiscFont);
 }
 
 .searchResultsBlock{
@@ -20,6 +27,7 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    transition: ease-out 0.5s;
 }
 
 .searchResultsBlock a{

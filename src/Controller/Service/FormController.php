@@ -96,6 +96,23 @@ class FormController
                 }
             }
         }
+
+        return $errors;
+    }
+
+    public function errorContact($post): array|null
+    {
+        $errors = [];
+
+        if (empty($post['subject'])) {
+            $errors[] = 'Subject is require.';
+        }
+        if (empty($post['message'])) {
+            $errors[] = 'Message is require.';
+        }
+        if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
+            $errors[] = 'Email is not valid.';
+        }
         return $errors;
     }
 }

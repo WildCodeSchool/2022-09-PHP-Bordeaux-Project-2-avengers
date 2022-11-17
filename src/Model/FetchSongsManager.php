@@ -56,7 +56,6 @@ class FetchSongsManager extends Connection
      */
     public function getsongList(int $id):array | false
     {
-
         $statement = $this->pdo->prepare("SELECT s2.ID_song , s2.title, s2.artist, s2.image_url, g1.genre
         FROM songs s1 
         JOIN songs s2 ON s1.artist=s2.artist 
@@ -68,4 +67,33 @@ class FetchSongsManager extends Connection
         return $statement->fetchAll();
     }
 
+    /**
+     * Get list of liked songs by id
+     */
+    public function getLikedSongsById(int $id)
+    {
+        $statement = $this->pdo->prepare("SELECT s.ID_song, s.title, s.artist, s.image_url, s.song_url
+        FROM songs s
+        JOIN `like` l on l.songs_ID_song = s.ID_song
+        WHERE l.user_ID_user =:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
+    /**
+     * Get list of liked songs for play page by user id
+     */
+    public function getLikedSongsByUserId(int $userid)
+    {
+        $statement = $this->pdo->prepare("SELECT s.ID_song, s.title, s.artist, s.image_url, s.song_url
+        FROM songs s
+        JOIN `like` l on l.songs_ID_song = s.ID_song
+        WHERE l.user_ID_user =:user");
+        $statement->bindValue('user', $userid, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
 }
