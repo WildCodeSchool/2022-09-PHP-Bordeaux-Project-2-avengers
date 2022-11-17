@@ -4,14 +4,20 @@ namespace App\Model;
 
 use PDO;
 
-class UserManager
+class UserManager extends Connection
 {
-    public PDO $pdo;
-
-    public function __construct()
+    /**
+     * Insert new user in database
+     */
+    public function insert(array $user): void
     {
-        $connection = new Connection();
-        $this->pdo = $connection->getConnection();
+        $query = "INSERT INTO user (`username`,`email`,`password`) VALUES (:username, :email, :password)";
+        $statement = $this->pdo->prepare($query);
+
+        $statement->bindValue(':username', $user['username'], PDO::PARAM_STR);
+        $statement->bindValue(':email', $user['email'], PDO::PARAM_STR);
+        $statement->bindValue(':password', $user['password'], PDO::PARAM_STR);
+        $statement->execute();
     }
 
     /**

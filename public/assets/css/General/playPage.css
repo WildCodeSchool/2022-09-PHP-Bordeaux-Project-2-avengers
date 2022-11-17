@@ -1,0 +1,301 @@
+.main-block{
+    margin: 0;
+    margin-top: 80px;
+}
+
+.play-page-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.play-Flex {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    z-index: 1;
+}
+
+.background-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    object-fit: fill;
+    opacity: 0.2;
+}
+
+.play-main-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-songCover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    border-radius: 40px;
+    box-shadow: 0 0 20px 5px var(--backgroundNavTop);
+    z-index: 2;
+}
+
+.play-songInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    font-family: var(--mainFont);
+    color: var(--colorMainFont);
+}
+
+.play-songTitle {
+    padding-bottom: 10px;
+    font-weight: 550;
+    font-size: 20px;
+    color: var(--colorObject);
+}
+
+.play-songArtist {
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+    font-family: var(--mainFont);
+    font-size: 15px;
+    color: var(--colorMainFont);
+    text-shadow: 2px px 10px var(--backgroundBody);
+}
+
+.playlist-like-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist-like-icons {
+    height: 35px;
+    width: 35px;
+}
+
+.like-song-icon {
+    margin-left: 60px;
+    content: url("/assets/images/playPage/icon-heart-empty.png");
+    cursor: pointer;
+}
+
+.add-to-playlist-icon {
+    margin-top: 20px;
+}
+
+.playControls-footer {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--backgroundNavLeft);
+    height: 80px;
+    width: 100%;
+    z-index: 5;
+    opacity: 1;
+}
+
+/* ----------- artist song list section ---------- */
+.play-page-song-list {
+    margin-top: 30px;
+    margin-bottom: 80px;
+    width: 100%;
+    z-index: 0;
+}
+
+.songs-by {
+    margin-left: 25px;
+    margin-bottom: 5px;
+    font-size: 19px;
+    font-family: var(--mainFont);
+    color: var(--colorMainFont);
+}
+
+.play-song-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    font-family: var(--mainFont);
+    color: var(--colorMainFont);
+    z-index: 1;
+}
+
+.song-list-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px;
+}
+
+.song-Cover {
+    margin-left: 15px;
+    margin-right: 20px;
+    height: 40px;
+    min-width: 40px;
+    background: var(--colorObject);
+    border-radius: 25%;
+    box-shadow: 0 4px 18px 0 var(--backgroundNavTop);
+}
+
+.play-icon{
+    position: relative;
+    height: 30px;
+    min-width: 30px;
+    opacity: 0;
+    border-radius: 50px;
+    background: rgb(7, 7, 7, 0.6);
+    transition: 0.6s ease-out;
+}
+
+.song-title {
+    font-weight: 550;
+    flex-wrap: wrap;
+}
+
+.song-artist {
+    flex-wrap: wrap;
+    font-size: 15px;
+    color: var(--colorSubDiscFont);
+}
+
+/* ---- highlight song being played ----- */
+.playing-song-containers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background: rgba(56, 56, 56, 0.6);
+    padding: 15px;
+}
+
+/* ---- Like page ---- */
+.like-title{
+    margin-top: 0;
+    font-weight: 550;
+    font-size: 28px;
+    font-family: var(--titleFont);
+    color: var(--colorMainFont);
+    z-index: 1;
+}
+
+.liked-songs{
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-family: var(--mainFont);
+    color: var(--colorMainFont);
+    z-index: 1;
+}
+
+/* ----------------- DESKTOP --------------------------------------------------------------------- */
+@media only screen and (min-width: 771px) {
+
+    .main-block{
+        margin: 0;
+        margin-top: 120px;
+        margin-left: 190px;
+    }
+
+    .play-page-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: unset;
+        height: 100%;
+        width: 100%;
+    }
+
+    .play-Flex {
+        position: relative;
+        margin-top: unset;
+        padding-top: unset;
+        padding-bottom: unset;
+    }
+
+    .background-image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .play-songCover {
+        height: 350px;
+        width: 350px;
+    }
+
+    .playControls-footer {
+        position: absolute;
+        bottom: 0;
+        height: 60px;
+        width: 100%;
+        background-color: #1a1a1a;
+    }
+
+    .play-page-song-list {
+        width: unset;
+        margin-top:unset;
+        position: relative;
+        max-height: 100%;
+        margin: 0;
+        padding-top: 5px;
+        padding-bottom: 30px;
+        width: 450px;
+        border-left: 1px;
+        overflow: auto;
+        background: rgb(7, 7, 7, 0.4);
+    }
+
+    .play-songTitle {
+        font-size: 30px;
+    }
+
+    .play-songArtist {
+        font-size: 20px;
+    }
+
+    .songs-by {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 25px;
+        font-family: var(--mainFont);
+        color: var(--colorMainFont);
+    }
+
+    .song-list-container {
+        height: 50px;
+    }
+
+    .song-Cover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        min-width: 60px;
+    }
+
+    .play-song-link:hover .play-icon{
+        opacity: 1;
+    }
+
+}

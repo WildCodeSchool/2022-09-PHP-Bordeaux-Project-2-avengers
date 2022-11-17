@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Controller\Service\FormController;
 use App\Model\UserManager;
 
-class UserController extends AbstractController
+class UserController extends AbstractTwigController
 {
     /**
      * Show all information for user connected
@@ -97,5 +97,38 @@ class UserController extends AbstractController
                 header('Location: /');
             }
         }
+    }
+
+    /**
+     * User registration
+     */
+    public function index()
+    {
+        $registrationManager = new UserManager();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // clean $_POST data
+            $user = array_map('trim', $_POST);
+            $errors = [];
+            if (empty($_POST["username"])) {
+                $errors[] = "Username is required";
+            }
+            if ((empty($_POST["email"])) || (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))) {
+                $errors[] = "A valid email is required";
+            }
+            if (empty($_POST["password"])) {
+                $errors[] = "Password is required";
+            }
+        //TODO le coupe de password doesn't match
+            if ((empty($_POST["passwordConfirmation"])) || ($_POST["passwordConfirmation"] !== $_POST["password"])) {
+                $errors[] = "Passwords doesn't match";
+            }
+            if (!empty($errors)) {
+                return $this->twig->render('Registration/index.html.twig', ['errors' => $errors]);
+            } else {
+                $registrationManager->insert($user);
+                header('Location: /');
+            }
+        }
+        return $this->twig->render('Registration/index.html.twig');
     }
 }

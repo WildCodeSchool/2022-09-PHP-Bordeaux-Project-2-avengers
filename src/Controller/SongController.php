@@ -6,7 +6,7 @@ use App\Controller\Service\FormController;
 use App\Model\SongManager;
 use App\Model\UserManager;
 
-class SongController extends AbstractController
+class SongController extends AbstractTwigController
 {
     /**
      *  Add music upload files
@@ -28,22 +28,31 @@ class SongController extends AbstractController
                 $errors = array_merge(
                     $service->addSongForm($song),
                     $service->jacketTreatment($fileJacket),
-                    $service->trackTreatment($fileTrack)
+                    $service->trackTreatment($fileTrack, $song)
                 );
 
                 if (!empty($errors)) {
                     return $this->twig->render('Setting/add_music.html.twig', ['errors' => $errors]);
                 } else {
+                    if (!file_exists('../public/songs/' . $song['artist'])) {
+                        mkdir('../public/songs/' . $song['artist']);
+                    }
+
+                    $uploadDir = '../public/songs/' . $song['artist'] . '/';
+                    $uploadDirDb = 'songs/' . $song['artist'] . '/';
+                    if ($fileJacket['error'] !== 4) {
+                        $uploadJacket = $uploadDir . basename($fileJacket['name']);
+                        move_uploaded_file($fileJacket['tmp_name'], $uploadJacket);
+                        $fileJacket['name'] = $uploadDirDb . $fileJacket['name'];
+                    } else {
+                        $fileJacket['name'] = null;
+                    }
+                    $uploadTrack = $uploadDir . basename($fileTrack['name']);
+                    move_uploaded_file($fileTrack['tmp_name'], $uploadTrack);
+                    $fileTrack['name'] = $uploadDirDb . $fileTrack['name'];
+
                     $songManager = new SongManager();
                     $songManager->addSong($song, $fileJacket, $fileTrack);
-
-                    $uploadDirJacket = '../public/jacket/';
-                    $uploadJacket = $uploadDirJacket . basename($fileJacket['name']);
-                    move_uploaded_file($fileJacket['tmp_name'], $uploadJacket);
-
-                    $uploadDirTrack = '../public/track/';
-                    $uploadTrack = $uploadDirTrack . basename($fileTrack['name']);
-                    move_uploaded_file($fileTrack['tmp_name'], $uploadTrack);
 
                     $success = "Your song has been upload with success !";
                     return $this->twig->render('Setting/add_music.html.twig', ['success' => $success]);

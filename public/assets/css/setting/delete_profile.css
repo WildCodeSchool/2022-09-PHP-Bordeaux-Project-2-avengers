@@ -1,3 +1,7 @@
+.delete-profile {
+    width: 100%;
+}
+
 .delete-wildify-logo{
     text-align: center;
 }
@@ -27,16 +31,12 @@
 }
 
 @media screen and (min-width: 768px) {
-    body {
-        margin: 0 0 0 241px;
-    }
-
     .delete-wildify-logo img{
         width: initial;
     }
 
     .delete-text {
-        width: 80%;
+        width: 70%;
     }
 
     .btn-option.warning-option.adapt-btn {

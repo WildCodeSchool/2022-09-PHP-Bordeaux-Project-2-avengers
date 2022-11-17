@@ -9,6 +9,13 @@
 return [
     /* ------------------------------------------ General page -------------------------------------------------*/
     '' => ['HomeController', 'index',],
+    'login' => ['LoginController', 'login',],
+    'searchSong' => ['SearchPageController', 'searchSongs',],
+    'play' => ['PlayPageController', 'getSongsForPlayPage', ['id']],
+    'contact' => ['ContactController', 'sendEmail'],
+    'likepage' => ['LikePageController', 'getSongsForLikePage', ['id']],
+    'playlikedsong' => ['LikePageController', 'getSongToPlayLikedSong', ['id', 'user']],
+    'spotify-play' => ['PlayPageController', 'playSpotifySong',],
     'logout' => ['HomeController', 'logout'],
     /* ------------------------------------------ Setting page USER --------------------------------------------*/
     'setting/profile' => ['UserController', 'showOneUser', ['id']],
@@ -21,7 +28,10 @@ return [
     'setting/admin/delete' => ['AdminController', 'showDeleteUser', ['id']],
     'setting/admin/deleteDone' => ['AdminController', 'deleteUser', ['id']],
     'setting/admin/manageMusics' => ['AdminController','showAllMusics'],
+
     'setting/admin/deleteMusic' => ['AdminController', 'showOneMusic', ['id']],
     'setting/admin/deleteMusicDone' => ['AdminController', 'deleteMusic', ['id']]
+    /* ------------------------------------------ User registration -------------------------------------------*/
+    'registration' => ['UserController', 'index'],
 
 ];

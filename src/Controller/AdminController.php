@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\AdminManager;
 
-class AdminController extends AbstractController
+class AdminController extends AbstractTwigController
 {
     public function showAllUsers(): string
     {
@@ -41,7 +41,7 @@ class AdminController extends AbstractController
     public function showAllMusics(): string
     {
         $musicManager = new AdminManager();
-        $musics= $musicManager->getAllMusics();
+        $musics = $musicManager->getAllMusics();
 
         return $this->twig->render("Setting/Admin/manage-musics.html.twig", ['musics' => $musics]);
     }
@@ -54,6 +54,5 @@ class AdminController extends AbstractController
 
         return $this->twig->render('Setting/Admin/admin-delete-music.html.twig', ['music' => $music]);
     }
-
 
 }

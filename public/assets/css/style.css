@@ -5,9 +5,12 @@
 
 /* --------------------------------------- Import general css -------------------------------------------- */
 
-@import "homepage-style.css"; /* CSS d'Alexis, pour la page d'accueil */
+@import "General/homepage-style.css"; /* CSS d'Alexis, pour la page d'accueil */
 @import "General/Layout.css";
+@import "General/searchPage.css";
+@import "General/playPage.css";
 @import "General/loginModal.css";
+@import "General/contact.css";
 
 /* --------------------------------------- Import UserSettings css --------------------------------------- */
 @import "setting/show_profile.css";
@@ -17,6 +20,7 @@
 @import "setting/admin-user.css";
 @import "setting/admin-delete-user.css";
 @import "setting/admin-music-show.css";
+@import "setting/registration-user.css";
 
 :root {
     --backgroundNavLeft: #090909;
@@ -62,7 +66,7 @@ body {
 }
 
 .default-bttn:hover {
-    box-shadow: var(--colorObject) 0 0px 5px;
+    box-shadow: var(--colorObject) 0 0 5px;
     background-position: right center;
     transform: scale(1.03);
     text-decoration: none;

@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Wildify | Playing: {{ trackTitle }}{% endblock %}
+
+{# -- content for main-block in main layout -- #}
+{% block content %}
+
+<div class="play-page-container">
+
+    <div class="play-Flex">
+
+        <img class="background-image" src="/{{random(rndSongCoverImg)}}">
+
+        <div class="play-main-info">
+
+            <div class="play-songCover" style="background-image: url('{{ trackImg }}');background-size: cover">
+
+            </div>
+            <div class="play-songInfo">
+                <div class="play-songTitle">
+                    {{ trackTitle }}
+                </div>
+                <div class="play-songArtist">
+                    {{ trackArtist }}
+                </div>
+            </div>
+
+            <a href="#"><img src="/assets/images/playPage/icon-heart-empty.png"
+                             class="add-to-playlist-icon playlist-like-icons"></a>
+
+        </div>
+
+        <div class="playControls-footer">
+            <audio controls autoplay>
+                <source src="{{ trackURL }}" type="audio/mpeg">
+            </audio>
+        </div>
+
+    </div>
+
+    {% endblock %}
+

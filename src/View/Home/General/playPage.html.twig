@@ -1,0 +1,87 @@
+{% extends 'Layout.html.twig' %}
+
+{% block title %}Playing: {{ song.title }}{% endblock %}
+
+{# -- content for main-block in main layout -- #}
+{% block content %}
+
+	<div class="play-page-container">
+
+		<div class="play-Flex">
+
+		<img class="background-image" src="/{{random(rndSongCoverImg)}}">
+
+			<div class="play-main-info">
+				
+				{# ---- if song has album cover, show image. If not choose random image ---- #}
+				{% if song.image_url %}
+					<div class="play-songCover" style="background-image: url('/{{song.image_url}}');background-size: cover">
+				{% else %}
+					{% set imgCover = random(rndSongCoverImg) %}
+					<div class="play-songCover" style="background-image: url('/{{imgCover}}');background-size: cover">
+				{% endif %}	
+					
+				</div>
+				<div class="play-songInfo">
+					<div class="play-songTitle">
+						{{ song.title }}
+					</div>
+					<div class="play-songArtist">
+						{{ song.artist }}
+					</div>
+				</div>
+
+					<a href="#"><img src="/assets/images/playPage/icon-heart-empty.png" class="add-to-playlist-icon playlist-like-icons"></a>
+
+			</div>
+
+			<div class="playControls-footer">
+				<audio controls autoplay>
+					<source src="/{{song.song_url}}" type="audio/mpeg">
+				</audio>
+			</div>
+			
+		</div>
+
+		{# ---- list of songs by artist section ---- #}
+		<div class="play-page-song-list">
+
+			<div class="songs-by">Songs by {{ song.artist }} :</div>
+
+			{% for songs in artistSongs %}
+				<a href="/play?id={{ songs.ID_song }}" class="play-song-link">
+
+					{# ---- highlight song on list if song is being played ---- #}
+					{% if songs.ID_song == song.ID_song %}
+						<div class="playing-song-containers">
+						{% else %}
+						<div class="song-list-container">
+					{% endif %}
+
+						{# ---- if song has album cover, show image cover. If not choose random image ---- #}
+						{% if songs.image_url %}
+							<div class="song-Cover" style="background-image: url('/{{songs.image_url}}');background-size: cover">
+						{% else %}
+							{% set imgCover = random(rndSongCoverImg) %} 
+							<div class="song-Cover" style="background-image: url('/{{imgCover}}');background-size: cover">
+						{% endif %}	
+								<img src="/assets/images/searchPage/play-icon-gold.png" alt="" class="play-icon">
+							</div>
+							<div class="song-info">
+								<div class="song-title">
+									{{ songs.title }}
+								</div>
+								<div class="song-artist">
+									{{ songs.artist }}
+								</div>
+							</div>
+						</div>
+				</a>
+			{% endfor %}
+
+			</div>
+
+		</div>
+
+	{% endblock %}
+

@@ -45,7 +45,7 @@
     height: 15px;
     width: 15px;
   }
-  
+
   /* ------- [top navbar] Subscribe and Login buttons----- */
   .sub-login-buttons {
     display: flex;
@@ -53,7 +53,7 @@
     align-items: center;
     justify-content: space-around;
   }
-  
+
   .subscribe-button {
     margin-right: 15px;
     background-color: transparent;
@@ -83,7 +83,7 @@
     color: var(--colorSubFont);
     text-decoration: none;
   }
-  
+
   /* ------ [side navbar] HOME, SETTINGS and ADMIN menus -------- */
 
   .menu-arrow-icon {
@@ -102,102 +102,102 @@
     color: var(--colorSubFont);
     cursor: pointer;
   }
-  
+
   .settings-arrow-icon {
     rotate: -90deg;
     transition: all ease-out 0.5s;
   }
-  
+
   .expand-profile-checkbox:checked~div .settings-arrow-icon {
     rotate: 90deg;
   }
-  
+
   .profile-menus {
     max-height: 0px;
     overflow: hidden;
     transition: 0.7s ease-out;
   }
-  
+
   .expand-profile-checkbox:checked~.profile-menus {
     transition: 0.7s ease-out;
     max-height: 150px;
   }
-  
+
   .profile-menus div a {
     transition: 0.7s ease-out;
     opacity: 0;
   }
-  
+
   .expand-profile-checkbox:checked~.profile-menus div a {
     animation-delay: 0s;
     opacity: 1;
   }
-  
+
   .profile-menus p {
     margin: 0;
     margin-left: 30px;
     color: var(--colorSubDiscFont);
     font-size: 14px;
   }
-  
+
   .admin-arrow-icon {
     rotate: -90deg;
     transition: all ease-out 0.5s;
   }
-  
+
   .expand-admin-checkbox:checked~div p .admin-arrow-icon {
     transition: all ease-out 0.5s;
     rotate: 90deg;
   }
-  
+
   .admin-menu {
     max-height: 0px;
     overflow: hidden;
     transition: 0.7s ease-out;
   }
-  
+
   .expand-admin-checkbox:checked~.admin-menu {
     transition: 0.7s ease-out;
     max-height: 150px;
   }
-  
+
   .admin-menu div a {
     transition: 0.9s ease-out;
     opacity: 0;
   }
-  
+
   .expand-admin-checkbox:checked~.admin-menu div a {
     opacity: 1;
   }
-  
+
   .admin-menu p {
     margin: 0;
     margin-left: 30px;
     color: var(--colorSubDiscFont);
     font-size: 14px;
   }
-  
+
   /* ----------------------------------------------MOBILE AND TABLET SCREEN SIZE ---------------------------------------------------------------- */
   @media only screen and (max-width: 770px) {
-  
+
     .sub-login-buttons {
       display: none;
     }
-  
+
     .expand-side-navbar {
       display: none;
     }
-  
+
     .burger-label {
       margin: 0;
       padding: 0;
     }
-  
+
     .burger-icon {
       max-height: 55px;
       max-width: 55px;
     }
-  
+
     .top_navbar {
       position: fixed;
       z-index: 3;
@@ -210,28 +210,28 @@
       align-items: center;
       background-color: var(--backgroundNavTop);
     }
-  
+
     .navbar_logo {
       display: flex;
       align-items: center;
     }
-  
+
     .navbar_logo_mobile {
       margin-right: 10px;
       height: 50px;
       width: 50px;
     }
-  
+
     .ildify-logo {
       display: none;
     }
-  
+
     .navbar_logo_desktop {
       display: none;
     }
-  
+
     /* ---------------------------------------------------- SEARCH BAR ----------------------------------------------------------*/
- 
+
     .search-input {
       position: relative;
       border: 0;
@@ -244,25 +244,25 @@
       font-size: auto;
       transition: 0.5s width;
     }
-  
+
     /* ---------------------------------------------- MAIN BLOCK ---------------------------------------------------------------------- */
-  
+
     .middle-section {
       position: relative;
       display: flex;
       flex-direction: row;
     }
-  
+
     .main-block {
       margin: 10px;
       margin-top: 80px
     }
-  
+
     /* ---------------------------------------------- LEFT NAVBAR ---------------------------------------------------------------------- */
     .expand-label {
       display: none;
     }
-  
+
     .side-navbar {
       position: fixed;
       top: 80px;
@@ -274,17 +274,17 @@
       z-index: 3;
       overflow: hidden;
     }
-  
+
     .middle-section .expand-side-navbar:checked~.side-navbar {
       max-height: 100%;
       width: 100%;
     }
-  
+
     .left-navbar {
       padding: 5px;
       padding-left: 20px;
     }
-  
+
     .left-navbar ul {
       margin: 0px;
       margin-left: 0px;
@@ -292,17 +292,17 @@
       list-style-type: none;
       font-size: 19px;
     }
-  
+
     .left-navbar ul li {
       margin-bottom: 20px;
       padding: 0;
     }
-  
+
     .side-navbar-icons {
       height: 20px;
       width: 20px;
     }
-  
+
     .left-navbar ul li a {
       display: flex;
       flex-direction: row;
@@ -310,13 +310,13 @@
       padding: 0;
       align-items: center;
     }
-  
+
     .hide-labels {
       margin: 0;
       margin-left: 10px;
       opacity: 1;
     }
-  
+
     .welcome-user-leftNavbar {
       margin: 0;
       padding-bottom: 18px;
@@ -325,7 +325,7 @@
       color: var(--colorSubFont);
       text-decoration: none;
     }
-  
+
     .contact-label {
       margin: 0;
       text-decoration: none;
@@ -333,12 +333,12 @@
       color: var(--colorSubDiscFont);
       font-size: 14px;
     }
-  
+
     .sub-login-left-navbar-labels {
       align-items: left;
       margin: 0;
     }
-  
+
     .login-button-leftbar {
       margin: 0;
       text-align: center;
@@ -352,40 +352,40 @@
       user-select: none;
       touch-action: manipulation;
     }
-  
+
     .login-out-bttn {
       margin: 0;
       font-size: 15px;
     }
-  
+
   }
-  
+
   /* --------------------------------------------------  DESKTOP SCREEN SIZE ---------------------------------------------------------- */
   @media only screen and (min-width: 771px) {
-  
+
     /* --------------------------------------------------  TOP NAVBAR ---------------------------------------------------------- */
     .burger-label {
       display: none;
     }
-  
+
     .sub-login-buttons a {
       text-decoration: none;
     }
-  
+
     .sub-login-buttons p {
       font-family: var(--mainFont);
       color: var(--colorSubFont);
       margin-right: 20px;
     }
-  
+
     .sub-login-buttons-leftNavbar {
       display: none;
     }
-  
+
     .expand-side-navbar {
       display: none;
     }
-  
+
     .top_navbar {
       overflow: hidden;
       position: fixed;
@@ -398,14 +398,13 @@
       width: 100%;
       align-items: center;
       background-color: var(--backgroundNavTop);
-      box-shadow: 2px 2px 2px #1d1d1d;
       z-index: 1;
     }
-  
+
     .logo-search-button {
       flex-direction: row;
     }
-  
+
     .navbar_logo {
       display: flex;
       flex-direction: row;
@@ -415,18 +414,18 @@
       font-family: var(--titleFont);
       font-size: 2em;
     }
-  
+
     .navbar_logo_part {
       margin: 0;
       color: var(--colorObject);
     }
-  
+
     .navbar_logo_mobile {
       z-index: 0;
       height: 80px;
       width: 80px;
     }
-  
+
     /* ---------------------------------------------------- [top navbar] ILDIFY LOGO ---------------------------------------------------------- */
     .ildify-logo {
       z-index: 1;
@@ -438,13 +437,17 @@
       font-size: 55px;
       color: var(--colorObject);
     }
-  
+
     .navbar_logo_desktop {
       display: none;
     }
-  
+
+    .logo-home-link {
+        text-decoration: none;
+    }
+
     /* ---------------------------------------------------- [top navbar] SEARCH BAR ---------------------------------------------------------- */
-  
+
     .search-form {
       flex-direction: row;
     }
@@ -461,19 +464,19 @@
       font-size: auto;
       transition: 0.5s width;
     }
-  
+
     .search-input:focus {
       width: 25vw;
     }
-  
+
     /* ---------------------------------------------- MAIN BLOCK ---------------------------------------------------------------------- */
-  
+
     .middle-section {
       display: flex;
       flex-direction: row;
       height: 100vh;
     }
-  
+
     .main-block {
       display: flex;
       margin-left: 190px;
@@ -484,9 +487,9 @@
     .expand-side-navbar:checked~.main-block {
       margin-left: 60px;
     }
-  
+
     /* ---------------------------------------------- LEFT NAVBAR ---------------------------------------------------------------------- */
-  
+
     .side-navbar {
       position: fixed;
       top: 120px;
@@ -498,18 +501,18 @@
       transition: linear 0.5s;
       overflow: hidden;
     }
-  
+
     .expand-side-navbar:checked~.side-navbar {
       width: 60px;
     }
-  
+
     .left-navbar {
       display: flex;
       justify-content: space-between;
       margin: 0;
       overflow: hidden;
     }
-  
+
     .expand-label {
       margin-left: 2px;
       display: flex;
@@ -521,7 +524,7 @@
       cursor: pointer;
       white-space: nowrap;
     }
-  
+
     .arrow-icon {
       margin-right: 10px;
       padding: 2px;
@@ -532,11 +535,11 @@
       color: var(--colorSubDiscFont);
       transition: ease-out 0.5s;
     }
-  
+
     .expand-side-navbar:checked~.side-navbar .left-navbar ul li div label .arrow-icon {
       rotate: 180deg;
     }
-  
+
     .left-navbar ul {
       display: flex;
       flex-direction: column;
@@ -545,12 +548,12 @@
       list-style-type: none;
       overflow: hidden;
     }
-  
+
     .welcome-user-leftNavbar {
       margin: 0;
       display: none;
     }
-  
+
     .left-navbar ul li {
       margin-left: 20px;
       margin-bottom: 25px;
@@ -558,21 +561,21 @@
       flex-direction: row;
       align-items: center;
     }
-  
+
     .left-navbar ul li a {
       display: flex;
       flex-direction: row;
       align-items: center;
       white-space: nowrap;
     }
-  
+
     .hide-labels {
       margin: 0;
       width: 100%;
       opacity: 1;
       transition: ease-out 0.5s;
     }
-  
+
     .expand-side-navbar:checked~.side-navbar .left-navbar .hide-labels {
       opacity: 0;
     }
@@ -585,19 +588,19 @@
       color: var(--colorSubDiscFont);
       font-size: 14px;
     }
-  
+
     .expand-side-navbar {
       display: none;
     }
-  
+
     .logout-bttn-leftnavbar {
       display: none;
     }
-  
+
     .side-navbar-icons {
       margin-right: 10px;
       height: 20px;
       width: 20px;
     }
-  
+
   }
