@@ -30,7 +30,6 @@ class AdminController extends AbstractTwigController
             $id = trim($_GET['id']);
 
 
-
             $adminManager = new AdminManager();
             $adminManager->deleteOneUser($id);
 
@@ -46,4 +45,14 @@ class AdminController extends AbstractTwigController
 
         return $this->twig->render("Setting/Admin/manage-musics.html.twig", ['musics' => $musics]);
     }
+
+    public function showOneMusic($id): string
+    {
+        $adminManager = new AdminManager();
+        $music = $adminManager->getOneMusic($id);
+
+
+        return $this->twig->render('Setting/Admin/admin-delete-music.html.twig', ['music' => $music]);
+    }
+
 }
