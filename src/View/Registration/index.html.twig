@@ -1,43 +1,48 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %}  Wildify | Registration {% endblock %}
+
 {% block content %}
+    <section class="registration-section">
+        <h1 class="setting-title">> Registration <</h1>
 
+    <form action="registration" method="POST" class="registration-form">
+     <div class="form-content-registration">
 
-    <h2>Registration</h2>
+     <div class="div-inside-form-registration">
+        <label for="username" class="registration-form-label"> Username : </label>
+        <input type="text" id="username" name="username" class="registration-form-input" placeholder="Enter a username">
+    </div>
+    <div class="div-inside-form-registration">
+        <label for="email" class="registration-form-label"> Email : </label>
+        <input type="email" id="email" name="email" class="registration-form-input" placeholder="Enter your email">
+    </div>
+    <div class="div-inside-form-registration">
+        <label for="password" class="registration-form-label"> Password : </label>
+        <input type="text" id="password" name="password" class="registration-form-input" placeholder="Enter your password">
+    </div>
+    <div class="div-inside-form-registration">
+        <label for="passwordConfirmation"class="registration-form-label"> Confirmation : </label>
+        <input type="text" id="passwordConfirmation" name="passwordConfirmation" class="registration-form-input" placeholder="Confirm your password">
+    </div> 
+     <div class="error-registration">
+         {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </div>
+ </form>
 
-    <form method="post">
-  
-     <div>
-        <label for="username"> Username : </label>
-        <input type="text" id="username" name="username" placeholder="Enter a username">
-    </div>
-    <div>
-        <label for="email"> Email : </label>
-        <input type="email" id="email" name="email" placeholder="Enter your email">
-    </div>
-    <div>
-        <label for="password"> Password : </label>
-        <input type="text" id="password" name="password" placeholder="Enter your password">
-    </div>
-    <div>
-        <label for="passwordConfirmation"> Confirmation : </label>
-        <input type="text" id="passwordConfirmation" name="passwordConfirmation" placeholder="Confirm your password">
-    </div>
+</section>
 
-    <div class="button">
-        <button type="submit">Submit</button>
+     <div class="profile-button-option reverse-button">
+        <button type="submit" class="btn-option validate-option adapt-btn">Submit</button>
     </div>
     
-    {% for error in errors %}
-        {{ error }}
-
-    {% endfor %}
+   
+    
      {% for user in users %}
         {{ user }}
         
     {% endfor %}
-</ul
-   <!-- Pour ajouter un user
-   <a href="/items/add">Ajouter</a>
-   -->
+
 {% endblock %}

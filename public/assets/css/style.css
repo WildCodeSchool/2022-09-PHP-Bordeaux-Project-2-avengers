@@ -19,6 +19,7 @@
 @import "setting/admin-user.css";
 @import "setting/admin-delete-user.css";
 @import "setting/admin-music-show.css";
+@import "setting/registration-user.css";
 
 :root {
     --backgroundNavLeft: #090909;
