@@ -5,120 +5,104 @@
 {% block content %}
     <div class="homepage-wrapper">
         {# pop #}
-        <div class="genre-wrapper">
-            <h2>Pop</h2>
-            <div class="multiple-item-wrapper">
-                {% for track in pop.tracks %}
-                    <div class="single-item-wrapper">
-                        <div class="img-and-icon">
-                            <a href="spotify-play?
+        <h2>Pop</h2>
+        <div class="multiple-item-wrapper">
+            {% for track in pop.tracks %}
+                <div class="single-item-wrapper">
+                    <a href="spotify-play?
                             spotify-sample={{ track.preview_url }}&
                             spotify-artist={{ track.artists[0].name }}&
                             spotify-title={{ track.name }}&
                             spotify-img={{ track.album.images[1].url }}">
-                                <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
-                            </a>
-                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        <div class="img-and-icon"
+                             style="background-image: url('{{ track.album.images[1].url }}'); background-size: cover">
+                            <img src="assets/images/play-icon-gold.png" class="home-play-icon">
                         </div>
-                        <p class="item-artist">{{ track.artists[0].name }}</p>
-                        <p class="item-title">{{ track.name }}</p>
-                    </div>
-                {% endfor %}
-            </div>
+                    </a>
+                    <p class="item-artist">{{ track.artists[0].name }}</p>
+                    <p class="item-title">{{ track.name }}</p>
+                </div>
+            {% endfor %}
         </div>
-
         {# rock #}
-        <div class="genre-wrapper">
-            <h2>Rock</h2>
-            <div class="multiple-item-wrapper">
-                {% for track in rock.tracks %}
-                    <div class="single-item-wrapper">
-                        <div class="img-and-icon">
-                            <a href="spotify-play?
+        <h2>Rock</h2>
+        <div class="multiple-item-wrapper">
+            {% for track in rock.tracks %}
+                <div class="single-item-wrapper">
+                    <a href="spotify-play?
                             spotify-sample={{ track.preview_url }}&
                             spotify-artist={{ track.artists[0].name }}&
                             spotify-title={{ track.name }}&
                             spotify-img={{ track.album.images[1].url }}">
-                                <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
-                            </a>
-                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        <div class="img-and-icon"
+                             style="background-image: url('{{ track.album.images[1].url }}'); background-size: cover">
+                            <img src="assets/images/play-icon-gold.png" class="home-play-icon">
                         </div>
-                        <p class="item-artist">{{ track.artists[0].name }}</p>
-                        <p class="item-title">{{ track.name }}</p>
-                    </div>
-                {% endfor %}
-            </div>
+                    </a>
+                    <p class="item-artist">{{ track.artists[0].name }}</p>
+                    <p class="item-title">{{ track.name }}</p>
+                </div>
+            {% endfor %}
         </div>
-
         {# metal #}
-        <div class="genre-wrapper">
-            <h2>Metal</h2>
-            <div class="multiple-item-wrapper">
-                {% for track in metal.tracks %}
-                    <div class="single-item-wrapper">
-                        <div class="img-and-icon">
-                            <a href="spotify-play?
+        <h2>Metal</h2>
+        <div class="multiple-item-wrapper">
+            {% for track in metal.tracks %}
+                <div class="single-item-wrapper">
+                    <a href="spotify-play?
                             spotify-sample={{ track.preview_url }}&
                             spotify-artist={{ track.artists[0].name }}&
                             spotify-title={{ track.name }}&
                             spotify-img={{ track.album.images[1].url }}">
-                                <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
-                            </a>
-                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        <div class="img-and-icon"
+                             style="background-image: url('{{ track.album.images[1].url }}'); background-size: cover">
+                            <img src="assets/images/play-icon-gold.png" class="home-play-icon">
                         </div>
-                        <p class="item-artist">{{ track.artists[0].name }}</p>
-                        <p class="item-title">{{ track.name }}</p>
-                    </div>
-                {% endfor %}
-            </div>
+                    </a>
+                    <p class="item-artist">{{ track.artists[0].name }}</p>
+                    <p class="item-title">{{ track.name }}</p>
+                </div>
+            {% endfor %}
         </div>
-
         {# electro #}
-        <div class="genre-wrapper">
-            <h2>Electro</h2>
-            <div class="multiple-item-wrapper">
-                {% for track in electro.tracks %}
-                    <div class="single-item-wrapper">
-                        <div class="img-and-icon">
-                            <a href="spotify-play?
+        <h2>Electro</h2>
+        <div class="multiple-item-wrapper">
+            {% for track in electro.tracks %}
+                <div class="single-item-wrapper">
+                    <a href="spotify-play?
                             spotify-sample={{ track.preview_url }}&
                             spotify-artist={{ track.artists[0].name }}&
                             spotify-title={{ track.name }}&
                             spotify-img={{ track.album.images[1].url }}">
-                                <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
-                            </a>
-                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        <div class="img-and-icon"
+                             style="background-image: url('{{ track.album.images[1].url }}'); background-size: cover">
+                            <img src="assets/images/play-icon-gold.png" class="home-play-icon">
                         </div>
-                        <p class="item-artist">{{ track.artists[0].name }}</p>
-                        <p class="item-title">{{ track.name }}</p>
-                    </div>
-                {% endfor %}
-            </div>
+                    </a>
+                    <p class="item-artist">{{ track.artists[0].name }}</p>
+                    <p class="item-title">{{ track.name }}</p>
+                </div>
+            {% endfor %}
         </div>
-
-
         {# country #}
-        <div class="genre-wrapper">
-            <h2>Country</h2>
-            <div class="multiple-item-wrapper">
-                {% for track in country.tracks %}
-                    <div class="single-item-wrapper">
-                        <div class="img-and-icon">
-                            <a href="spotify-play?
+        <h2>Country</h2>
+        <div class="multiple-item-wrapper">
+            {% for track in country.tracks %}
+                <div class="single-item-wrapper">
+                    <a href="spotify-play?
                             spotify-sample={{ track.preview_url }}&
                             spotify-artist={{ track.artists[0].name }}&
                             spotify-title={{ track.name }}&
                             spotify-img={{ track.album.images[1].url }}">
-                                <img src="{{ track.album.images[1].url }}" alt="" class="item-img">
-                            </a>
-                            <img src="assets/images/play-icon-gold.png" class="play-icon">
+                        <div class="img-and-icon"
+                             style="background-image: url('{{ track.album.images[1].url }}'); background-size: cover">
+                            <img src="assets/images/play-icon-gold.png" class="home-play-icon">
                         </div>
-                        <p class="item-artist">{{ track.artists[0].name }}</p>
-                        <p class="item-title">{{ track.name }}</p>
-                    </div>
-                {% endfor %}
-            </div>
+                    </a>
+                    <p class="item-artist">{{ track.artists[0].name }}</p>
+                    <p class="item-title">{{ track.name }}</p>
+                </div>
+            {% endfor %}
         </div>
-
     </div>
 {% endblock %}

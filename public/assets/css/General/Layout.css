@@ -200,7 +200,7 @@
 
     .top_navbar {
       position: fixed;
-      z-index: 3;
+      z-index: 4;
       height: 60px;
       width: 100vw;
       padding: 10px;
