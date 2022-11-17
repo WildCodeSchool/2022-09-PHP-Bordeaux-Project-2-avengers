@@ -22,11 +22,13 @@
     border-radius: 20px;
     border: solid 1px var(--colorObject);
     padding: 1rem;
+    
 }
 
 .div-inside-form-registration {
     display: flex;
     flex-direction: column;
+    
 }
 
 .registration-form-label {
@@ -88,11 +90,6 @@
 }
 
 @media screen and (min-width: 916px) {
-    .main-block{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
 
     .form-content-registration {
         width: 550px;

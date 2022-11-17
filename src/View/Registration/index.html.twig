@@ -8,7 +8,7 @@
 
     <form action="registration" method="POST" class="registration-form">
      <div class="form-content-registration">
-
+     <div class="border">
      <div class="div-inside-form-registration">
         <label for="username" class="registration-form-label"> Username : </label>
         <input type="text" id="username" name="username" class="registration-form-input" placeholder="Enter a username">
@@ -25,20 +25,21 @@
         <label for="passwordConfirmation"class="registration-form-label"> Confirmation : </label>
         <input type="text" id="passwordConfirmation" name="passwordConfirmation" class="registration-form-input" placeholder="Confirm your password">
     </div> 
-     <div class="error-registration">
+    <div class="error-registration">
          {% for error in errors %}
             <li>{{ error }}</li>
         {% endfor %}
     </div>
- </form>
-
-</section>
-
+    </div>
      <div class="profile-button-option reverse-button">
         <button type="submit" class="btn-option validate-option adapt-btn">Submit</button>
     </div>
     
-   
+ </form>
+
+</section>
+
+    
     
      {% for user in users %}
         {{ user }}
