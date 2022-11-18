@@ -11,13 +11,27 @@
 }
 
 .delete-text {
+    font-family: var(--mainFont);
     color: var(--colorMainFont);
+    font-size: 20px;
     width: 80vw;
     margin: 20px auto;
     background-color: #181818;
     border-radius: 20px;
     border: solid 1px var(--colorObject);
     padding: 1rem 2rem;
+}
+
+.delete-validation{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--colorObject);
+    
+}
+
+.delete-text p span{
+    font-weight: bold;
+    color: var(--colorObject);
 }
 
 .btn-option.warning-option.adapt-btn {
@@ -33,6 +47,10 @@
 @media screen and (min-width: 768px) {
     .delete-wildify-logo img{
         width: initial;
+    }
+
+    .setting-title{
+        font-size: 40px;
     }
 
     .delete-text {
