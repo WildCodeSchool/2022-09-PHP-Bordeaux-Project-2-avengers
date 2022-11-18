@@ -118,7 +118,7 @@ class UserController extends AbstractTwigController
             if (empty($_POST["password"])) {
                 $errors[] = "Password is required";
             }
-        //TODO le coupe de password doesn't match
+        //TODO le coup de password doesn't match
             if ((empty($_POST["passwordConfirmation"])) || ($_POST["passwordConfirmation"] !== $_POST["password"])) {
                 $errors[] = "Passwords doesn't match";
             }

@@ -56,6 +56,7 @@ class AdminController extends AbstractTwigController
         return $this->twig->render('Setting/Admin/admin-delete-music.html.twig', ['music' => $music]);
     }
 
+
     public function deleteMusic($id) : void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
