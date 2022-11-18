@@ -1,26 +1,24 @@
 {% extends 'layout.html.twig' %}
 
+{% block title %} Wildify | Admin Delete Page {% endblock %}
 
 {% block content %}
 
-
-    <h1 class="setting-title">>Wildify | Admin Delete Page <</h1>
     <section class= "delete-adminpage" >
-    <div class="admin-delete-text">
-   <p class="setting-title">Vous allez supprimer l'utilisateur : </p>
 
-   <h2 class="setting-title">{{ admin.username }}</h2>
-   <p class="setting-title">
-   Etes-vous sur de vouloir le supprimer?
-    </p>
+    <h1 class="page-title">> Deleting account <</h1>
+
+    <div class="delete-container">
+    <div class="admin-delete-text">
+        <p class="setting-title">You are about to delete account: </p>
+        <h2 class="user-title">{{ admin.username }}</h2>
+        <p class="setting-title">are you sure you want to delete this account?</p>
     </div>
     <div class="admin-buttons">
-   <a class="btn-option redirection-option" href="/setting/admin">Non</a>
-    <a class="btn-option warning-option" href="/setting/admin/deleteDone?id={{ admin.ID_user }}">Oui</a>
+        <a class="btn-option redirection-option" href="/setting/admin">Back</a>  
+        <a class="btn-option warning-option" href="/setting/admin/deleteDone?id={{ admin.ID_user }}">Delete</a>
+    </div>
     </div>
    </section>
-
-
-
 
 {% endblock %}
