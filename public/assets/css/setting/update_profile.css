@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    animation: smoothload 1.5s ease-out;
 }
 
 .update-profile-form {

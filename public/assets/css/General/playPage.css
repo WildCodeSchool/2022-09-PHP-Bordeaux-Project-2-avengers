@@ -31,7 +31,7 @@
     height: 100%;
     width: 100vw;
     object-fit: fill;
-    opacity: 0.2;
+    opacity: 0.1;
 }
 
 .play-main-info{
@@ -229,6 +229,7 @@
         margin-top: unset;
         padding-top: unset;
         padding-bottom: unset;
+        animation: smoothload 1.5s ease-out;
     }
 
     .background-image{
