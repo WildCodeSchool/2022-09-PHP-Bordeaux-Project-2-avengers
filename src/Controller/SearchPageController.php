@@ -13,7 +13,6 @@ class SearchPageController extends AbstractTwigController
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
             if (empty($_GET['search'])) {
                 return $this->twig->render('/Home/General/searchPage.html.twig');
             }
@@ -27,11 +26,13 @@ class SearchPageController extends AbstractTwigController
 
             // do a LOCAL search
             $fetchSongsManager = new FetchSongsManager();
-            $songs = $fetchSongsManager->songSearch();
-            $rndSongCoverImg = $fetchSongsManager->showImgDir();
+            $songs = $fetchSongsManager->songSearch(); // Gets song by search value
+            $rndSongCoverImg = $fetchSongsManager->showImgDir(); // Get images for song covers and background
 
             return $this->twig->render('/Home/General/searchPage.html.twig', [
-                'songs' => $songs, 'rndSongCoverImg' => $rndSongCoverImg, 'spotifySongList' => $spotifySongList
+                'songs' => $songs,
+                'rndSongCoverImg' => $rndSongCoverImg,
+                'spotifySongList' => $spotifySongList
             ]);
         }
     }

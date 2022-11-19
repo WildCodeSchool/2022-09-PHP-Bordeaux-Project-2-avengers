@@ -11,8 +11,8 @@ class SpotifyAPIController
 
     public function __construct(
         string $clientId = 'db9effd8139e4d699e186fea3d7f6bd1',
-        string $clientSecret = '6e9f03008be7451b9f59d0704d2d392e')
-    {
+        string $clientSecret = '6e9f03008be7451b9f59d0704d2d392e'
+    ) {
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
     }
