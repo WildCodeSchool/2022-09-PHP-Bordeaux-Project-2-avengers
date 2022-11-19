@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Model;
+
 use PDO;
 
 class FetchSongsManager extends Connection
@@ -29,9 +30,10 @@ class FetchSongsManager extends Connection
      */
     public function songSearch(): array
     {
-        $query = 'SELECT songs.ID_song , songs.title , songs.artist , genre.genre, songs.image_url, songs.song_url FROM songs
-        join genre on songs.genre_ID_genre = genre.ID_genre
-        where songs.title like "%'.$_POST['search'].'%" or songs.artist like "%'.$_POST['search'].'%" or genre.genre like "%'.$_POST['search'].'%"';
+        $query = 'SELECT songs.ID_song , songs.title , songs.artist , genre.genre, songs.image_url, songs.song_url 
+                    FROM songs
+                    join genre on songs.genre_ID_genre = genre.ID_genre
+                    where songs.title like "%'.$_GET['search'].'%" or songs.artist like "%'.$_GET['search'].'%" or genre.genre like "%'.$_GET['search'].'%"';
 
         return $this->pdo->query($query)->fetchAll();
     }
