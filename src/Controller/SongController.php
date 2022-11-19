@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Controller\Service\FormController;
+use App\Model\FetchSongsManager;
 use App\Model\SongManager;
 use App\Model\UserManager;
 
@@ -60,5 +61,17 @@ class SongController extends AbstractTwigController
             }
         }
         return $this->twig->render('Setting/add_music.html.twig');
+    }
+
+    public function showSongById(): string
+    {
+        $fetchSongsManagerImg = new FetchSongsManager();
+        $rndSongCoverImg = $fetchSongsManagerImg->showImgDir();
+        $songManager = new SongManager();
+        $songs = $songManager->getSongByUserId($this->user['ID_user']);
+
+        return $this->twig->render('Setting/manage_music.html.twig', [
+            'songs' => $songs,
+            'rndSongCoverImg' => $rndSongCoverImg]);
     }
 }
