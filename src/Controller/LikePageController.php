@@ -12,13 +12,13 @@ class LikePageController extends AbstractTwigController
      */
     public function getSongsForLikePage(int $id): string
     {
-        $fetchSongs = new FetchSongsManager();
-        $likedSongs = $fetchSongs->getLikedSongsById($id);
-        $fetchSongsImgs = new FetchSongsManager();
-        $rndSongCoverImg = $fetchSongsImgs->showImgDir();
+        $fetchSongsManager = new FetchSongsManager();
+        $likedSongs = $fetchSongsManager->getLikedSongsById($id); // Gets liked songs by user ID
+        $rndSongCoverImg = $fetchSongsManager->showImgDir(); // Get images for song covers and background
 
         return $this->twig->render('/Home/General/likePage.html.twig', [
-            'likedSongs' => $likedSongs, 'rndSongCoverImg' => $rndSongCoverImg]);
+            'likedSongs' => $likedSongs,
+            'rndSongCoverImg' => $rndSongCoverImg]);
     }
 
     /**
@@ -26,13 +26,11 @@ class LikePageController extends AbstractTwigController
      */
     public function getSongToPlayLikedSong(int $id, int $userid)
     {
-        $fetchSong = new FetchSongsManager();
-        $playLikedSong = $fetchSong->selectSongById($id);
-        $fetchSongs = new FetchSongsManager();
-        $likedSongs = $fetchSongs->getLikedSongsByUserId($userid);
-        $fetchSongsImgs = new FetchSongsManager();
-        $rndSongCoverImg = $fetchSongsImgs->showImgDir();
-        $likeId = $this->likeSong();
+        $fetchSongsManager = new FetchSongsManager();
+        $playLikedSong = $fetchSongsManager->selectSongById($id); // Gets song by song ID
+        $likedSongs = $fetchSongsManager->getLikedSongsByUserId($userid); // Gets list of liked songs by user ID
+        $rndSongCoverImg = $fetchSongsManager->showImgDir(); // Get images for song covers and background
+        $likeId = $this->likeSong(); // Checks if songs are liked
 
         return $this->twig->render('/Home/General/likePlayPage.html.twig', [
             'playLikedSong' => $playLikedSong,

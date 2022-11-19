@@ -19,7 +19,7 @@
         "phpmd/phpmd": "^2.12",
         "phpro/grumphp": "^1.9",
         "phpstan/phpstan": "^1.5",
-        "squizlabs/php_codesniffer": "^3.6"
+        "squizlabs/php_codesniffer": "^3.7"
     },
     "autoload": {
         "psr-4": {

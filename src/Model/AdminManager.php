@@ -66,6 +66,4 @@ class AdminManager extends Connection
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
-
-
 }
