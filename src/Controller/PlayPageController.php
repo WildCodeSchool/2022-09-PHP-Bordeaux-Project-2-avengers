@@ -12,16 +12,17 @@ class PlayPageController extends AbstractTwigController
     public function getSongsForPlayPage(int $id): string
     {
         $fetchSongsManager = new FetchSongsManager();
-        $song = $fetchSongsManager->selectSongById($id);
-        $fetchSongs = new FetchSongsManager();
-        $artistSongs = $fetchSongs->getsongList($id);
-        $fetchSongsManagerImg = new FetchSongsManager();
-        $rndSongCoverImg = $fetchSongsManagerImg->showImgDir();
+        $song = $fetchSongsManager->selectSongById($id); // Get song one song for play page
+        $artistSongs = $fetchSongsManager->getsongList($id); // Get list of songs by the artist for play page
+        $rndSongCoverImg = $fetchSongsManager->showImgDir(); // Get images for song covers and background
         $likedController = new LikePageController();
-        $likeId = $likedController->likeSong();
+        $likeId = $likedController->likeSong(); // Checks if songs are liked
 
         return $this->twig->render('/Home/General/playPage.html.twig', [
-            'song' => $song, 'artistSongs' => $artistSongs, 'rndSongCoverImg' => $rndSongCoverImg, 'likeId' => $likeId
+            'song' => $song,
+            'artistSongs' => $artistSongs,
+            'rndSongCoverImg' => $rndSongCoverImg,
+            'likeId' => $likeId
         ]);
     }
 
@@ -50,8 +51,11 @@ class PlayPageController extends AbstractTwigController
         }
         return $this->twig->render(
             '/Home/General/spotifyPlayPage.html.twig',
-            ['trackURL' => $trackURL, 'trackArtist' => $trackArtist,
-                'trackTitle' => $trackTitle, 'trackImg' => $trackImg, 'rndSongCoverImg' => $rndSongCoverImg]
+            ['trackURL' => $trackURL,
+            'trackArtist' => $trackArtist,
+            'trackTitle' => $trackTitle,
+            'trackImg' => $trackImg,
+            'rndSongCoverImg' => $rndSongCoverImg]
         );
     }
 }
