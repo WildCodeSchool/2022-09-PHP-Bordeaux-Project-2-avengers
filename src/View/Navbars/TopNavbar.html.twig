@@ -1,19 +1,20 @@
 <nav class="top_navbar">
 
     <div class="logo-search-button">
-        <a href="/" class="logo-home-link">
+        <a href="/" class="logo-home-link" title="Home"
+                     alt="Home">
             <div class="navbar_logo">
                 <img class="navbar_logo_mobile" src="/assets/images/Navbars/logo-wildify-mobile.svg" title="Home"
                      alt="Home">
-                <p class="ildify-logo" title="ildify">ildify</p>
+                <p class="ildify-logo" title="Home">ildify</p>
                 <img class="navbar_logo_desktop" src="/assets/images/Navbars/logo-wildify-desktop.svg" title="Home"
                      alt="Home">
             </div>
         </a>
 
 		<div class="search-bar">
-			<form action="/searchSong" method="post" class="search-form">
-				<input type="text" class="search-input" placeholder="Search" name="search" id="search">
+			<form action="/searchSong" method="get" class="search-form">
+				<input type="text" class="search-input" placeholder="Search" name="search" id="search" required>
 				<button class="search-button" type="submit"><img class="magnifying_glass" title="Search" src="/assets/images/Navbars/icon-magnifying-glass.png" alt="Search"></button>
 			</form>
 		</div>

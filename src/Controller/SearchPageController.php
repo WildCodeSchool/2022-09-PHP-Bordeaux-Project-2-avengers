@@ -11,10 +11,15 @@ class SearchPageController extends AbstractTwigController
      */
     public function searchSongs()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+            if (empty($_GET['search'])) {
+                return $this->twig->render('/Home/General/searchPage.html.twig');
+            }
 
             // search on SPOTIFY (keyword "track" is important, instead "song" will be invalid)
-            $songTitleFoSpotify = $_POST['search'];
+            $songTitleFoSpotify = $_GET['search'];
             $spotifySearch = new SpotifyAPIController();
             $spotifySearch->connectToAPI();
             $spotifySongList = $spotifySearch->searchTracks($songTitleFoSpotify, 'track');
@@ -23,8 +28,7 @@ class SearchPageController extends AbstractTwigController
             // do a LOCAL search
             $fetchSongsManager = new FetchSongsManager();
             $songs = $fetchSongsManager->songSearch();
-            $fetchSongsManagerImg = new FetchSongsManager();
-            $rndSongCoverImg = $fetchSongsManagerImg->showImgDir();
+            $rndSongCoverImg = $fetchSongsManager->showImgDir();
 
             return $this->twig->render('/Home/General/searchPage.html.twig', [
                 'songs' => $songs, 'rndSongCoverImg' => $rndSongCoverImg, 'spotifySongList' => $spotifySongList

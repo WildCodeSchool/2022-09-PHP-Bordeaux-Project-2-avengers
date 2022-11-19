@@ -33,5 +33,4 @@ return [
     'setting/admin/deleteMusicDone' => ['AdminController', 'deleteMusic', ['id']],
     /* ------------------------------------------ User registration -------------------------------------------*/
     'registration' => ['UserController', 'index'],
-
 ];

@@ -46,6 +46,7 @@ class AdminController extends AbstractTwigController
         return $this->twig->render("Setting/Admin/manage-musics.html.twig", ['musics' => $musics]);
     }
 
+
     public function showOneMusic($id): string
     {
         $adminManager = new AdminManager();
@@ -53,6 +54,20 @@ class AdminController extends AbstractTwigController
 
 
         return $this->twig->render('Setting/Admin/admin-delete-music.html.twig', ['music' => $music]);
+    }
+
+
+    public function deleteMusic($id) : void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $id = trim($_GET['id']);
+
+
+            $adminManager = new AdminManager();
+            $adminManager->deleteOneMusic($id);
+
+            header('Location: /setting/admin/manageMusics');
+        }
     }
 
 }

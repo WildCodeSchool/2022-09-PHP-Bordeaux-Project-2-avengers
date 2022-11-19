@@ -60,8 +60,12 @@ class AdminManager extends Connection
         return $statement->fetch();
     }
 
-
-
+    public function deleteOneMusic(int $id): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM songs WHERE ID_song=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 
 
 }
