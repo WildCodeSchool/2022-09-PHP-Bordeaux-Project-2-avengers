@@ -76,6 +76,7 @@
 @media screen and (min-width: 481px) {
     .homepage-wrapper {
         font-size: 1.2em;
+        animation: smoothload 1.5s ease-out;
     }
 
     .homepage-wrapper h2 {
