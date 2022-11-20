@@ -21,18 +21,15 @@ class AdminController extends AbstractTwigController
 
         return $this->twig->render('Setting/Admin/admin-delete.html.twig', ['admin' => $admin]);
     }
-
+    
     public function deleteUser($id): void
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $id = trim($_GET['id']);
-            $adminManager = new AdminManager();
-            $adminManager->deleteUsersLikes($id); // Deletes users likes by user ID
-            $adminManager->deleteUsersSongs($id); // Deletes users songs by user ID
-            $adminManager->deleteOneUser($id); // Delete user by user ID
+        $adminManager = new AdminManager();
+        $adminManager->deleteUsersLikes($id); // Deletes users likes by user ID
+        $adminManager->deleteUsersSongs($id); // Deletes users songs by user ID
+        $adminManager->deleteOneUser($id); // Delete user by user ID
 
-            header('Location: /setting/admin');
-        }
+        header('Location: /setting/admin');
     }
 
     public function showAllMusics(): string
