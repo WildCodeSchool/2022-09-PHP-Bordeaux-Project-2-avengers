@@ -73,6 +73,9 @@ class SongManager extends Connection
         $statement->execute();
     }
 
+    /**
+     * Delete like song by ID song from database
+     */
     public function deleteLikeFromSongId($id): void
     {
         $statement = $this->pdo->prepare("DELETE FROM `like` WHERE songs_ID_song=:id");
