@@ -72,4 +72,11 @@ class SongManager extends Connection
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
+
+    public function deleteLikeFromSongId($id): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM `like` WHERE songs_ID_song=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }

@@ -91,6 +91,9 @@ class SongController extends AbstractTwigController
                 $fechSongsManager = new FetchSongsManager();
                 $song = $fechSongsManager->selectSongById($id);
 
+                $songManager = new SongManager();
+                $songManager->deleteLikeFromSongId($id);
+
                 if ($song['image_url'] !== null) {
                     unlink($song['image_url']);
                 }
@@ -98,7 +101,6 @@ class SongController extends AbstractTwigController
 
                 $songManager = new SongManager();
                 $songManager->deleteSongbyId($id);
-
 
                 header('Location: /setting/manage_music');
             }
