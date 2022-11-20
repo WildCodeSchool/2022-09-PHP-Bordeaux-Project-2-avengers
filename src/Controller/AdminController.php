@@ -27,7 +27,9 @@ class AdminController extends AbstractTwigController
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = trim($_GET['id']);
             $adminManager = new AdminManager();
-            $adminManager->deleteOneUser($id);
+            $adminManager->deleteUsersLikes($id); // Deletes users likes by user ID
+            $adminManager->deleteUsersSongs($id); // Deletes users songs by user ID
+            $adminManager->deleteOneUser($id); // Delete user by user ID
 
             header('Location: /setting/admin');
         }

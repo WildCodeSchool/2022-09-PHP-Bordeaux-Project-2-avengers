@@ -30,7 +30,7 @@
 
         <div class="profile-button-option">
             <a class="btn-option redirection-option" href="/setting/profile?id={{ user.ID_user }}">Back to profile</a>
-            <form action="/setting/profile/deleteDone" method="POST">
+            <form action="/setting/profile/deleteDone">
                 <button type="submit" name="delete" class="btn-option warning-option adapt-btn" value="{{ user.ID_user }}">Delete account
                 </button>
             </form>
