@@ -120,6 +120,7 @@
         width: 100%;
         left: 0;
         top: 120px;
+        z-index: 2;
     }
 
     .modal-body form {
