@@ -54,4 +54,12 @@ class SongManager extends Connection
         $sql = "DELETE FROM `like` WHERE user_ID_user = $idUser AND songs_ID_song = $idSong";
         $this->pdo->query($sql);
     }
+
+    public function getSongByUserId($id): array|null
+    {
+        $sql = "SELECT id_song, title, artist, image_url, song_url FROM `songs` WHERE user_ID_user = $id";
+        $statement = $this->pdo->query($sql);
+
+        return $statement->fetchAll();
+    }
 }

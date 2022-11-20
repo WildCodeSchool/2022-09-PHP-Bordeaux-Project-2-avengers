@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Wildify | Manage my tracks {% endblock %}
+
+{% block content %}
+    <section class="manage-music-section">
+
+        <h1 class="setting-title">> Manage my tracks <</h1>
+
+        <div class="manage-song-card">
+            {% for song in songs %}
+                <div class="manage-music-info">
+                    <a href="/play?id={{ song.id_song }}" class="song-link-manage-music">
+                        {% if song.image_url %}
+                            <div>
+                                <img src="/{{ song.image_url }}" alt="cover track" class="cover-manage-track">
+                            </div>
+                        {% else %}
+                            {% set imgCover = random(rndSongCoverImg) %}
+                            <div>
+                                <img src="/{{ imgCover }}" alt="cover track" class="cover-manage-track">
+                            </div>
+                        {% endif %}
+
+                        <div class="info-title-artist">
+                            <div class="manage-song-title">
+                                {{ song.title }}
+                            </div>
+                            <div class="manage-song-artist">
+                                {{ song.artist }}
+                            </div>
+                        </div>
+                    </a>
+                    <div class="div-btn-manage-song">
+                        <button class="btn-option manage warning-option" value="{{ song.id_song }}">Delete</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

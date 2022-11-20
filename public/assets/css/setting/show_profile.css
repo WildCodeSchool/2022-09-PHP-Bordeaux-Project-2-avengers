@@ -15,6 +15,7 @@
     font-family: var(--titleFont);
     color: var(--colorMainFont);
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .container-info-profile {
