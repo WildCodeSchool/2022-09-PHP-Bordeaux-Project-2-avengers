@@ -62,4 +62,14 @@ class SongManager extends Connection
 
         return $statement->fetchAll();
     }
+
+    /**
+     * Delete song from database
+     */
+    public function deleteSongbyId($id): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM songs WHERE ID_song=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }
