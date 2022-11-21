@@ -56,12 +56,12 @@
     .manage-song-card {
         border-radius: 30px;
         margin: 20px;
-        box-shadow: 0 0 10px #000000;
         padding-bottom: 10px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         align-items: center;
+        font-family: var(--mainFont);
         transition: ease-out 0.5s;
     }
 
