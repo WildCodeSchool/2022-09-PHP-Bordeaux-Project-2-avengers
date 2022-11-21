@@ -25,6 +25,10 @@
                     <p class="item-artist">{{ track.artist }}</p>
                     <p class="item-title">{{ track.title }}</p>
                 </div>
+            {% else %}
+                    <div>
+                        <h3 id="noResults" style="width: 88vw; text-align: center">There is no track on Wildify for now. Check your profile and be the first to add one!</h3>
+                    </div>
             {% endfor %}
         </div>
         {# pop #}
