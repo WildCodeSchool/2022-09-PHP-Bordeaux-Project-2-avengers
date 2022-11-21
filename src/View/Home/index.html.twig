@@ -4,6 +4,29 @@
 
 {% block content %}
     <div class="homepage-wrapper">
+        {# last six Wildify tracks #}
+        <h2>Recent additions</h2>
+        <div class="multiple-item-wrapper">
+            {% for track in lastSixTracks %}
+                <div class="single-item-wrapper">
+                    <a href="/play?id={{ track.id_song }}">
+                        {% if song.image_url %}
+                            <div class="img-and-icon"
+                                 style="background-image: url('{{ track.image_url }}'); background-size: cover">
+                                <img src="assets/images/play-icon-gold.png" class="home-play-icon">
+                            </div>
+                        {% else %}
+                            <div class="img-and-icon"
+                                 style="background-image: url('/{{ random(imgCover) }}'); background-size: cover">
+                                <img src="assets/images/play-icon-gold.png" class="home-play-icon">
+                            </div>
+                        {% endif %}
+                    </a>
+                    <p class="item-artist">{{ track.artist }}</p>
+                    <p class="item-title">{{ track.title }}</p>
+                </div>
+            {% endfor %}
+        </div>
         {# pop #}
         <h2>Pop</h2>
         <div class="multiple-item-wrapper">
