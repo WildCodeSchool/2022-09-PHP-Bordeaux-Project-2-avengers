@@ -36,6 +36,8 @@ CREATE TABLE IF NOT EXISTS `wildify_db`.`user` (
   PRIMARY KEY (`ID_user`))
 ENGINE = InnoDB;
 
+INSERT INTO wildify_db.user (firstname, lastname, username, email, password, role)
+VALUES ('Jean Le Grand', 'BOKASA', 'JeanLG', 'jeanlg@wildify.com', 'test', 'admin');
 
 -- -----------------------------------------------------
 -- Table `wildify_db`.`album`
