@@ -28,11 +28,13 @@ class SearchPageController extends AbstractTwigController
             $fetchSongsManager = new FetchSongsManager();
             $songs = $fetchSongsManager->songSearch(); // Gets song by search value
             $rndSongCoverImg = $fetchSongsManager->showImgDir(); // Get images for song covers and background
+            $search = $_GET['search'];
 
             return $this->twig->render('/Home/General/searchPage.html.twig', [
                 'songs' => $songs,
                 'rndSongCoverImg' => $rndSongCoverImg,
-                'spotifySongList' => $spotifySongList
+                'spotifySongList' => $spotifySongList,
+                'search' => $search
             ]);
         }
     }
