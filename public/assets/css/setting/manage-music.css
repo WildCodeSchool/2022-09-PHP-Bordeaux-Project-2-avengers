@@ -52,7 +52,64 @@
     align-items: center;
 }
 
-@media screen and (min-width: 768px) {
+/*-------------------------------- Modal to confirm delete --------------------------- */
+.no-music-found {
+    font-family: var(--mainFont);
+    color: var(--colorSubDiscFont);
+    text-align: center;
+}
+
+.modal-delete-song {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    padding-top: 100px;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-music-body {
+    position: relative;
+    background-color: var(--backgroundNavTop);
+    margin: auto;
+    border-radius: 20px;
+    border: solid 1px var(--colorObject);
+    width: 90vw;
+}
+
+.modal-music-content {
+    text-align: center;
+    font-family: var(--mainFont);
+    color: var(--colorMainFont);
+    font-size: 20px;
+}
+
+.modal-music-text {
+    font-family: var(--mainFont);
+    color: var(--colorMainFont);
+    font-size: 20px;
+}
+
+.modal-music-title {
+    font-weight: bold;
+    color: var(--colorObject);
+}
+
+.modal-music-artist {
+    color: var(--colorObject);
+}
+
+@media screen and (min-width: 422px) {
+
+    .modal-music-body {
+        width: 379px
+    }
+}
+
+@media screen and (min-width: 770px) {
     .manage-song-card {
         border-radius: 30px;
         margin: 20px;
@@ -83,5 +140,19 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
+    }
+
+    .modal-delete-song {
+        width: 100%;
+        left: 0;
+        top: 120px;
+    }
+
+    .modal-music-body {
+        width: 446px;
+    }
+
+    .btn-option.modal-adapt {
+        margin: 0 20px;
     }
 }

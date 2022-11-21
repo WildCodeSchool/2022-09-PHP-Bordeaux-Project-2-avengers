@@ -9,39 +9,33 @@ class LoginController extends AbstractTwigController
     /**
      * Verify login then redirection
      */
-    public function login(): string
+    public function login()
     {
         $userModel = new UserManager();
 
         $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $_POST['email'] = htmlspecialchars($_POST['email']);
-            $_POST['password'] = htmlspecialchars($_POST['password']);
+            $_POST = array_map('trim', $_POST);
+            $_POST = array_map('htmlspecialchars', $_POST);
 
-            if (!isset($_POST['email'])) {
+            if (empty($_POST['email'])) {
                 $errors[] = 'Email is require.';
             }
-            if (!isset($_POST['password'])) {
+            if (empty($_POST['password'])) {
                 $errors[] = 'Password is require.';
             }
             if (!empty($errors)) {
-                return $this->twig->render('Home/index.html.twig', ['errors' => $errors]);
+                header('Location: /');
             } else {
-                $email = $_POST['email'];
-                $password = $_POST['password'];
+                $user = $userModel->login($_POST['email'], $_POST['password']);
 
-                $user = $userModel->login($email, $password);
-
-                if ($user === false) {
-                    $errors[] = "Email or password not correct";
-                    return $this->twig->render('Home/index.html.twig', ['errors' => $errors]);
-                } else {
+                if ($user) {
                     $_SESSION['ID_user'] = $user['ID_user'];
-                    header('Location: /');
                 }
+
+                header('Location: /');
             }
         }
-        return $this->twig->render('Home/index.html.twig');
     }
 }

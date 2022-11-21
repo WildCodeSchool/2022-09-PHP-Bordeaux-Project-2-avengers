@@ -1,4 +1,4 @@
-.manage-music-admin 
+.manage-music-admin
 {
     margin : 2rem;
 
@@ -15,8 +15,8 @@
     border: solid 1px var(--colorObject);
     padding: 1rem 1.5rem;
     font-family: var(--mainFont);
-    color: var(--colorMainFont);
     justify-content: space-between;
+    flex-direction: column;
 }
 .admin-music-title {
     font-family: var(--titleFont);
@@ -46,7 +46,7 @@
     width: 7rem;
     height: 7rem;
     margin-left: 3rem;
-    
+
 }
 
 
@@ -64,9 +64,9 @@
 
 
 @media screen and ( max-width: 950px) {
-    
+
     .admin-music-title {
-        
+
         font-size: 80%;
         text-align: end;
         margin: 0rem;
@@ -75,7 +75,7 @@
     }
 
     .admin-table-music {
-        
+
         font-size: 70%;
         text-align: start;
         padding: 0.5rem;
@@ -84,25 +84,25 @@
     }
 
     .admin-manage-titles {
-        
+
         display: grid;
         grid-template-columns: 5rem 10rem;
-        
+
     }
-    
+
     .admin-music-img {
-        
+
         width: 6rem;
         height: 6rem;
         margin: auto;
     }
-    
+
     .admin-button {
-        
+
         flex-direction: column;
         margin: 1rem;
     }
-    
+
     .admin-button-margin {
 
         margin-bottom: 2rem;
@@ -111,42 +111,42 @@
     .admin-music-token {
         word-wrap: break-word;
     }
-    
+
     .manage-music-admin {
-        
+
         margin-top: 1.5rem;
         margin-right: 2rem;
         margin-left: 1.5rem;
         margin-bottom: 0;
 
     }
-    
-}   
+
+}
     @media screen and (max-width: 600px) {
-        
-       
+
+
         .admin-table-music {
-    
+
             width : 80vw;
         }
-    
-       
-    
+
+
+
         .admin-music-img {
-    
+
             width: 4rem;
             height: 4rem;
             margin: auto;
         }
-    
-    
-    
-    
+
+
+
+
     }
 
     @media screen and (max-width: 1200px)
     {
-        
+
 
         .admin-table-music {
             font-size: 70%;
@@ -161,7 +161,7 @@
     .admin-music-token {
         word-wrap: break-word;
     }
-    
+
     }
 
     @media screen and (max-width: 1400px){
@@ -173,15 +173,15 @@
     .admin-music-token {
         word-wrap: break-word;
     }
-    
+
     }
 
 @media screen and (max-width: 400px){
     .admin-manage-titles {
-        
+
         display: grid;
         grid-template-columns: 5rem 5rem;
-        
+
     }
 
     .admin-table-music {

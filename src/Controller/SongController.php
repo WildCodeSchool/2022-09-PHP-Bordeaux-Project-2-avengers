@@ -74,4 +74,36 @@ class SongController extends AbstractTwigController
             'songs' => $songs,
             'rndSongCoverImg' => $rndSongCoverImg]);
     }
+
+    /**
+     * Delete all information for user connected
+     */
+    public function deleteSong(): void
+    {
+        if (!$this->user) {
+            echo 'Unauthorized access';
+            header('HTTP/1.1 401 Unauthorized');
+        } else {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $id = trim($_POST['delete']);
+                $id = intval($id);
+
+                $fechSongsManager = new FetchSongsManager();
+                $song = $fechSongsManager->selectSongById($id);
+
+                $songManager = new SongManager();
+                $songManager->deleteLikeFromSongId($id);
+
+                if ($song['image_url'] !== null) {
+                    unlink($song['image_url']);
+                }
+                unlink($song['song_url']);
+
+                $songManager = new SongManager();
+                $songManager->deleteSongbyId($id);
+
+                header('Location: /setting/manage_music');
+            }
+        }
+    }
 }

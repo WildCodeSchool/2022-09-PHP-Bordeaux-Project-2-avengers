@@ -24,6 +24,7 @@ return [
     'setting/profile/deleteDone' => ['UserController', 'deleteUser'],
     'setting/add_music' => ['SongController', 'addSong'],
     'setting/manage_music' => ['SongController', 'showSongById'],
+    'setting/manage_music/delete' => ['SongController', 'deleteSong', ['id']],
     /* ------------------------------------------ Setting page ADMIN -------------------------------------------*/
     'setting/admin' => ['AdminController', 'showAllUsers'],
     'setting/admin/delete' => ['AdminController', 'showDeleteUser', ['id']],

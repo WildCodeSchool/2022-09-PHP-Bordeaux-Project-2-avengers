@@ -66,4 +66,18 @@ class AdminManager extends Connection
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
+
+    public function deleteUsersSongs(int $id): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM songs WHERE user_ID_user=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
+    public function deleteUsersLikes(int $id): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM `like` WHERE user_ID_user=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
 }

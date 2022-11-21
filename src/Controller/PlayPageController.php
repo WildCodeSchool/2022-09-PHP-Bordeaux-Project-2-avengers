@@ -15,14 +15,22 @@ class PlayPageController extends AbstractTwigController
         $song = $fetchSongsManager->selectSongById($id); // Get song one song for play page
         $artistSongs = $fetchSongsManager->getsongList($id); // Get list of songs by the artist for play page
         $rndSongCoverImg = $fetchSongsManager->showImgDir(); // Get images for song covers and background
-        $likedController = new LikePageController();
-        $likeId = $likedController->likeSong(); // Checks if songs are liked
+
+        if ($this->user) {
+            $likedController = new LikePageController();
+            $likeId = $likedController->likeSong(); // Checks if songs are liked
+            return $this->twig->render('/Home/General/playPage.html.twig', [
+                'song' => $song,
+                'artistSongs' => $artistSongs,
+                'rndSongCoverImg' => $rndSongCoverImg,
+                'likeId' => $likeId
+            ]);
+        }
 
         return $this->twig->render('/Home/General/playPage.html.twig', [
             'song' => $song,
             'artistSongs' => $artistSongs,
-            'rndSongCoverImg' => $rndSongCoverImg,
-            'likeId' => $likeId
+            'rndSongCoverImg' => $rndSongCoverImg
         ]);
     }
 
