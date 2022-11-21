@@ -6,7 +6,7 @@ use PDO;
 
 class FetchSongsManager extends Connection
 {
-    public function showImgDir()
+    public function showImgDir(): array
     {
         $dir = "assets/images/imgPicker";
 
@@ -30,7 +30,7 @@ class FetchSongsManager extends Connection
      */
     public function songSearch(): array
     {
-        $query = 'SELECT songs.ID_song , songs.title , songs.artist , genre.genre, songs.image_url, songs.song_url 
+        $query = 'SELECT songs.ID_song , songs.title , songs.artist , genre.genre, songs.image_url, songs.song_url
                     FROM songs
                     join genre on songs.genre_ID_genre = genre.ID_genre
                     where songs.title like "%' . $_GET['search'] . '%" or songs.artist like "%' . $_GET['search'] . '%" or genre.genre like "%' . $_GET['search'] . '%"';
@@ -51,6 +51,22 @@ class FetchSongsManager extends Connection
         $statement->execute();
 
         return $statement->fetch();
+    }
+
+    /**
+     * Select last siw tracks added on wildify for the Homepage
+     *
+     * @return mixed
+     */
+    public function selectLastSixAddedTracks()
+    {
+        $statement = $this->pdo->prepare(
+            "SELECT id_song, title, artist, image_url, song_url
+                FROM songs ORDER BY id_song DESC LIMIT 6"
+        );
+        $statement->execute();
+
+        return $statement->fetchAll();
     }
 
     /**
