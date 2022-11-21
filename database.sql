@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `wildify_db`.`user` (
                                                    `firstname` VARCHAR(255) NULL,
                                                    `lastname` VARCHAR(255) NULL,
                                                    `username` VARCHAR(255) NOT NULL,
-                                                   `birthday` DATE NULL,
+                                                   `birthday` VARCHAR(10) NULL,
                                                    `country` VARCHAR(255) NULL,
                                                    `email` VARCHAR(255) NOT NULL,
                                                    `password` VARCHAR(255) NOT NULL,
