@@ -66,6 +66,7 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--colorMainFont);
+    font-family: var(--mainFont);
 }
 
 .logo-modal {

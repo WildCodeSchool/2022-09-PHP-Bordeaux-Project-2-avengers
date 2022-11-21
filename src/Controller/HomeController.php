@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\FetchSongsManager;
+
 /**
  * In case of access problem to a specific page,
  * try and check the authorized RedirectURI on the Dashboard of Spotify App
@@ -9,10 +11,15 @@ namespace App\Controller;
 class HomeController extends AbstractTwigController
 {
     /**
-     * Display home page
+     * Display home page with both local and Spotify tracks
      */
     public function index(): string
     {
+        //on appelle les musiques ajoutées par les users
+        $fetchSongs = new FetchSongsManager();
+        $imgCover = $fetchSongs->showImgDir();
+        $lastSixTracks = $fetchSongs->selectLastSixAddedTracks();
+
         // on crée une connexion à l'API de Spotify
         $spotify = new SpotifyAPIController();
         $spotify->connectToAPI();
@@ -36,6 +43,8 @@ class HomeController extends AbstractTwigController
 
         // on retourne la vue twig avec les arrays de musiques qu'on a chargées
         return $this->twig->render('Home/index.html.twig', [
+            'lastSixTracks' => $lastSixTracks,
+            'imgCover' => $imgCover,
             'metal' => $tracksMetal,
             'rock' => $tracksRock,
             'pop' => $tracksPop,
