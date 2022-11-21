@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use App\Controller\Service\FormController;
+use App\Model\AdminManager;
+use App\Model\FetchSongsManager;
+use App\Model\SongManager;
 use App\Model\UserManager;
 
 class UserController extends AbstractTwigController
@@ -91,8 +94,24 @@ class UserController extends AbstractTwigController
         } else {
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id = trim($_POST['delete']);
-                $userModel = new UserManager();
-                $userModel->delete($id);
+                $id = intval($id);
+                $adminManager = new AdminManager();
+                $adminManager->deleteUsersLikes($id);
+
+                $songManager = new SongManager();
+                $songs = $songManager->getSongByUserId($id);
+
+                foreach ($songs as $song) {
+                    if ($song['image_url'] !== null) {
+                        unlink($song['image_url']);
+                    }
+                    unlink($song['song_url']);
+                }
+
+                $adminManager->deleteUsersSongs($id); // Deletes users songs by user ID
+
+                $userManager = new UserManager();
+                $userManager->delete($id);
 
                 header('Location: /');
             }

@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Model\AdminManager;
+use App\Model\SongManager;
+use App\Model\UserManager;
 
 class AdminController extends AbstractTwigController
 {
@@ -21,13 +23,27 @@ class AdminController extends AbstractTwigController
 
         return $this->twig->render('Setting/Admin/admin-delete.html.twig', ['admin' => $admin]);
     }
-    
+
     public function deleteUser($id): void
     {
+        $id = intval($id);
         $adminManager = new AdminManager();
-        $adminManager->deleteUsersLikes($id); // Deletes users likes by user ID
+        $adminManager->deleteUsersLikes($id);
+
+        $songManager = new SongManager();
+        $songs = $songManager->getSongByUserId($id);
+
+        foreach ($songs as $song) {
+            if ($song['image_url'] !== null) {
+                unlink($song['image_url']);
+            }
+            unlink($song['song_url']);
+        }
+
         $adminManager->deleteUsersSongs($id); // Deletes users songs by user ID
-        $adminManager->deleteOneUser($id); // Delete user by user ID
+
+        $userManager = new UserManager();
+        $userManager->delete($id);
 
         header('Location: /setting/admin');
     }
@@ -52,6 +68,7 @@ class AdminController extends AbstractTwigController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = trim($_GET['id']);
+            $id = intval($id);
             $adminManager = new AdminManager();
             $adminManager->deleteOneMusic($id);
 
