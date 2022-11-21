@@ -21,6 +21,7 @@ USE `wildify_db` ;
 -- -----------------------------------------------------
 -- Table `wildify_db`.`user`
 -- -----------------------------------------------------
+
 DROP TABLE IF EXISTS `wildify_db`.`user` ;
 
 CREATE TABLE IF NOT EXISTS `wildify_db`.`user` (

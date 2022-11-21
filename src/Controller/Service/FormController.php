@@ -2,6 +2,8 @@
 
 namespace App\Controller\Service;
 
+use App\Model\AdminManager;
+
 class FormController
 {
     /**
@@ -35,6 +37,19 @@ class FormController
         if (empty($post['title'])) {
             $errors[] = 'Title is require.';
         }
+
+        $adminManager = new AdminManager();
+        $songs = $adminManager->getAllMusics();
+
+        $titleSongs = [];
+        foreach ($songs as $song) {
+            $titleSongs[] = $song['title'];
+        }
+
+        if (in_array($post['title'], $titleSongs)) {
+            $errors[] = 'This title already exist.';
+        }
+
         if (empty($post['artist'])) {
             $errors[] = 'Artist is require.';
         }
