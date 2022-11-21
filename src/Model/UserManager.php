@@ -23,7 +23,7 @@ class UserManager extends Connection
     /**
      * Get all information for one user
      */
-    public function getOneUser(int $id): array
+    public function getOneUser(int $id): array|bool
     {
         $sql = "SELECT ID_user, firstname, lastname, username, birthday, country,
        email, password, role FROM user WHERE ID_user=:id";
