@@ -35,7 +35,7 @@ class UserController extends AbstractTwigController
                 $service = new FormController();
 
                 $userUpdate = array_map('trim', $_POST);
-                $userUpdate = array_map('htmlspecialchars', $_POST);
+                $userUpdate = array_map('htmlspecialchars', $userUpdate);
 
                 $errors = $service->emptyForm($userUpdate);
 
