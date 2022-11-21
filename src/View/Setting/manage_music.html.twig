@@ -32,9 +32,36 @@
                         </div>
                     </a>
                     <div class="div-btn-manage-song">
-                        <button class="btn-option manage warning-option" value="{{ song.id_song }}">Delete</button>
+                        <button class="btn-option manage warning-option btn-modal-music" data-modal="{{ song.title }}">
+                            Delete
+                        </button>
                     </div>
                 </div>
+
+                <div class="modal modal-music" id="{{ song.title }}">
+                    <div class="modal-music-body">
+                        <div class="modal-music-content">
+                            <p class="modal-music-text">You are about to delete :</p>
+                            <p class="modal-music-title">{{ song.title }}</p>
+                            <p class="modal-music-artist">{{ song.artist }}</p>
+                        </div>
+                        <div class="profile-button-option reverse-button">
+                            <button class="btn-option modal-adapt redirection-option btn-back">Back</button>
+                            <form action="/setting/manage_music/delete" method="POST">
+                                <button type="submit" name="delete" class="btn-option modal-adapt warning-option"
+                                        value="{{ song.id_song }}">Delete song
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                {# -------- if no results found -------- #}
+            {% else %}
+                <div>
+                    <h3 class="no-music-found">You haven't added music yet...</h3>
+                </div>
+
             {% endfor %}
         </div>
     </section>
