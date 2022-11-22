@@ -4,7 +4,7 @@
 
 {% block content %}
     <section class="admin-one-music-token">
-        <h1 class="setting-title">> Deleting account <</h1>
+        <h1 class="setting-title">> Manage all musics <</h1>
 
         {% for music in musics %}
             <div class="manage-music-admin">
@@ -33,7 +33,7 @@
                             </p>
                             <div class="admin-img">
                                 <p class="admin-music-title">
-                                    <img src="/{{ music.image_url }}" class="admin-music-img">
+                                    <img src="/{{ music.image_url }}" class="admin-music-img" alt="No track cover">
                                 </p>
                             </div>
                         </div>
