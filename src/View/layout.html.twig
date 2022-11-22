@@ -19,7 +19,7 @@
 		<div class="middle-section">
 
 			{# -------------------------------SIDE NAVBAR--------------------------------------------- #}
-			<input type="checkbox" class="expand-side-navbar" id="expand-side-navbar">
+			<input type="checkbox" class="expand-side-navbar" id="expand-side-navbar" onclick="document.getElementById('expand-profile-checkbox').checked = false, document.getElementById('expand-admin-checkbox').checked = false">
 			<div class="side-navbar">
 				{% include 'Navbars/SideNavbar.html.twig' %}
 			</div>
