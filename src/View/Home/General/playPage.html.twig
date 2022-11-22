@@ -29,6 +29,7 @@
 					<div class="play-songArtist">
 						{{ song.artist }}
 					</div>
+					{% if user.role %}
                     <form action="" method="POST" id="testform">
                         <input type="hidden" name="ID_song" value="{{ song.ID_song }}">
                         <input type="image"
@@ -39,6 +40,7 @@
                             {% endif %}
                         >
                     </form>
+					{% endif %}
 				</div>
 			</div>
 
