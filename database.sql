@@ -147,22 +147,22 @@ CREATE TABLE IF NOT EXISTS `wildify_db`.`songs`
     ENGINE = InnoDB;
 
 INSERT INTO `songs`
-VALUES (1, 1, NULL, 'Three Little Birds', 'Bob Marley', NULL,
+VALUES (1, 1, 1, 'Three Little Birds', 'Bob Marley', NULL,
         'assets/wildify_songs/Bob_Marley_The_Very_Best_Of_legend/Three Little Birds.mp3'),
-       (2, 8, NULL, 'Smells Like Teen Spirit', 'Nirvana',
+       (2, 8, 1, 'Smells Like Teen Spirit', 'Nirvana',
         'assets/wildify_songs/Nirvana _Greatest _Hits/nirvana_greatest hits.jpg',
         'assets/wildify_songs/Nirvana _Greatest _Hits/Smells Like Teen Spirit.mp3'),
-       (3, 5, NULL, 'I Just Called To Say I Love You', 'Stevie Wonder', NULL,
+       (3, 5, 1, 'I Just Called To Say I Love You', 'Stevie Wonder', NULL,
         'assets/wildify_songs/Stevie_Wonder_Greatest_Hits/I Just Called To Say I Love You.mp3'),
-       (4, 3, NULL, 'Califonia Love', 'Tupac Shakur',
+       (4, 3, 1, 'Califonia Love', 'Tupac Shakur',
         'assets/wildify_songs/Tupac_Greatest_Hits/Tupac_Greatest_Hits_Front.jpg',
         'assets/wildify_songs/Tupac_Greatest_Hits/Califonia Love.mp3'),
-       (5, 4, NULL, 'Juicy', 'The Notorious B.I.G.',
+       (5, 4, 1, 'Juicy', 'The Notorious B.I.G.',
         'assets/wildify_songs/The_Notorious_B_I_G_Greatest_Hits/The Notorious B.I.G. - Greatest Hits.jpg',
         'assets/wildify_songs/The_Notorious_B_I_G_Greatest_Hits/Juicy.mp3'),
-       (6, 2, NULL, 'Bad Moon Rising', 'Creedence Clearwater Revival', NULL,
+       (6, 2, 1, 'Bad Moon Rising', 'Creedence Clearwater Revival', NULL,
         'assets/wildify_songs/CCR_Greatest Hits/Bad Moon Rising.mp3'),
-       (7, 6, NULL, 'All you need is love', 'The Beatles', '',
+       (7, 6, 1, 'All you need is love', 'The Beatles', '',
         'assets/wildify_songs/The_Beatles_Greatest_Hits/All you need is love.mp3');
 
 -- -----------------------------------------------------
