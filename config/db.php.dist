@@ -1,6 +1,15 @@
 <?php
 
+// database settings
 define('APP_DB_USER', 'user');
 define('APP_DB_PASSWORD', 'password');
 define('APP_DB_HOST', 'localhost');
 define('APP_DB_NAME', 'database_name');
+
+// Spotify credentials (see readme.md)
+define('CLIENT_ID', 'your_client_id');
+define('CLIENT_SECRET', 'your_client_secret');
+
+// Mail config (see readme.md)
+define('MAIL_USER NAME', 'your_email');
+define('MAIL_PASSWORD', 'your_password');
