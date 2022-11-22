@@ -11,6 +11,10 @@
     color: var(--colorMainFont);
 }
 
+.searchTitle span{
+    font-family: var(--mainFont);
+}
+
 .search-sub-title {
     color: var(--colorMainFont);
     font-family: var(--mainFont);
